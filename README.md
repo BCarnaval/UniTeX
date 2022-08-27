@@ -1,5 +1,7 @@
 # UnITeX
 
+UnITeX is a collection of scientific oriented and minimalistic $\LaTeX{}$ templates suitable for to many assignement types.
+
 ![LaTeX](https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white) ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white) ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
 ## Table of contents
