@@ -1,0 +1,129 @@
+% -----------------------------------------------------------------------------
+% USER DEFINED COMMANDS
+% -----------------------------------------------------------------------------
+\ProvidesPackage{commands}[2022/08/24]
+
+% --------------
+% Math & Physics
+% --------------
+
+% Blacksquare math proof env.
+\renewcommand{\qedsymbol}{\rule{0.7em}{0.7em}}
+
+% Partial derivative shortcut
+\newcommand{\pd}{\partial}
+
+% Space between equations in math environnement
+\newcommand{\betspace}{\hspace{0.5cm}\text{et}\hspace{0.5cm}}
+
+% Spin's indices
+\renewcommand{\up}{\uparrow}
+\newcommand{\down}{\downarrow}
+
+% Styled Lagrangian
+\newcommand{\Lagr}{\mathcal{L}}
+
+% SI units
+\newcommand{\V}[1]{\SI{#1}{\volt}}
+\newcommand{\Amp}[1]{\SI{#1}{\ampere}}
+\newcommand{\m}[1]{\SI{#1}{\meter}}
+\newcommand{\J}[1]{\SI{#1}{\joule}}
+\newcommand{\Ang}[1]{\SI{#1}{\angstrom}}
+\newcommand{\cm}[1]{\SI{#1}{\centimeter}}
+\newcommand{\Cou}[1]{\SI{#1}{\coulomb}}
+\newcommand{\dB}[1]{\SI{#1}{\decibel}}
+\renewcommand{\deg}[1]{\SI{#1}{\degree}}
+\newcommand{\eV}[1]{\SI{#1}{\electronvolt}}
+\newcommand{\e}[1]{\SI{#1}{\elementarycharge}}
+\newcommand{\F}[1]{\SI{#1}{\farad}}
+\newcommand{\Hz}[1]{\SI{#1}{\hertz}}
+\newcommand{\K}[1]{\SI{#1}{\kelvin}}
+\newcommand{\kg}[1]{\SI{#1}{\kilogram}}
+\renewcommand{\l}[1]{\SI{#1}{\litre}}
+\newcommand{\mol}[1]{\SI{#1}{\mole}}
+\newcommand{\N}[1]{\SI{#1}{\newton}}
+\renewcommand{\O}[1]{\SI{#1}{\ohm}}
+\newcommand{\Pa}[1]{\SI{#1}{\pascal}}
+\newcommand{\s}[1]{\SI{#1}{\second}}
+\newcommand{\T}[1]{\SI{#1}{\tesla}}
+\newcommand{\W}[1]{\SI{#1}{\watt}}
+
+% Identity caracter
+\newcommand{\identity}{\ensuremath{\mathbb{1}}}
+
+% Derivatives
+\newcommand{\ddv}[1]{\, \mathrm{d} \vec{#1}}
+\newcommand{\derivv}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\derivvb}[1]{\frac{\mathrm{d}}{\mathrm{d} #1}}
+\newcommand{\derivvn}[3]{\frac{\mathrm{d}^{#3} #1}{\mathrm{d} {#2}^{#3}}}
+\newcommand{\partiald}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\partialdn}[3]{\frac{\partial^{#3} #1}{\partial {#2}^{#3}}}
+\newcommand{\rot}[1]{\nabla \cross \vec{#1}}
+\newcommand{\diver}[1]{\nabla \cdot \mathbf{#1}}
+\newcommand{\lapl}[1]{\nabla^2 {#1}}
+
+% Integrals
+\newcommand{\intg}[2]{\int #1 \dd #2}
+\newcommand{\intgd}[4]{\int_{#3}^{#4} #1 \dd #2}
+\newcommand{\intono}[1]{\varoiint_S \vec{#1} \cdot \dd \vec{S}}
+\newcommand{\inton}[2]{\iint_{S #2} \vec{#1} \cdot \dd \vec{S}_{#2}}
+
+% -------------
+% Colored Boxes
+% -------------
+\newtcolorbox{mybox}{
+  tcbox width=auto limited,capture=hbox,on line,
+  colback=white,colframe=\MasterColor,size=fbox,arc=0pt
+}
+
+\newtcbox{\mymath}[1][]{
+    nobeforeafter, math upper, tcbox raise base,
+    enhanced, colframe=\MasterColor,
+    colback=white, boxrule=1pt, arc=0pt
+    #1
+}
+
+% Classic colored boxes
+\renewcommand{\boxed}[1]{
+  \begin{mybox}
+      #1
+  \end{mybox}
+}
+
+% Numbered equation colored boxes
+\newcommand{\MNboxed}[2]{
+  \begin{empheq}[box=\mymath]{align}
+      \label{#2}
+      #1
+  \end{empheq}
+}
+
+% Unnumbered equation colored boxes
+\newcommand{\Mboxed}[2]{
+  \begin{empheq}[box=\mymath]{align*}
+      \label{#2}
+      #1
+  \end{empheq}
+}
+
+% Sections blueboxes
+\newcommand{\Boxed}[1]{
+  \begin{tcolorbox}[colback=white,colframe=\MasterColor,arc=0pt]
+      \section{#1}
+      \vspace{-0.5cm}
+  \end{tcolorbox}
+}
+
+% ---------------
+% Document layout
+% ---------------
+
+% Indent answers paragraph
+\newcommand{\fullindent}{\setlength{\leftskip}{0.5cm}\noindent}
+
+% Noindent answers paragraph (where 'rindent' stands for remove indent)
+\newcommand{\rindent}{\setlength{\leftskip}{0cm}\noindent}
+
+% Roman numbers
+\newcommand{\rom}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
