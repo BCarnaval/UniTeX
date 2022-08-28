@@ -1,0 +1,123 @@
+% -----------------------------------------------------------------------------
+% Style & Libraries
+% -----------------------------------------------------------------------------
+\ProvidesPackage{style}[2022/08/24]
+
+% --------------------------
+% Global page style settings
+% --------------------------
+\usepackage{cite} % Bibliography support
+\usepackage{lmodern} % Font
+\usepackage{sectsty} % Control sectional headers
+
+% Using 'subfiles', the user can compile each of the project's file
+% separately and those will automatically use 'main.tex' preamble.
+\usepackage{subfiles}
+
+\usepackage{booktabs} % Enhances the quality of tables
+\usepackage{siunitx} % Displaying SI units
+\usepackage{geometry} % Customize page layout and dimensions
+\usepackage{fancyhdr} % Extensive control of page headers and footers
+\usepackage{titlesec} % Select alternative section titles
+\usepackage{blindtext} % Generate dummy text to test template
+\usepackage[T1]{fontenc} % Uses fonts that have 256 glyphs
+\usepackage[11pt]{moresize} % To use '\HUGE' fontsize
+\usepackage[utf8]{inputenc} % Telling LaTeX what encoding is used
+\usepackage[titles]{tocloft} % Table of contents (ToC) customization
+\usepackage[most]{tcolorbox} % Colored boxes support
+\usepackage[greek, english, french]{babel} % Using different languages
+
+% --------------
+% Math & Physics
+% --------------
+\usepackage{bm} % Makes bold symbols in math env.
+\usepackage{array}
+\usepackage{empheq}
+\usepackage{physics}
+\usepackage{enumerate}
+\usepackage{amsmath, amsfonts, amsthm, amssymb, dsfont}
+\AtBeginDocument{\RenewCommandCopy\qty\physics}
+
+% -------
+% Figures
+% -------
+\usepackage{wrapfig} % Merge figures and text blocks
+\usepackage{listings} % Insert code blocks in .tex file
+
+% ------------
+% Bibliography
+% ------------
+\bibliographystyle{plain}
+
+% -----------------
+% Table of contents
+% -----------------
+\renewcommand{\cftsecfont}{\bfseries\color{\MasterColor}}
+\renewcommand{\cftsubsecfont}{\color{\MasterColor}}
+\renewcommand{\cftsubsubsecfont}{\color{\MasterColor}}
+
+% Link's dots color
+\renewcommand{\cftsecleader}{\color{\MasterColor}\cftdotfill{\cftsecdotsep}}
+\renewcommand{\cftsubsecleader}{\color{\MasterColor}\cftdotfill{\cftsubsecdotsep}}
+\renewcommand{\cftsubsubsecleader}{\color{\MasterColor}\cftdotfill{\cftsubsubsecdotsep}}
+
+% Load hyperred package after 'tocloft' settings to color Toc
+\usepackage{hyperref}
+
+% ---------------
+% Page dimensions
+% ---------------
+\geometry{left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm}
+\setlength{\headheight}{16pt}
+
+% ----------------------------------------------
+% Titles (sections, subsections, subsubsections)
+% ----------------------------------------------
+\newcommand{\justifyheading}{\raggedleft}
+
+\titleformat{\section}{
+  \normalfont\Large\bfseries{
+    \color{\MasterColor}\titlerule[2pt]
+    }
+  \vspace{0.25cm}
+}{\thesection}{1em}{}
+
+\titleformat{\subsection}{
+  \normalfont\large\bfseries{
+    \color{\MasterColor}\titlerule[1pt]
+    }
+  \vspace{0.25cm}
+}{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}{
+  \normalfont\large\bfseries{
+    \color{\MasterColor}\titlerule[0.5pt]
+    }
+  \vspace{0.25cm}
+}{\thesubsubsection}{1em}{}
+
+% -----------------
+% Headers & Footers
+% -----------------
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\color{\MasterColor}#1}{}}
+\renewcommand{\subsectionmark}[1]{\markboth{\color{\MasterColor}#1}{}}
+\renewcommand{\headrulewidth}{0pt}
+
+% --------------------------------------
+% Title Page shortcuts & French captions
+% --------------------------------------
+\newcommand{\Nom}[1]{\renewcommand{\Nom}{#1}}
+\newcommand{\Titre}[1]{\renewcommand{\Titre}{#1}}
+\newcommand{\SousTitre}[1]{\renewcommand{\SousTitre}{#1}}
+\newcommand{\NomCours}[1]{\renewcommand{\NomCours}{#1}}
+\newcommand{\CodeCours}[1]{\renewcommand{\CodeCours}{#1}}
+\newcommand{\Enseignant}[1]{\renewcommand{\Enseignant}{#1}}
+\newcommand{\Faculte}[1]{\renewcommand{\Faculte}{#1}}
+\newcommand{\Departement}[1]{\renewcommand{\Departement}{#1}}
+\newcommand{\Date}[1]{\renewcommand{\Date}{#1}}
+
+\addto\captionsfrench{\def\figurename{{\sc Figure}}}
+\addto\captionsfrench{\def\tablename{{\sc Tableau}}}
+\addto\captionsfrench{\def\listfigurename{Liste des figures}}
+
