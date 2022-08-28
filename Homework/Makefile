@@ -1,12 +1,6 @@
-# Usage docs
-#
-#
-
-.PHONY: all $(MAIN).pdf nomk clean clean_nomk targz zip
-
 MAIN = main
 SHELL = /bin/bash
-PROJECT = 'UnITeX_Classic'
+PROJECT = UnITeX_Homework
 DATE = $(shell date +"%F-%H")
 
 # Retreiving all source files
@@ -15,47 +9,54 @@ FIGS = $(shell find figs/* -type f)
 STY = $(wildcard *.sty)
 TEX = $(wildcard *.tex) $(wildcard sections/*.tex)
 
-OPT = -interaction=batchmode
 SOURCE = $(BIB) $(STY) $(TEX) $(FIGS)
+GARBAGE = {pdf,log,blg,bbl,aux,out,toc,idx,bcf,run.xml,ind,ilg,fls,fdb_latexmk,synctex.gz}
+
+
+# Setting LaTeX compile (latexmk) options & flags
+MK = latexmk
+OUT = pdf # Generate pdf version of document using pdflatex
+OUT_MODE = pvc # Run a file previewer and continually update the files
+GENERATOR = pdflatex # Sets the generation of pdf files by pdflatex
+OPT = -interaction=batchmode
 
 HIDE = @
+
+# OS specific part
+ifeq ($(OS),Windows_NT)
+    RM = del /F /Q 
+    RMDIR = -RMDIR /S /Q
+    MKDIR = -mkdir
+else
+    RM = -rm -f 
+    RMDIR = -rm -rf 
+    MKDIR = -mkdir -p
+endif
+
+.PHONY: all $(MAIN).pdf clean targz zip
 
 all: $(MAIN).pdf
 
 $(MAIN).pdf: $(SOURCE)
-	latexmk -pdf -pvc -pdflatex="pdflatex $(OPT)" $(MAIN)
-	latexmk -CA
+	$(MK) -$(OUT) -$(OUT_MODE) -$(GENERATOR)="pdflatex $(OPT)" $(MAIN)
+	$(MK) -CA
 
 dry: $(SOURCE)
-	latexmk -pdf -pvc -pdflatex="pdflatex $(OPT)" $(MAIN)
-
-nomk: $(SOURCE)
-	pdflatex $(MAIN)
-	bibtex $(MAIN)
-	pdflatex $(MAIN)
-	pdflatex $(MAIN)
-	pdflatex $(MAIN)
+	$(MK) -$(OUT) -$(GENERATOR)="pdflatex $(OPT)" $(MAIN)
 
 clean:
-	$(HIDE)-rm -f $(MAIN).{bbl,synctex.gz}
-	latexmk -CA
-	$(HIDE)echo -e "Cleaning finished!"
-
-clean_nomk:
-	-rm -f $(MAIN).{pdf,log,blg,bbl,aux,out,toc,idx,bcf,run.xml,ind,ilg,fls}
-	-rm -f $(MAIN).{fdb_latexmk,synctex.gz}
-	-rm -f sections/*.{pdf,log,blg,bbl,aux,out,toc,idx,bcf,run.xml,ind,ilg,fls}
-	-rm -f sections/*.{fdb_latexmk,synctex.gz}
+	$(MK) -CA
+	$(HIDE)echo -e "'Homework' template cleaned!"
 
 targz:
-	$(MAKE) clean_nomk
-	$(MAKE) nomk
-	$(MAKE) clean_nomk
+	$(MAKE) clean
+	$(MAKE)
+	$(MAKE) clean
 	tar czf $(PROJECT)_$(DATE).tgz $(SOURCE)
 
 zip:
-	$(MAKE) clean_nomk
-	$(MAKE) nomk
-	$(MAKE) clean_nomk
+	$(MAKE) clean
+	$(MAKE)
+	$(MAKE) clean
 	zip -q $(PROJECT)_$(DATE).zip $(SOURCE)
 
