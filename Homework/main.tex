@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage{colors,style,commands}
+
+\MasterColor  {YALE1}
+
+\Nom          {Votre Magnifique Nom}
+\Titre        {le travail}
+\SousTitre    {précision(s)}
+\NomCours     {nom du cours}
+\CodeCours    {code}
+\Enseignant   {l'enseignant}
+\Faculte      {la faculté}
+\Departement  {le département}
+\Date         {\today}
+
+
+\begin{document}
+  
+  \subfile{PageTitre}
+  
+  \tableofcontents
+
+  \clearpage
+
+  \subfile{sections/introduction}
+
+  \subfile{sections/num_1}
+
+  \subfile{sections/num_2}
+
+  \subfile{sections/conclusion}
+
+  \clearpage
+
+  \bibliography{refs}
+
+\end{document}
+
