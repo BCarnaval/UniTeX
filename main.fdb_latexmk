@@ -1,0 +1,12 @@
+# Fdb version 3
+["pdflatex"] 1661649848 "Classic/main.tex" "main.pdf" "main" 1661649848
+  "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmr12.tfm" 1661350953 1288 655e228510b4c2a1abe905c368440826 ""
+  "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls" 1661350961 20144 7555b7429d80bef287ebb82117811acc ""
+  "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/size12.clo" 1661350961 8449 7fbdc9c8596083427317c1e525489c81 ""
+  "/Users/antoinedelagrave/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1661647981 10377477 cb1c0ca958358a129b4e28b8814e2246 ""
+  "Classic/main.tex" 1661607203 603 b8ee7b352d92779901498a46c1836b64 ""
+  "colors.sty" 0 -1 0 ""
+  "main.aux" 1661647979 32 3985256e7290058c681f74d7a3565a19 ""
+  (generated)
+  "main.log"
+  "main.pdf"
