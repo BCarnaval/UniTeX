@@ -10,8 +10,8 @@ ORANGE="$(printf '\033[33m')"
 PROJ=UniTeX
 CURRENT_DIR=$( pwd )
 DESTINATION=/usr/local/share
-MAN_DIR=/usr/local/share/man/man1
 LINK_DIR=/usr/local/bin/unitex
+MAN_DIR=/usr/local/share/man/man1
 
 # Turn on extended globbing in bash shell
 shopt -s extglob 
