@@ -28,7 +28,7 @@ UniTeX requires a complete TeX distribution (you can find the most used TeX dist
 Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of 
 TeX distributions like MikTeX and MacTeX but you can always install it by following [these](https://mg.readthedocs.io/latexmk.html) steps.
 
-A Unix shell is also required to build UnITeX templates properly.
+A Unix shell is also required to build UniTeX templates properly.
 
 ## Installation
 
