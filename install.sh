@@ -16,7 +16,7 @@ LINK_DIR=/usr/local/bin/unitex
 shopt -s extglob 
 
 build_directory () {
-    echo -e "${GREEN}[@] Installing ${WHITE} ${PROJ} ${GREEN}..."
+    echo -e "${GREEN}[@] Installing ${WHITE}${PROJ}${GREEN}..."
     if [[ -d "${DESTINATION}"/UniTeX ]]; then
 
         # Updating directories
