@@ -12,6 +12,9 @@ CURRENT_DIR=$( pwd )
 DESTINATION=/usr/local/share
 LINK_DIR=/usr/local/bin/unitex
 
+# Turn on extended globbing in bash shell
+shopt -s extglob 
+
 build_directory () {
     echo -e "${GREEN}[@] Installing ${WHITE} ${PROJ} ${GREEN}..."
     if [[ -d "${DESTINATION}"/UniTeX ]]; then
@@ -30,10 +33,7 @@ build_directory () {
 
 fill_directory () {
     echo -e "${GREEN}[@] Filling dirs with shell scripts..."
-    sudo cp -r ${CURRENT_DIR}/unitex.sh ${DESTINATION}/${PROJ}
-    sudo cp -r ${CURRENT_DIR}/install.sh ${DESTINATION}/${PROJ}
-    sudo cp -r ${CURRENT_DIR}/uninstall.sh ${DESTINATION}/${PROJ}
-    sudo cp -r ${CURRENT_DIR}/man_page.1 ${DESTINATION}/${PROJ}
+    sudo cp -r ${CURRENT_DIR}/!(*.md) ${DESTINATION}/${PROJ}
 
     # Make scripts executable
     sudo chmod +x ${DESTINATION}/${PROJ}/unitex.sh
