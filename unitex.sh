@@ -66,7 +66,7 @@ usage () {
     Y88b. .d88P 888  888 888     888  Y8b.     d88P Y88b  
      "Y88888P"  888  888 888     888   "Y8888 d88P   Y88b
     ${WHITE}
-    Usage: ${CYAN}$(basename $0) ${WHITE}-h <help> -v <version> -b <build> -d <dir> [-hvb]
+    Usage: ${CYAN}$(basename $0) ${WHITE}-h <help> -v <version> -b <build> -d <dir> [-hvbd]
 
     ${CYAN}-h,          -help           ${WHITE}Display help.
 
