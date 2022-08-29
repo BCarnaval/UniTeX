@@ -17,6 +17,10 @@ MAN_DIR=/usr/local/share/man/
 # Turn on extended globbing in bash shell
 shopt -s extglob 
 
+reset_terminal () {
+    tput init
+}
+
 build_directory () {
     echo -e "${GREEN}[@] Installing ${WHITE}${PROJ}${GREEN}..."
     if [[ -d "${DESTINATION}"/UniTeX ]]; then
@@ -61,6 +65,7 @@ fill_directory () {
 main () {
     build_directory
     fill_directory
+    reset_terminal
 }
 
 main

@@ -10,6 +10,10 @@ PROJ=UniTeX
 DESTINATION=/usr/local/share
 MAN_DIR=/usr/local/share/man
 
+reset_terminal () {
+    tput init
+}
+
 rm_directory () {
     echo -e "${ORANGE}[!] Uninstalling ${WHITE}${PROJ}${ORANGE}..."
     if [[ -d ${DESTINATION}/${PROJ} ]]; then
@@ -33,7 +37,7 @@ rm_symlink() {
 main () {
     rm_directory
     rm_symlink
-    tput init
+    reset_terminal
 }
 
 main
