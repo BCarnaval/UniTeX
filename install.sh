@@ -10,6 +10,7 @@ ORANGE="$(printf '\033[33m')"
 PROJ=UniTeX
 CURRENT_DIR=$( pwd )
 DESTINATION=/usr/local/share
+MAN_DIR=/usr/local/share/man/man1
 LINK_DIR=/usr/local/bin/unitex
 
 # Turn on extended globbing in bash shell
@@ -22,6 +23,7 @@ build_directory () {
         # Updating directories
         echo -e "${GREEN}[@] Wiping old version if any inside ${WHITE}${DESTINATION}${GREEN}."
         sudo rm -rf ${DESTINATION}/${PROJ}
+        sudo rm ${MAN_DIR}/unitex.1
 
         echo -e "${GREEN}[@] Building new dirs inside ${WHITE}${DESTINATION}${GREEN}."
         sudo mkdir -p ${DESTINATION}/${PROJ}
@@ -33,7 +35,8 @@ build_directory () {
 
 fill_directory () {
     echo -e "${GREEN}[@] Filling dirs with shell scripts..."
-    sudo cp -r ${CURRENT_DIR}/!(*.md) ${DESTINATION}/${PROJ}
+    sudo cp -r ${CURRENT_DIR}/!(*.md|*.1) ${DESTINATION}/${PROJ}
+    sudo cp ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/
 
     # Make scripts executable
     sudo chmod +x ${DESTINATION}/${PROJ}/unitex.sh

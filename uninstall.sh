@@ -8,12 +8,17 @@ ORANGE="$(printf '\033[33m')"
 
 PROJ=UniTeX
 DESTINATION=/usr/local/share
+MAN_DIR=/usr/local/share/man/man1
 
 rm_directory () {
-echo -e "${ORANGE}[!] Uninstalling ${WHITE}${PROJ}${ORANGE}..."
+    echo -e "${ORANGE}[!] Uninstalling ${WHITE}${PROJ}${ORANGE}..."
     if [[ -d ${DESTINATION}/${PROJ} ]]; then
         echo -e "${ORANGE}[!] Removing dirs from ${WHITE}${DESTINATION}${ORANGE}."
         sudo rm -rf ${DESTINATION}/${PROJ}
+    fi
+
+    if [[ -a ${MAN_DIR}/unitex.1 ]]; then
+        sudo rm ${MAN_DIR}/unitex.1
     fi
 }
 
