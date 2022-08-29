@@ -48,10 +48,6 @@ display_version () {
     reset_terminal
 }
 
-# ------------------------
-# FUNCS
-# ------------------------
-
 usage () {
     clear
 
@@ -68,30 +64,70 @@ usage () {
     Y88b. .d88P 888  888 888     888  Y8b.     d88P Y88b  
      "Y88888P"  888  888 888     888   "Y8888 d88P   Y88b
     ${WHITE}
-    Usage: ${CYAN}$(basename $0) ${WHITE}-h <help> -v <version> -b <build> -d <dir> [-hvbd]
+    Usage: ${CYAN}$(basename $0) ${WHITE}-h <help> -v <version> -b <build> -d <dir> -o <opt> [-hvbdo]
 
     ${CYAN}-h,          -help           ${WHITE}Display help.
 
     ${CYAN}-v,          -version        ${WHITE}Display current installation version of UniTex.
 
-    ${CYAN}-b,          -build          ${WHITE}Build specified template using latexmk compiler.
+    ${CYAN}-b,          -build          ${WHITE}Build specified template using latexmk compiler (ex: classic, article, homework).
 
     ${CYAN}-d,          -dir            ${WHITE}Specifies where to build chosen template.
+
+    ${CYAN}-o,          -opt            ${WHITE}Specifies 'make' tool option (clean, targz, zip or dry). No option means 'make all'.
 
 EOF
 }
 
-main () {
-    check_latexmk
+copy_template () {
+    cp -r ${PROJ_DIR}/${BUILD_TEMP}/ ${BUILD_DIR}/
 }
 
-while getopts ":b:d:vh" opt; do
+build_template () {
+    make ${MAKE_OPT} -C ${BUILD_DIR}
+}
+
+main () {
+    check_latexmk
+    copy_template
+    build_template
+}
+
+while getopts ":b:d:o:vh" opt; do
     case ${opt} in
         b)
-            BUILD_TEMP=${OPTARG}
+            case ${OPTARG} in
+                classic)
+                    BUILD_TEMP=Classic
+                    ;;
+                article)
+                    BUILD_TEMP=Article
+                    ;;
+                homework)
+                    BUILD_TEMP=Homework
+                    ;;
+                *)
+                    echo -e "${ORANGE}[X] UniTeX doesn't have a template named '${OPTARG}' ${WHITE}run $(basename ${0}) -h."
+                    reset_terminal
+                    exit 0
+                    ;;
+            esac
             ;;
         d)
             BUILD_DIR=${OPTARG}
+            ;;
+
+        o)
+            MAKE_OPT=${OPTARG}
+            case ${MAKE_OPT} in
+                clean|targz|zip|dry)
+                    ;;
+                *)
+                    echo -e "${RED}[X] Unknown option: '${MAKE_OPT}' ${WHITE}run $(basename ${0}) -h."
+                    reset_terminal
+                    exit 0
+                    ;;
+            esac
             ;;
         v)
             display_version
@@ -115,7 +151,7 @@ while getopts ":b:d:vh" opt; do
 done
 
 # Main run
-if [[ "${BUILD_TEMP}" ]]; then
+if [[ "${BUILD_TEMP}" && "${BUILD_DIR}" ]]; then
     main
 else
     usage

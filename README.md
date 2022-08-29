@@ -19,26 +19,29 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
   - [x] Bash install script
   - [ ] Test on different OS (Docker?)
   - [ ] README yikes
+  - [ ] Man pages for different OS
 
 - [Credits](#credits)
 
 ## Requirements
 
-UniTeX requires a complete TeX distribution (you can find the most used TeX distributions 
+UniTeX requires a complete TeX distribution (you can find the most used TeX distributions
 [here](https://www.latex-project.org/get/#tex-distributions)). Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of TeX distributions like MikTeX and MacTeX but you can always install it by following [these](https://mg.readthedocs.io/latexmk.html) steps.
 
-A Unix shell is also required to install UniTeX properly and build it's templates. A pdf viewer like [Skim](https://skim-app.sourceforge.io/), 
-[Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader) is also fun to have 
+A Unix shell is also required to install UniTeX properly and build it's templates. A pdf viewer like [Skim](https://skim-app.sourceforge.io/),
+[Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader) is also fun to have
 when working on LaTeX projects.
 
 ## Installation
 
 The ideal way to install UniTeX templates is via the install script `install.sh`.
+
 ```shell
 $ git clone https://github.com/BCarnaval/UniTeX
 ...
 $ cd UniTeX && chmod +x install.sh && ./install.sh
 ```
+
 By doing it like so, you will be able to use UniTeX command such as `unitex -build ...` and others.
 
 ## Quick start
