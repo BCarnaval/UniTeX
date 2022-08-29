@@ -13,6 +13,10 @@ UnITeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
   - [Sub-element](#sub-element)
 - [Screenshots](#screenshots)
 - [Features](#features)
+
+  - [ ] (for unchecked checkbox)
+  - [x] (for checked checkbox)
+
 - [Credits](#credits)
 
 ## Requirements

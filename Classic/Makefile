@@ -25,7 +25,7 @@ OPT = -interaction=batchmode
 HIDE = @
 MAKE = make
 
-# OS specific part
+# OS commands specific part
 ifeq ($(OS),Windows_NT)
     RM = del /F /Q 
     RMDIR = -RMDIR /S /Q
@@ -50,7 +50,7 @@ dry: $(SOURCE)
 clean:
 	$(HIDE)$(RM) $(MAIN).$(GARBAGE)
 	$(MK) -c
-	$(HIDE)echo -e "'Classic' template cleaned!\n"
+	$(HIDE)echo -e "'Classic' template cleaned !\n"
 
 targz:
 	$(MAKE) clean
