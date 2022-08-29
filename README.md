@@ -37,7 +37,7 @@ The ideal way to install UniTeX templates is via the install script `install.sh`
 ```shell
 $ git clone https://github.com/BCarnaval/UniTeX
 ...
-$ cd UniTeX && ./install.sh
+$ cd UniTeX && chmod +x install.sh && ./install.sh
 ```
 By doing it like so, you will be able to use UniTeX command such as `unitex -build ...` and others.
 
