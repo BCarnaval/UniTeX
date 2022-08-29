@@ -19,7 +19,7 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
   - [ ] 'Homework' template
   - [ ] Bash install script
   - [ ] Test on different OS (Docker?)
-  - [ ] README fuck
+  - [ ] README yikes
 
 - [Credits](#credits)
 
