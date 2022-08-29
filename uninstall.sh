@@ -33,6 +33,7 @@ rm_symlink() {
 main () {
     rm_directory
     rm_symlink
+    tput init
 }
 
 main
