@@ -8,7 +8,6 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Configuration](#configuration)
 - [Quick start](#quick-start)
   - [Sub-element](#sub-element)
 - [Screenshots](#screenshots)
@@ -41,8 +40,6 @@ $ git clone https://github.com/BCarnaval/UniTeX
 $ cd UniTeX && ./install.sh
 ```
 By doing it like so, you will be able to use UniTeX command such as `unitex -build ...` and others.
-
-## Configuration
 
 ## Quick start
 
