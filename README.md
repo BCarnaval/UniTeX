@@ -14,12 +14,21 @@ UnITeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 - [Screenshots](#screenshots)
 - [Features](#features)
 
-  - [ ] (for unchecked checkbox)
-  - [x] (for checked checkbox)
+  - [x] 'Classic' template & Makefile
+  - [ ] 'Article' template
+  - [ ] 'Homework' template
 
 - [Credits](#credits)
 
 ## Requirements
+
+UnITeX requires a complete TeX distribution (you can find the most used TeX distributions 
+[here](https://www.latex-project.org/get/#tex-distributions)) and a pdf viewer like [Skim](https://skim-app.sourceforge.io/), 
+[Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader). 
+Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of 
+TeX distributions like MikTeX and MacTeX but you can always install it by following [these](https://mg.readthedocs.io/latexmk.html) steps.
+
+A Unix shell is also required to build UnITeX templates properly.
 
 ## Installation
 
