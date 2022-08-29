@@ -43,7 +43,7 @@ check_latexmk() {
 }
 
 display_version () {
-    echo -e "${CYAN}Current version of UniTeX is:${WHITE} UniTex 1.0${CYAN}."
+    echo -e "${CYAN}Current version of UniTeX is:${WHITE} UniTex $(git tag)${CYAN}."
     reset_terminal
 }
 
