@@ -10,17 +10,20 @@ STY = $(wildcard *.sty)
 TEX = $(wildcard *.tex) $(wildcard sections/*.tex)
 
 SOURCE = $(BIB) $(STY) $(TEX) $(FIGS)
-GARBAGE = {pdf,log,blg,bbl,aux,out,toc,idx,bcf,run.xml,ind,ilg,fls,fdb_latexmk,synctex.gz}
-
+GARBAGE = {bbl,synctex.gz}
 
 # Setting LaTeX compile (latexmk) options & flags
 MK = latexmk
-OUT = pdf # Generate pdf version of document using pdflatex
-OUT_MODE = pvc # Run a file previewer and continually update the files
-GENERATOR = pdflatex # Sets the generation of pdf files by pdflatex
+# Generate pdf version of document using pdflatex
+OUT = pdf
+# Run a file previewer and continually update the files
+OUT_MODE = pvc
+# Sets the generation of pdf files by pdflatex
+GENERATOR = pdflatex
 OPT = -interaction=batchmode
 
 HIDE = @
+MAKE = make
 
 # OS specific part
 ifeq ($(OS),Windows_NT)
@@ -39,24 +42,25 @@ all: $(MAIN).pdf
 
 $(MAIN).pdf: $(SOURCE)
 	$(MK) -$(OUT) -$(OUT_MODE) -$(GENERATOR)="pdflatex $(OPT)" $(MAIN)
-	$(MK) -CA
+	$(MK) -c
 
 dry: $(SOURCE)
 	$(MK) -$(OUT) -$(GENERATOR)="pdflatex $(OPT)" $(MAIN)
 
 clean:
-	$(MK) -CA
+	$(HIDE)$(RM) $(MAIN).$(GARBAGE)
+	$(MK) -c
 	$(HIDE)echo -e "'Article' template cleaned!\n"
 
 targz:
 	$(MAKE) clean
-	$(MAKE)
+	$(MAKE) dry
 	$(MAKE) clean
 	tar czf $(PROJECT)_$(DATE).tgz $(SOURCE)
 
 zip:
 	$(MAKE) clean
-	$(MAKE)
+	$(MAKE) dry
 	$(MAKE) clean
 	zip -q $(PROJECT)_$(DATE).zip $(SOURCE)
 
