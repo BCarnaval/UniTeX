@@ -8,6 +8,7 @@ ORANGE="$(printf '\033[33m')"
 
 # Paths
 PROJ=UniTeX
+TAG=$(git describe)
 CURRENT_DIR=$( pwd )
 DESTINATION=/usr/local/share
 LINK_DIR=/usr/local/bin/unitex
@@ -44,7 +45,7 @@ fill_directory () {
 
     # Version control
     sudo touch ${DESTINATION}/${PROJ}/version.txt
-    echo "$(git describe)" | sudo tee -a ${DESTINATION}/${PROJ}/version.txt &> /dev/null
+    echo "${TAG%-*}" | sudo tee -a ${DESTINATION}/${PROJ}/version.txt &> /dev/null
 
     # Create symlink
     echo -e "${GREEN}[@] Updating symlinks from ${WHITE}${LINK_DIR}${GREEN}."

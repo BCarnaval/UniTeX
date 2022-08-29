@@ -43,6 +43,7 @@ check_latexmk() {
 }
 
 display_version () {
+    clear
     echo -e "${CYAN}UniTeX $(cat ${PROJ_DIR}/version.txt), BCarnaval."
     reset_terminal
 }
@@ -53,6 +54,7 @@ display_version () {
 
 usage () {
     clear
+
     cat << EOF
     ${CYAN}
     888     888          d8b 88888888888      Y88b   d88P 
@@ -66,17 +68,16 @@ usage () {
     ${WHITE}
     Usage: ${CYAN}$(basename $0) ${WHITE}-h <help> -v <version> -b <build> -d <dir> [-hvb]
 
-    ${CYAN}-h, -help,          --help           ${WHITE}Display help.
+    ${CYAN}-h,          -help           ${WHITE}Display help.
 
-    ${CYAN}-v, -version,       --version        ${WHITE}Display current installation version of UniTex.
+    ${CYAN}-v,          -version        ${WHITE}Display current installation version of UniTex.
 
-    ${CYAN}-b, -build,         --build          ${WHITE}Build specified template using latexmk compiler.
+    ${CYAN}-b,          -build          ${WHITE}Build specified template using latexmk compiler.
 
-    ${CYAN}-d, -dir,           --dir            ${WHITE}Specifies where to build chosen template.
+    ${CYAN}-d,          -dir            ${WHITE}Specifies where to build chosen template.
 
 EOF
 }
-
 
 main () {
     check_latexmk
