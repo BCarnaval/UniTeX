@@ -1,6 +1,6 @@
 # UniTeX
 
-UnITeX is a collection of scientific oriented and minimalistic [LaTeX](https://www.latex-project.org/) templates suitable for many assignement types.
+UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://www.latex-project.org/) templates suitable for many assignement types.
 
 ![LaTeX](https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white) ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
@@ -22,7 +22,7 @@ UnITeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 
 ## Requirements
 
-UnITeX requires a complete TeX distribution (you can find the most used TeX distributions 
+UniTeX requires a complete TeX distribution (you can find the most used TeX distributions 
 [here](https://www.latex-project.org/get/#tex-distributions)) and a pdf viewer like [Skim](https://skim-app.sourceforge.io/), 
 [Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader). 
 Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of 
