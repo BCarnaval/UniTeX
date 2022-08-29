@@ -39,6 +39,10 @@ fill_directory () {
     sudo chmod +x ${DESTINATION}/${PROJ}/unitex.sh
     sudo chmod +x ${DESTINATION}/${PROJ}/uninstall.sh
 
+    # Version control
+    sudo touch ${DESTINATION}/${PROJ}/version.txt
+    echo "$(git describe)" | sudo tee -a ${DESTINATION}/${PROJ}/version.txt &> /dev/null
+
     # Create symlink
     echo -e "${GREEN}[@] Updating symlinks from ${WHITE}${LINK_DIR}${GREEN}."
     if [[ -L ${LINK_DIR} ]]; then

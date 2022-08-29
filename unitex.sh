@@ -43,7 +43,7 @@ check_latexmk() {
 }
 
 display_version () {
-    echo -e "${CYAN}Current version of UniTeX is:${WHITE} UniTex $(git tag)${CYAN}."
+    echo -e "${CYAN}UniTeX $(cat ${PROJ_DIR}/version.txt), BCarnaval."
     reset_terminal
 }
 
@@ -52,14 +52,15 @@ display_version () {
 # ------------------------
 
 usage () {
-    cat << EOF  
-    Usage: $(basename $0) -h <help> -v <version> -b <build> [-hvb]
+    cat << EOF
 
-    -h, -help,          --help              Display help
+    Usage: ${CYAN}$(basename $0) ${WHITE}-h <help> -v <version> -b <build> [-hvb]
 
-    -v, -version,       --version           Display current installation version of UniTex
+    ${CYAN}-h, -help,          --help           ${WHITE}Display help.
 
-    -b, -build,         --build             Build specified template using latexmk compiler
+    ${CYAN}-v, -version,       --version        ${WHITE}Display current installation version of UniTex.
+
+    ${CYAN}-b, -build,         --build          ${WHITE}Build specified template using latexmk compiler.
 
 EOF
 }
