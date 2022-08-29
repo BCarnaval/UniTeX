@@ -1,4 +1,4 @@
-# UnITeX
+# UniTeX
 
 UnITeX is a collection of scientific oriented and minimalistic [LaTeX](https://www.latex-project.org/) templates suitable for many assignement types.
 
