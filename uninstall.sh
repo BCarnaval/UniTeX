@@ -8,7 +8,7 @@ ORANGE="$(printf '\033[33m')"
 
 PROJ=UniTeX
 DESTINATION=/usr/local/share
-MAN_DIR=/usr/local/share/man/man1
+MAN_DIR=/usr/local/share/man
 
 rm_directory () {
     echo -e "${ORANGE}[!] Uninstalling ${WHITE}${PROJ}${ORANGE}..."

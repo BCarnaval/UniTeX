@@ -12,7 +12,7 @@ TAG=$(git describe)
 CURRENT_DIR=$( pwd )
 DESTINATION=/usr/local/share
 LINK_DIR=/usr/local/bin/unitex
-MAN_DIR=/usr/local/share/man/man1
+MAN_DIR=/usr/local/share/man/
 
 # Turn on extended globbing in bash shell
 shopt -s extglob 
