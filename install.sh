@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
-# Colors used in terminal messages
 RED="$(printf '\033[31m')"
-GREEN="$(printf '\033[32m')"
-ORANGE="$(printf '\033[33m')"
 CYAN="$(printf '\033[36m')"
+GREEN="$(printf '\033[32m')"
 WHITE="$(printf '\033[37m')"
+ORANGE="$(printf '\033[33m')"
 
 # Paths
 PROJ=UniTeX
