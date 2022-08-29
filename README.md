@@ -17,18 +17,20 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
   - [x] 'Classic' template & Makefile
   - [ ] 'Article' template
   - [ ] 'Homework' template
+  - [ ] Bash install script
+  - [ ] Test on different OS (Docker?)
+  - [ ] README fuck
 
 - [Credits](#credits)
 
 ## Requirements
 
 UniTeX requires a complete TeX distribution (you can find the most used TeX distributions 
-[here](https://www.latex-project.org/get/#tex-distributions)) and a pdf viewer like [Skim](https://skim-app.sourceforge.io/), 
-[Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader). 
-Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of 
-TeX distributions like MikTeX and MacTeX but you can always install it by following [these](https://mg.readthedocs.io/latexmk.html) steps.
+[here](https://www.latex-project.org/get/#tex-distributions)). Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of TeX distributions like MikTeX and MacTeX but you can always install it by following [these](https://mg.readthedocs.io/latexmk.html) steps.
 
-A Unix shell is also required to build UniTeX templates properly.
+A Unix shell is also required to install UniTeX properly and build it's templates. A pdf viewer like [Skim](https://skim-app.sourceforge.io/), 
+[Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader) is also fun to have 
+when working on LaTeX projects.
 
 ## Installation
 
