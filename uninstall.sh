@@ -11,7 +11,7 @@ PROJ=UniTeX
 DESTINATION=/usr/local/share
 
 rm_directory () {
-    echo -e "${ORANGE}[!] Uninstalling ${PROJ}..."
+    echo -e "${ORANGE}[!] Uninstalling ${WHITE} ${PROJ} ${ORANGE}..."
     if [[ -d ${DESTINATION}/${PROJ} ]]; then
         sudo rm -rf ${DESTINATION}/${PROJ}
     fi

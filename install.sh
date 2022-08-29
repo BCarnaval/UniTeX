@@ -13,7 +13,7 @@ CURRENT_DIR=$( pwd )
 DESTINATION=/usr/local/share
 
 build_directory () {
-    echo -e "${GREEN}[@] Installing ${PROJ}..."
+    echo -e "${GREEN}[@] Installing ${WHITE} ${PROJ} ${GREEN}..."
     if [[ -d "${DESTINATION}"/UniTeX ]]; then
         # Updating directories
         sudo rm -rf ${DESTINATION}/${PROJ}
@@ -25,13 +25,12 @@ build_directory () {
 
 fill_directory () {
     sudo cp -r ${CURRENT_DIR}/unitex.sh ${DESTINATION}/${PROJ}
-    sudo cp -r ${CURRENT_DIR}/intall.sh ${DESTINATION}/${PROJ}
+    sudo cp -r ${CURRENT_DIR}/install.sh ${DESTINATION}/${PROJ}
     sudo cp -r ${CURRENT_DIR}/uninstall.sh ${DESTINATION}/${PROJ}
     sudo cp -r ${CURRENT_DIR}/man_page.1 ${DESTINATION}/${PROJ}
 
     # Make scripts executable
     sudo chmod +x ${DESTINATION}/${PROJ}/unitex.sh
-    sudo chmod +x ${DESTINATION}/${PROJ}/install.sh
     sudo chmod +x ${DESTINATION}/${PROJ}/uninstall.sh
 
     # Create symlink
