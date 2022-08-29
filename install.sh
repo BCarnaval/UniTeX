@@ -11,19 +11,26 @@ WHITE="$(printf '\033[37m')"
 PROJ=UniTeX
 CURRENT_DIR=$( pwd )
 DESTINATION=/usr/local/share
+LINK_DIR=/usr/local/bin/unitex
 
 build_directory () {
     echo -e "${GREEN}[@] Installing ${WHITE} ${PROJ} ${GREEN}..."
     if [[ -d "${DESTINATION}"/UniTeX ]]; then
+
         # Updating directories
+        echo -e "${GREEN}[@] Wiping old version if any inside ${WHITE}${DESTINATION}${GREEN}."
         sudo rm -rf ${DESTINATION}/${PROJ}
+
+        echo -e "${GREEN}[@] Building new dirs inside ${WHITE}${DESTINATION}${GREEN}."
         sudo mkdir -p ${DESTINATION}/${PROJ}
     else
+        echo -e "${GREEN}[@] Building dirs inside ${WHITE}"
         sudo mkdir -p ${DESTINATION}/${PROJ}
     fi
 }
 
 fill_directory () {
+    echo -e "${GREEN}[@] Filling dirs with shell scripts..."
     sudo cp -r ${CURRENT_DIR}/unitex.sh ${DESTINATION}/${PROJ}
     sudo cp -r ${CURRENT_DIR}/install.sh ${DESTINATION}/${PROJ}
     sudo cp -r ${CURRENT_DIR}/uninstall.sh ${DESTINATION}/${PROJ}
@@ -34,13 +41,14 @@ fill_directory () {
     sudo chmod +x ${DESTINATION}/${PROJ}/uninstall.sh
 
     # Create symlink
-    if [[ -L /usr/local/bin/unitex ]]; then
-        sudo rm /usr/local/bin/unitex
-        sudo ln -s ${DESTINATION}/${PROJ}/unitex.sh /usr/local/bin/unitex
+    echo -e "${GREEN}[@] Updating symlinks from ${WHITE}${LINK_DIR}${GREEN}."
+    if [[ -L ${LINK_DIR} ]]; then
+        sudo rm ${LINK_DIR}
+        sudo ln -s ${DESTINATION}/${PROJ}/unitex.sh ${LINK_DIR}
     else
-        sudo ln -s ${DESTINATION}/${PROJ}/unitex.sh /usr/local/bin/unitex
+        sudo ln -s ${DESTINATION}/${PROJ}/unitex.sh ${LINK_DIR}
     fi
-    echo -e "${GREEN}[@] ${WHITE} ${PROJ} ${GREEN} Installed successfully:${WHITE} Execute 'unitex' to verify installation."
+    echo -e "${GREEN}[@] ${WHITE}${PROJ}${GREEN} Installed successfully:${WHITE} Execute 'unitex' to verify installation."
 }
 
 main () {
