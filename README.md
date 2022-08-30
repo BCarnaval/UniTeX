@@ -7,6 +7,9 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 ## Table of contents
 
 - [Requirements](#requirements)
+  - [TeX](#tex)
+  - [Shell](#shell)
+  - [PDF viewer (optional)](#pdf-viewer-optional)
 - [Installation](#installation)
 - [Quick start](#quick-start)
 - [Screenshots](#screenshots)
@@ -18,10 +21,15 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 
 ## Requirements
 
+### TeX
 UniTeX requires a complete TeX distribution (you can find the most used TeX distributions
 [here](https://www.latex-project.org/get/#tex-distributions)). Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of TeX distributions like MikTeX and MacTeX but you can always install it separately by following [these](https://mg.readthedocs.io/latexmk.html) steps.
 
-A Unix shell is also required to install UniTeX properly. A pdf viewer like [Skim](https://skim-app.sourceforge.io/),
+### Shell
+A Unix shell is also required to install UniTeX properly. Commands such as `mkdir`, `cp`, `ln` and others are used within install script and makefiles so it's important for you to have access to this type of shell to install UniTeX correctly.
+
+### PDF viewer (optional)
+A pdf viewer like [Skim](https://skim-app.sourceforge.io/),
 [Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader) is also fun to have
 when working on LaTeX projects.
 
@@ -76,7 +84,7 @@ style.sty
 
 ### Classic
 
-Example of what you should get from 'classic' template and Yale's darkblue as main color
+Example of what you should get from 'classic' template with Yale's darkblue as main color
 
 <table>
   <tr>
@@ -103,6 +111,10 @@ Example of what you should get from 'classic' template and Yale's darkblue as ma
 ### Article
 
 ### Homework
+
+Example of what you should get from 'homework' template with Princeton's orange as main color
+
+
 
 ## TODO
 
