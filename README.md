@@ -107,7 +107,7 @@ Example of what you should get from 'classic' template and Yale's darkblue as ma
 ## TODO
 
 - [x] 'Classic' template
-- [ ] Add MIT license
+- [x] Add MIT license
 - [ ] 'Article' template (RevTeX)
 - [ ] 'Homework' template (Overleaf's rebuild)
 - [x] Install/uninstall scripts
