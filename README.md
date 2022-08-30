@@ -50,22 +50,22 @@ By doing it like so, you will be able to use UniTeX's commands `unitex -...`.
 Once [installation](#Installation) properly done and `unitex` command outputs no error, you can directly build
 your first UniTeX template
 
-1. Create a folder (**test** in home folder for the example) in which store template's files that you will actually edit.
+1. Select a directory (folder) on your machine in which store template's files that you will actually edit. For the example, we will use a folder named **test** in home directory.
 
 ```shell
 $ mkdir ~/test
 ```
 
-2. Build your template inside this directory using `unitex` by specifying the flags **-b build**: template (classic, article, homework), **-d directory**: directory in which build it (use directory created in step 1.) and **-o opt**: building options (`clean`, `dry`, `targz` or `zip`).
+2. Build your template inside this directory using `unitex` by specifying the flags **-b build**: template (classic, article, homework), **-d directory**: directory in which build it (directory created in step 1.) and **-o opt**: building options (`clean`, `dry`, `targz`, `zip` or empty to tell latexmk to continuously compile your project on save).
 
 ```shell
 $ unitex -b classic -d ~/test -o dry
 ```
 
-Here, the `dry` option means that latexmk will not compile your project continuously and not clean the directory either. To clean it, you must use the option `clean` with the `-o` flag. These commands being done (`dry` and `clean`), you should have the following content inside your **test** folder
+Here, the `dry` option means that latexmk will not compile your project continuously and not clean the directory either. It will simply build the template inside the specified directory and leave all files there. To clean it, you must use the option `clean` with the `-o` flag. These commands being done (`dry` and `clean`), you should have the following content inside your **test** folder
 
 ```shell
-$ ls ~/test
+$ ls ~/test/Classic
 Makefile
 PageTitre.tex
 colors.sty
