@@ -106,13 +106,13 @@ Example of what you should get from 'classic' template and Yale's darkblue as ma
 
 ## TODO
 
-  - [x] 'Classic' template & Makefile
-  - [ ] 'Article' template
-  - [ ] 'Homework' template
-  - [x] Bash install script
+  - [x] 'Classic' template
+  - [ ] 'Article' template (RevTeX)
+  - [ ] 'Homework' template (Overleaf's rebuild)
+  - [x] Install/uninstall scripts
   - [ ] Test on fresh Linux and Mac OS (Docker)
-  - [ ] README
-  - [ ] Man pages for different OS
+  - [ ] Man pages (MacOS, Linux)
+  - [ ] REAME.md
 
 ## Credits
 
