@@ -95,8 +95,8 @@ Example of what you should get from 'classic' template and Yale's darkblue as ma
     <td>References</td>
   </tr>
   <tr>
-    <td><img src="screenshots/math_screen.png" width=360 height=480></td>
-    <td><img src="screenshots/refs_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/math_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/refs_screen.png" width=360 height=480></td>
   </tr>
  </table>
  
