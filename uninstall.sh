@@ -35,8 +35,11 @@ rm_symlink() {
 }
 
 main () {
+    echo -e "${WHITE}\n--------------------------\n"
     rm_directory
+    echo -e "${WHITE}\n--------------------------\n"
     rm_symlink
+    echo -e "${WHITE}\n--------------------------"
     reset_terminal
 }
 
