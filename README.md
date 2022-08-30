@@ -80,7 +80,7 @@ style.sty
 
 ## Screenshots
 
-Example of what you should get from 'classic' template
+Example of what you should get from 'classic' template and Yale's darkblue as main color
 
 <table>
   <tr>
@@ -88,8 +88,8 @@ Example of what you should get from 'classic' template
     <td>Sections layout</td>
   </tr>
   <tr>
-    <td><img src="screenshots/title_screen.png" width=270 height=480></td>
-    <td><img src="screenshots/mid_screen.png" width=270 height=480></td>
+    <td><img src="screenshots/title_screen.png" width=360 height=480></td>
+    <td><img src="screenshots/mid_screen.png" width=360 height=480></td>
   </tr>
  </table>
 
@@ -99,8 +99,8 @@ Example of what you should get from 'classic' template
     <td>References</td>
   </tr>
   <tr>
-    <td><img src="screenshots/math_screen.png" width=270 height=480></td>
-    <td><img src="screenshots/refs_screen.png" width=270 height=480></td>
+    <td><img src="screenshots/math_screen.png" width=360 height=480></td>
+    <td><img src="screenshots/refs_screen.png" width=360 height=480></td>
   </tr>
  </table>
 
