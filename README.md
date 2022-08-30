@@ -7,6 +7,9 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 ## Table of contents
 
 - [Requirements](#requirements)
+  - [TeX](#tex)
+  - [Shell](#shell)
+  - [PDF viewer (optional)](#pdf-viewer-(optional))
 - [Installation](#installation)
 - [Quick start](#quick-start)
 - [Screenshots](#screenshots)
@@ -21,7 +24,9 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 UniTeX requires a complete TeX distribution (you can find the most used TeX distributions
 [here](https://www.latex-project.org/get/#tex-distributions)). Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of TeX distributions like MikTeX and MacTeX but you can always install it separately by following [these](https://mg.readthedocs.io/latexmk.html) steps.
 
-A Unix shell is also required to install UniTeX properly. A pdf viewer like [Skim](https://skim-app.sourceforge.io/),
+A Unix shell is also required to install UniTeX properly. Commands such as `mkdir`, `cp`, `ln` and some Unix shell operators are used within **.sh** scripts so you must have access to this type of shell to enjoy all features.
+
+A pdf viewer like [Skim](https://skim-app.sourceforge.io/),
 [Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader) is also fun to have
 when working on LaTeX projects.
 
@@ -76,7 +81,7 @@ style.sty
 
 ### Classic
 
-Example of what you should get from 'classic' template and Yale's darkblue as main color
+Example of what you should get from 'classic' template with Yale's darkblue as main color
 
 <table>
   <tr>
@@ -84,8 +89,8 @@ Example of what you should get from 'classic' template and Yale's darkblue as ma
     <td>Sections layout</td>
   </tr>
   <tr>
-    <td><img src="screenshots/title_screen.png" width=360 height=480></td>
-    <td><img src="screenshots/mid_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Classic/title_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Classic/mid_screen.png" width=360 height=480></td>
   </tr>
  </table>
 
@@ -95,20 +100,46 @@ Example of what you should get from 'classic' template and Yale's darkblue as ma
     <td>References</td>
   </tr>
   <tr>
-    <td><img src="screenshots/math_screen.png" width=360 height=480></td>
-    <td><img src="screenshots/refs_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Classic/math_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Classic/refs_screen.png" width=360 height=480></td>
   </tr>
  </table>
  
 ### Article
 
+IN DEVELOPPEMENT.
+
 ### Homework
+
+Example of what you should get from 'homework' template with Yale's darkblue as main color
+
+<table>
+  <tr>
+    <td>Default title page</td>
+    <td>Problem(s) presentation</td>
+  </tr>
+  <tr>
+    <td><img src="/../screenshots/screenshots/Homework/title_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Homework/problem_screen.png" width=360 height=480></td>
+  </tr>
+ </table>
+
+<table>
+  <tr>
+    <td>Basic problem solving</td>
+    <td>References</td>
+  </tr>
+  <tr>
+    <td><img src="/../screenshots/screenshots/Homework/res_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Homework/refs_screen.png" width=360 height=480></td>
+  </tr>
+ </table>
 
 ## TODO
 
   - [x] 'Classic' template
   - [ ] 'Article' template (RevTeX)
-  - [ ] 'Homework' template (Overleaf's rebuild)
+  - [x] 'Homework' template (Overleaf's rebuild)
   - [x] Install/uninstall scripts
   - [ ] Test on fresh Linux and Mac OS (Docker)
   - [ ] Man pages (MacOS, Linux)
