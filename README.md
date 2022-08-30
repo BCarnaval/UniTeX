@@ -111,7 +111,7 @@ IN DEVELOPPEMENT.
 
 ### Homework
 
-Example of what you should get from 'homework' template with Yale's darkblue as main color
+Example of what you should get from 'homework' template with Yale's orange as main color
 
 <table>
   <tr>
