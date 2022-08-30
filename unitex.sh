@@ -68,11 +68,12 @@ check_latexmk() {
 }
 
 copy_template () {
-    cp -r ${PROJ_DIR}/${BUILD_TEMP}/ ${BUILD_DIR}/
+    mkdir ${BUILD_DIR}/${BUILD_TEMP}
+    cp -r ${PROJ_DIR}/${BUILD_TEMP}/ ${BUILD_DIR}/${BUILD_TEMP}
 }
 
 build_template () {
-    make ${MAKE_OPT} -C ${BUILD_DIR}
+    make ${MAKE_OPT} -C ${BUILD_DIR}/${BUILD_TEMP}
 }
 
 main () {
