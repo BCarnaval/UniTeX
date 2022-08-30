@@ -50,7 +50,7 @@ dry: $(SOURCE)
 clean:
 	$(HIDE)$(RM) $(MAIN).$(GARBAGE)
 	$(MK) -c
-	$(HIDE)echo -e "'Homework' template cleaned !"
+	$(HIDE)echo -e "\n'Homework' template cleaned !"
 
 targz:
 	$(MAKE) clean

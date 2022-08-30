@@ -19,29 +19,6 @@ reset_terminal () {
     tput init
 }
 
-# Progress animation functions
-sp="/-\|"
-sc=0
-spin() {
-   printf "\r${GREEN}[@] ${1}${WHITE}${sp:sc++:1}"
-   ((sc==${#sp})) && sc=0
-}
-endspin() {
-   printf "\r%s\n" "$@"
-}
-
-# Exit if 'latexmk' not found on machine
-check_latexmk() {
-    if [[ -x $(command -v latexmk ) ]]; then
-        echo -e "${GREEN}[@] Using compiler 'latexmk' version: ${WHITE}$(latexmk -v)${GREEN}."
-        reset_terminal
-    else
-        echo -e "${RED}[X] Compiler 'latexmk' is not installed on your system:${WHITE} exiting..."
-        reset_terminal
-        exit 1
-    fi
-}
-
 display_version () {
     clear
     echo -e "${CYAN}UniTeX $(cat ${PROJ_DIR}/version.txt), BCarnaval."
@@ -79,6 +56,17 @@ usage () {
 EOF
 }
 
+check_latexmk() {
+    if [[ -x $(command -v latexmk ) ]]; then
+        echo -e "${GREEN}[@] Using compiler 'latexmk' version: ${WHITE}$(latexmk -v)${GREEN}."
+        reset_terminal
+    else
+        echo -e "${RED}[X] Compiler 'latexmk' is not installed on your system:${WHITE} exiting..."
+        reset_terminal
+        exit 1
+    fi
+}
+
 copy_template () {
     cp -r ${PROJ_DIR}/${BUILD_TEMP}/ ${BUILD_DIR}/
 }
@@ -88,6 +76,7 @@ build_template () {
 }
 
 main () {
+    reset_terminal
     check_latexmk
     copy_template
     build_template
@@ -107,7 +96,8 @@ while getopts ":b:d:o:vh" opt; do
                     BUILD_TEMP=Homework
                     ;;
                 *)
-                    echo -e "${ORANGE}[X] UniTeX doesn't have a template named '${OPTARG}' ${WHITE}run $(basename ${0}) -h."
+                    echo -e "${ORANGE}[!] UniTeX doesn't have a template named '${OPTARG}'. ${WHITE}Run $(basename ${0}) -h."
+                    echo -e "${ORANGE}[!] Supported templates are at this time: ${WHITE}classic, article and homework${ORANGE}."
                     reset_terminal
                     exit 0
                     ;;
@@ -123,7 +113,8 @@ while getopts ":b:d:o:vh" opt; do
                 clean|targz|zip|dry)
                     ;;
                 *)
-                    echo -e "${RED}[X] Unknown option: '${MAKE_OPT}' ${WHITE}run $(basename ${0}) -h."
+                    echo -e "${RED}[X] Unknown option for 'make' tool: '${MAKE_OPT}'. ${WHITE}Run $(basename ${0}) -h."
+                    echo -e "${RED}[X] Supported options for 'make' tool are: ${WHITE}clean, targz, zip and dry${RED}."
                     reset_terminal
                     exit 0
                     ;;
@@ -138,7 +129,7 @@ while getopts ":b:d:o:vh" opt; do
             exit 0
             ;;
         \?)
-            echo -e "${RED}[X] Unknown option: '${OPTARG}' ${WHITE}run $(basename ${0}) -h."
+            echo -e "${RED}[X] Unknown option: '${OPTARG}'. ${WHITE}Run $(basename ${0}) -h."
             reset_terminal
             exit 1
             ;;
