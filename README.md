@@ -16,6 +16,7 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
   - [Classic](#classic)
   - [Article](#article)
   - [Homework](#homework)
+- [Features](#features)
 - [TODO](#todo)
 - [Credits](#credits)
 
@@ -135,6 +136,10 @@ Example of what you should get from 'homework' template with Princeton's orange 
     <td><img src="/../screenshots/screenshots/Homework/refs_screen.png" width=360 height=480></td>
   </tr>
  </table>
+ 
+## Features
+
+IN DEVELOPPEMENT.
 
 ## TODO
 
@@ -147,5 +152,6 @@ Example of what you should get from 'homework' template with Princeton's orange 
 - [ ] Man pages (MacOS, Linux)
 - [ ] Version control
 - [ ] REAME.md
+- [ ] Add all well explained commands and features
 
 ## Credits
