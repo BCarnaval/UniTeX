@@ -50,7 +50,7 @@ By doing it like so, you will be able to use UniTeX's commands `unitex -...`.
 Once [installation](#Installation) properly done and `unitex` command outputs no error, you can directly build
 your first UniTeX template
 
-1. Select a directory (folder) on your machine in which store template's files that you will actually edit. For the example, we will use a folder named **test** in home directory.
+1. Select a directory (folder) on your machine in which store template's files that you'll edit later. For the example, we will use a folder named **test** in home directory.
 
 ```shell
 $ mkdir ~/test
