@@ -9,7 +9,6 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Quick start](#quick-start)
-  - [Sub-element](#sub-element)
 - [Screenshots](#screenshots)
 - [Features](#features)
 
