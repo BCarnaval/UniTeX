@@ -112,6 +112,7 @@ Example of what you should get from 'classic' template and Yale's darkblue as ma
   - [x] Install/uninstall scripts
   - [ ] Test on fresh Linux and Mac OS (Docker)
   - [ ] Man pages (MacOS, Linux)
+  - [ ] Version control
   - [ ] REAME.md
 
 ## Credits
