@@ -45,17 +45,23 @@ By doing it like so, you will be able to use UniTeX command such as `unitex -bui
 
 ## Quick start
 
-Once [installation](#Installation) properly done and `unitex -v` command outputs no error, you can directly build 
+Once [installation](#Installation) properly done and `unitex -v` command outputs no error, you can directly build
 your first UniTeX template by following
+
 1. Create a folder (**test** in home folder for the example) in which store template's files that you will actually edit.
+
 ```shell
 $ mkdir ~/test
 ```
+
 2. Build your template inside this directory using `unitex` by specifying the flags **-b build**: template (classic, article, homework), **-d directory** directory in which build it (use directory created in step 1.) and **-o opt** building option.
+
 ```shell
 $ unitex -b classic -d ~/test -o dry
 ```
+
 Here, the `dry` option means that latexmk will not compile your project continuously and not clean the directory either. To clean it, you must use the option **clean** with the `-o` flag. These commands being done (`dry` and `clean`), you should see the following inside your **test** folder
+
 ```shell
 $ ls ~/test
 Makefile
@@ -69,9 +75,13 @@ refs.bib
 sections
 style.sty
 ```
+
 3. If you read this I am assuming that your **test** directory isn't missing any files and you now are ready to configure/customize the template to satisfy the nature of your project. To do this, you simply open your favorite text editor and remove default values from `PageTitre.tex`, `main.tex`, all the files inside `sections/` and `figs/` directories, references from `refs.bib` and feel free to add your personnal commands inside `commands.sty`.
 
 ## Screenshots
+
+![](./screenshots/title_screen.png) ![](./screenshots/mid_screen.png)
+![](./screenshots/math_screen.png) ![](./screenshots/refs_screen.png)
 
 ## Features
 
