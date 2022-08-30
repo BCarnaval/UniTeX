@@ -17,8 +17,8 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
   - [ ] 'Article' template
   - [ ] 'Homework' template
   - [x] Bash install script
-  - [ ] Test on different OS (Docker?)
-  - [ ] README yikes
+  - [ ] Test on fresh Linux and Mac OS (Docker)
+  - [ ] README
   - [ ] Man pages for different OS
 
 - [Credits](#credits)
@@ -46,7 +46,31 @@ By doing it like so, you will be able to use UniTeX command such as `unitex -bui
 
 ## Quick start
 
-### Sub-element
+Once [installation](#Installation) properly done and `unitex -v` command outputs no error, you can directly build 
+your first UniTeX template by following
+1. Create a folder (**test** in home folder for the example) in which store template's files that you will actually edit.
+```shell
+$ mkdir ~/test
+```
+2. Build your template inside this directory using `unitex` by specifying the flags **-b build**: template (classic, article, homework), **-d directory** directory in which build it (use directory created in step 1.) and **-o opt** building option.
+```shell
+$ unitex -b classic -d ~/test -o dry
+```
+Here, the `dry` option means that latexmk will not compile your project continuously and not clean the directory either. To clean it, you must use the option **clean** with the `-o` flag. These commands being done (`dry` and `clean`), you should see the following inside your **test** folder
+```shell
+$ ls ~/test
+Makefile
+PageTitre.tex
+colors.sty
+commands.sty
+figs
+main.pdf
+main.tex
+refs.bib
+sections
+style.sty
+```
+3. If you read this I am assuming that your **test** directory isn't missing any files and you now are ready to configure/customize the template to satisfy the nature of your project. To do this, you simply open your favorite text editor and remove default values from `PageTitre.tex`, `main.tex`, all the files inside `sections/` and `figs/` directories, references from `refs.bib` and feel free to add your personnal commands inside `commands.sty`.
 
 ## Screenshots
 
