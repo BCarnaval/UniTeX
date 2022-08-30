@@ -48,7 +48,7 @@ your first UniTeX template
 $ mkdir ~/test
 ```
 
-2. Build your template inside this directory using `unitex` by specifying the flags **-b build**: template (classic, article, homework), **-d directory** directory in which build it (use directory created in step 1.) and **-o opt** building options (`clean`, `dry`, `targz` or `zip`).
+2. Build your template inside this directory using `unitex` by specifying the flags **-b build**: template (classic, article, homework), **-d directory**: directory in which build it (use directory created in step 1.) and **-o opt**: building options (`clean`, `dry`, `targz` or `zip`).
 
 ```shell
 $ unitex -b classic -d ~/test -o dry
