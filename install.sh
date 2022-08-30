@@ -40,7 +40,7 @@ build_directory () {
 
 fill_directory () {
     echo -e "${GREEN}[@] Filling dirs with shell scripts..."
-    sudo cp -r ${CURRENT_DIR}/!(*.md|*.1|screenshots/) ${DESTINATION}/${PROJ}
+    sudo cp -r ${CURRENT_DIR}/!(*.md|*.1|screenshots) ${DESTINATION}/${PROJ}
     sudo cp ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/
 
     # Make scripts executable
