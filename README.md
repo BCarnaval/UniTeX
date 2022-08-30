@@ -109,7 +109,7 @@ Example of what you should get from 'classic' template and Yale's darkblue as ma
 - [x] 'Classic' template
 - [x] Add MIT license
 - [ ] 'Article' template (RevTeX)
-- [ ] 'Homework' template (Overleaf's rebuild)
+- [x] 'Homework' template (Overleaf's rebuild)
 - [x] Install/uninstall scripts
 - [ ] Test on fresh Linux and Mac OS (Docker)
 - [ ] Man pages (MacOS, Linux)
