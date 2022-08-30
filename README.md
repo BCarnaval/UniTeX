@@ -25,15 +25,15 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 ## Requirements
 
 UniTeX requires a complete TeX distribution (you can find the most used TeX distributions
-[here](https://www.latex-project.org/get/#tex-distributions)). Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of TeX distributions like MikTeX and MacTeX but you can always install it by following [these](https://mg.readthedocs.io/latexmk.html) steps.
+[here](https://www.latex-project.org/get/#tex-distributions)). Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of TeX distributions like MikTeX and MacTeX but you can always install it separately by following [these](https://mg.readthedocs.io/latexmk.html) steps.
 
-A Unix shell is also required to install UniTeX properly and build it's templates. A pdf viewer like [Skim](https://skim-app.sourceforge.io/),
+A Unix shell is also required to install UniTeX properly. A pdf viewer like [Skim](https://skim-app.sourceforge.io/),
 [Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader) is also fun to have
 when working on LaTeX projects.
 
 ## Installation
 
-The ideal way to install UniTeX templates is via the install script `install.sh`.
+The ideal way to install UniTeX is via the install script `install.sh`.
 
 ```shell
 $ git clone https://github.com/BCarnaval/UniTeX
@@ -41,12 +41,12 @@ $ git clone https://github.com/BCarnaval/UniTeX
 $ cd UniTeX && chmod +x install.sh && ./install.sh
 ```
 
-By doing it like so, you will be able to use UniTeX command such as `unitex -build ...` and others.
+By doing it like so, you will be able to use UniTeX's commands `unitex -...`.
 
 ## Quick start
 
 Once [installation](#Installation) properly done and `unitex -v` command outputs no error, you can directly build
-your first UniTeX template by following
+your first UniTeX template
 
 1. Create a folder (**test** in home folder for the example) in which store template's files that you will actually edit.
 
@@ -54,13 +54,13 @@ your first UniTeX template by following
 $ mkdir ~/test
 ```
 
-2. Build your template inside this directory using `unitex` by specifying the flags **-b build**: template (classic, article, homework), **-d directory** directory in which build it (use directory created in step 1.) and **-o opt** building option.
+2. Build your template inside this directory using `unitex` by specifying the flags **-b build**: template (classic, article, homework), **-d directory** directory in which build it (use directory created in step 1.) and **-o opt** building options (`clean`, `dry`, `targz` or `zip`).
 
 ```shell
 $ unitex -b classic -d ~/test -o dry
 ```
 
-Here, the `dry` option means that latexmk will not compile your project continuously and not clean the directory either. To clean it, you must use the option **clean** with the `-o` flag. These commands being done (`dry` and `clean`), you should see the following inside your **test** folder
+Here, the `dry` option means that latexmk will not compile your project continuously and not clean the directory either. To clean it, you must use the option `clean` with the `-o` flag. These commands being done (`dry` and `clean`), you should have the following content inside your **test** folder
 
 ```shell
 $ ls ~/test
@@ -103,7 +103,5 @@ Example of what you should get from 'classic' template and Yale's darkblue as ma
     <td><img src="screenshots/refs_screen.png" width=360 height=480></td>
   </tr>
  </table>
-
-## Features
 
 ## Credits
