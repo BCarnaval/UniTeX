@@ -10,16 +10,10 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 - [Installation](#installation)
 - [Quick start](#quick-start)
 - [Screenshots](#screenshots)
-- [Features](#features)
-
-  - [x] 'Classic' template & Makefile
-  - [ ] 'Article' template
-  - [ ] 'Homework' template
-  - [x] Bash install script
-  - [ ] Test on fresh Linux and Mac OS (Docker)
-  - [ ] README
-  - [ ] Man pages for different OS
-
+  - [Classic](#classic)
+  - [Article](#article)
+  - [Homework](#homework)
+- [TODO](#todo)
 - [Credits](#credits)
 
 ## Requirements
@@ -80,6 +74,8 @@ style.sty
 
 ## Screenshots
 
+### Classic
+
 Example of what you should get from 'classic' template and Yale's darkblue as main color
 
 <table>
@@ -103,5 +99,20 @@ Example of what you should get from 'classic' template and Yale's darkblue as ma
     <td><img src="screenshots/refs_screen.png" width=360 height=480></td>
   </tr>
  </table>
+ 
+### Article
+
+### Homework
+
+## TODO
+
+  - [x] 'Classic' template & Makefile
+  - [ ] 'Article' template
+  - [ ] 'Homework' template
+  - [x] Bash install script
+  - [ ] Test on fresh Linux and Mac OS (Docker)
+  - [ ] README
+  - [ ] Man pages for different OS
 
 ## Credits
+
