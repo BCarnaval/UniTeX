@@ -84,8 +84,8 @@ Example of what you should get from 'classic' template and Yale's darkblue as ma
     <td>Sections layout</td>
   </tr>
   <tr>
-    <td><img src="screenshots/title_screen.png" width=360 height=480></td>
-    <td><img src="screenshots/mid_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/title_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/mid_screen.png" width=360 height=480></td>
   </tr>
  </table>
 
@@ -106,14 +106,13 @@ Example of what you should get from 'classic' template and Yale's darkblue as ma
 
 ## TODO
 
-  - [x] 'Classic' template
-  - [ ] 'Article' template (RevTeX)
-  - [ ] 'Homework' template (Overleaf's rebuild)
-  - [x] Install/uninstall scripts
-  - [ ] Test on fresh Linux and Mac OS (Docker)
-  - [ ] Man pages (MacOS, Linux)
-  - [ ] Version control
-  - [ ] REAME.md
+- [x] 'Classic' template
+- [ ] 'Article' template (RevTeX)
+- [ ] 'Homework' template (Overleaf's rebuild)
+- [x] Install/uninstall scripts
+- [ ] Test on fresh Linux and Mac OS (Docker)
+- [ ] Man pages (MacOS, Linux)
+- [ ] Version control
+- [ ] REAME.md
 
 ## Credits
-
