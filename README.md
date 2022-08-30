@@ -92,8 +92,8 @@ Example of what you should get from 'classic' template with Yale's darkblue as m
     <td>Sections layout</td>
   </tr>
   <tr>
-    <td><img src="/../screenshots/screenshots/title_screen.png" width=360 height=480></td>
-    <td><img src="/../screenshots/screenshots/mid_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Classic/title_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Classic/mid_screen.png" width=360 height=480></td>
   </tr>
  </table>
 
@@ -103,8 +103,8 @@ Example of what you should get from 'classic' template with Yale's darkblue as m
     <td>References</td>
   </tr>
   <tr>
-    <td><img src="/../screenshots/screenshots/math_screen.png" width=360 height=480></td>
-    <td><img src="/../screenshots/screenshots/refs_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Classic/math_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Classic/refs_screen.png" width=360 height=480></td>
   </tr>
  </table>
  
