@@ -86,12 +86,19 @@ Example of what you should get from 'classic' template
   <tr>
     <td>Default title page</td>
     <td>Sections layout</td>
-    <td>Maths display</td>
-    <td>References</td>
   </tr>
   <tr>
     <td><img src="screenshots/title_screen.png" width=270 height=480></td>
     <td><img src="screenshots/mid_screen.png" width=270 height=480></td>
+  </tr>
+ </table>
+
+<table>
+  <tr>
+    <td>Maths display</td>
+    <td>References</td>
+  </tr>
+  <tr>
     <td><img src="screenshots/math_screen.png" width=270 height=480></td>
     <td><img src="screenshots/refs_screen.png" width=270 height=480></td>
   </tr>
