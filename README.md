@@ -114,7 +114,27 @@ Example of what you should get from 'classic' template with Yale's darkblue as m
 
 Example of what you should get from 'homework' template with Princeton's orange as main color
 
+<table>
+  <tr>
+    <td>Default title page</td>
+    <td>Problem(s) presentation</td>
+  </tr>
+  <tr>
+    <td><img src="/../screenshots/screenshots/Homework/title_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Homework/problem_screen.png" width=360 height=480></td>
+  </tr>
+ </table>
 
+<table>
+  <tr>
+    <td>Basic problem solving</td>
+    <td>References</td>
+  </tr>
+  <tr>
+    <td><img src="/../screenshots/screenshots/Homework/res_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Homework/refs_screen.png" width=360 height=480></td>
+  </tr>
+ </table>
 
 ## TODO
 
