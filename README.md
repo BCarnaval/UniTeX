@@ -70,11 +70,11 @@ Makefile
 PageTitre.tex
 colors.sty
 commands.sty
-figs
+figs/
 main.pdf
 main.tex
 refs.bib
-sections
+sections/
 style.sty
 ```
 
