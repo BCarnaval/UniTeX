@@ -47,7 +47,7 @@ By doing it like so, you will be able to use UniTeX's commands `unitex -...`.
 
 ## Quick start
 
-Once [installation](#Installation) properly done and `unitex -v` command outputs no error, you can directly build
+Once [installation](#Installation) properly done and `unitex` command outputs no error, you can directly build
 your first UniTeX template
 
 1. Create a folder (**test** in home folder for the example) in which store template's files that you will actually edit.
