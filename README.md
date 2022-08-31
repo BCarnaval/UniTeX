@@ -16,6 +16,7 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
   - [Classic](#classic)
   - [Article](#article)
   - [Homework](#homework)
+  - [Cover Letter](#cover-letter)
 - [Features](#features)
 - [TODO](#todo)
 - [Credits](#credits)
@@ -69,7 +70,7 @@ your first UniTeX template
 $ mkdir ~/test
 ```
 
-2. Build your template inside this directory using `unitex` by specifying the flags **-b build**: template (classic, article, homework), **-d directory**: directory in which build it (directory created in step 1.) and **-o opt**: building options (`clean`, `dry`, `targz`, `zip` or empty to tell latexmk to continuously compile your project on save).
+2. Build your template inside this directory using `unitex` by specifying the flags **-b build**: template (classic, article, homework, cover), **-d directory**: directory in which build it (directory created in step 1.) and **-o opt**: building options (`clean`, `dry`, `targz`, `zip` or empty to tell latexmk to continuously compile your project on save).
 
 ```shell
 $ unitex -b classic -d ~/test -o dry
@@ -151,6 +152,10 @@ Example of what you should get from 'homework' template with Princeton's orange 
   </tr>
  </table>
  
+### Cover Letter
+
+IN DEVELOPPEMENT
+ 
 ## Features
 
 IN DEVELOPPEMENT.
@@ -160,6 +165,7 @@ IN DEVELOPPEMENT.
 - [x] 'Classic' template
 - [x] Add MIT license
 - [ ] 'Article' template (RevTeX)
+- [ ] 'Cover Letter' template
 - [x] 'Homework' template (Overleaf's rebuild)
 - [x] Install/uninstall scripts
 - [ ] Test on fresh Linux and Mac OS (Docker)
