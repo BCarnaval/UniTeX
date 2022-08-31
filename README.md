@@ -114,6 +114,8 @@ Example of what you should get from 'classic' template with Yale's darkblue as m
  
 ### Article
 
+IN DEVELOPPEMENT
+
 ### Homework
 
 Example of what you should get from 'homework' template with Princeton's orange as main color
