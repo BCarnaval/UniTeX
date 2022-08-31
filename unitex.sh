@@ -43,21 +43,34 @@ usage () {
     ${WHITE}
     Usage: ${CYAN}$(basename $0) ${WHITE}-h <help> -v <version> -b <build> -d <dir> -o <opt> [-hvbdo]
 
-    ${CYAN}-h,          -help           ${WHITE}Display help.
+    ${CYAN}-h,          -help               ${WHITE}Display help.
 
-    ${CYAN}-v,          -version        ${WHITE}Display current installation version of UniTex.
+    ${CYAN}-v,          -version            ${WHITE}Display current installation version of UniTex.
 
-    ${CYAN}-b,          -build          ${WHITE}Build specified template using latexmk compiler (ex: classic, article, homework).
+    ${CYAN}-b,          -build              ${WHITE}Build specified template using latexmk compiler (ex: classic, article, homework).
 
-    ${CYAN}-d,          -dir            ${WHITE}Specifies where to build chosen template.
+    ${CYAN}-d,          -dir                ${WHITE}Specifies where to build chosen template.
 
-    ${CYAN}-o,          -opt            ${WHITE}Specifies 'make' tool option (clean, targz, zip or dry). No option means 'make all'.
+    ${CYAN}-o,          -opt     ${WHITE}(optional) Specifies 'make' tool option (clean, targz, zip or dry). No option means 'make all'.
 
 EOF
 }
 
-check_latexmk() {
-    if [[ -x $(command -v latexmk ) ]]; then
+check_pdflatex () {
+    if [[ -x $(command -version pdflatex) ]]; then
+        echo -e "${GREEN}[@] Using pdf generator version: ${WHITE}$(pdflatex -version)${GREEN}."
+        reset_terminal
+    else
+        echo -e "${RED}[X] Program 'pdflatex' is not installed on your
+        system !"
+        echo -e "${ORANGE}[!] Verify your 'TeX' installation: ${WHITE}exiting..."
+        reset_terminal
+        exit 1
+    fi
+}
+
+check_latexmk () {
+    if [[ -x $(command -v latexmk) ]]; then
         echo -e "${GREEN}[@] Using compiler 'latexmk' version: ${WHITE}$(latexmk -v)${GREEN}."
         reset_terminal
     else
@@ -78,6 +91,7 @@ build_template () {
 
 main () {
     reset_terminal
+    check_pdflatex
     check_latexmk
     copy_template
     build_template

@@ -26,7 +26,7 @@ HIDE = @
 MAKE = make
 
 # OS commands specific part
-ifeq ($(OS),Windows_NT)
+ifeq ($(OS), Windows_NT)
     RM = del /F /Q 
     RMDIR = -RMDIR /S /Q
     MKDIR = -mkdir
