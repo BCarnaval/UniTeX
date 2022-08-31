@@ -93,15 +93,14 @@
 % Numbered equation colored boxes
 \newcommand{\MNboxed}[2]{
   \begin{empheq}[box=\mymath]{align}
-      \label{#2}
-      #1
+      \label{#1}
+      #2
   \end{empheq}
 }
 
 % Unnumbered equation colored boxes
-\newcommand{\Mboxed}[2]{
+\newcommand{\Mboxed}[1]{
   \begin{empheq}[box=\mymath]{align*}
-      \label{#2}
       #1
   \end{empheq}
 }
@@ -109,9 +108,14 @@
 % Sections blueboxes
 \newcommand{\Boxed}[1]{
   \begin{tcolorbox}[colback=white,colframe=\MasterColor,arc=0pt]
-      \section{#1}
-      \vspace{-0.5cm}
+      \vspace{0.2cm}
+      \section*{
+        \centering
+        #1
+      }
+      \vspace{-0.3cm}
   \end{tcolorbox}
+  \vspace{0.5cm}
 }
 
 % ---------------
@@ -126,4 +130,10 @@
 
 % Roman numbers
 \newcommand{\rom}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+\newcommand{\question}[2]{
+\begin{enumerate}[label=\textit{(#1)}]
+  \item \textit{#2}
+  \end{enumerate}
+}
 

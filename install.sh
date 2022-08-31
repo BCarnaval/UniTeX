@@ -33,14 +33,14 @@ build_directory () {
         echo -e "${GREEN}[@] Building new dirs inside ${WHITE}${DESTINATION}${GREEN}."
         sudo mkdir -p ${DESTINATION}/${PROJ}
     else
-        echo -e "${GREEN}[@] Building dirs inside ${WHITE}"
+        echo -e "${GREEN}[@] Building dirs inside ${WHITE}${DESTINATION}${GREEN}."
         sudo mkdir -p ${DESTINATION}/${PROJ}
     fi
 }
 
 fill_directory () {
-    echo -e "${GREEN}[@] Filling dirs with shell scripts..."
-    sudo cp -r ${CURRENT_DIR}/!(*.md|*.1|screenshots) ${DESTINATION}/${PROJ}
+    echo -e "${GREEN}[@] Filling dirs with templates..."
+    sudo cp -r ${CURRENT_DIR}/!(*.md|*.1) ${DESTINATION}/${PROJ}
     sudo cp ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/
 
     # Make scripts executable
@@ -52,7 +52,7 @@ fill_directory () {
     echo "${TAG%-*}" | sudo tee -a ${DESTINATION}/${PROJ}/version.txt &> /dev/null
 
     # Create symlink
-    echo -e "${GREEN}[@] Updating symlinks from ${WHITE}${LINK_DIR}${GREEN}."
+    echo -e "${GREEN}[@] Updating symlink from ${WHITE}${LINK_DIR}${GREEN}."
     if [[ -L ${LINK_DIR} ]]; then
         sudo rm ${LINK_DIR}
         sudo ln -s ${DESTINATION}/${PROJ}/unitex.sh ${LINK_DIR}
@@ -63,8 +63,11 @@ fill_directory () {
 }
 
 main () {
+    echo -e "${WHITE}\n--------------------------\n"
     build_directory
+    echo -e "${WHITE}\n--------------------------\n"
     fill_directory
+    echo -e "${WHITE}\n--------------------------"
     reset_terminal
 }
 

@@ -1,13 +1,13 @@
 MAIN = main
 SHELL = /bin/bash
-PROJECT = UnITeX_Homework
+PROJECT = UniTeX_Homework
 DATE = $(shell date +"%F-%H")
 
 # Retreiving all source files
-BIB = refs.bib
-FIGS = $(shell find figs/* -type f)
-STY = $(wildcard *.sty)
-TEX = $(wildcard *.tex) $(wildcard sections/*.tex)
+BIB = $(shell find . -name "*.bib" -type f)
+FIGS = $(shell find . -name "figs/*" -type f)
+STY = $(shell find . -name "*.sty" -type f)
+TEX = $(shell find . -name "*.tex" -type f)
 
 SOURCE = $(BIB) $(STY) $(TEX) $(FIGS)
 GARBAGE = {bbl,synctex.gz}
@@ -26,7 +26,7 @@ HIDE = @
 MAKE = make
 
 # OS specific part
-ifeq ($(OS),Windows_NT)
+ifeq ($(OS), Windows_NT)
     RM = del /F /Q 
     RMDIR = -RMDIR /S /Q
     MKDIR = -mkdir
