@@ -23,13 +23,16 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 ## Requirements
 
 ### TeX
+
 UniTeX requires a complete TeX distribution (you can find the most used TeX distributions
 [here](https://www.latex-project.org/get/#tex-distributions)). Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of TeX distributions like MikTeX and MacTeX but you can always install it separately by following [these](https://mg.readthedocs.io/latexmk.html) steps.
 
 ### Shell
+
 A Unix shell is also required to install UniTeX properly. Commands such as `mkdir`, `cp`, `ln` and others are used within install script and makefiles so it's important for you to have access to this type of shell to install UniTeX correctly.
 
 ### PDF viewer (optional)
+
 A pdf viewer like [Skim](https://skim-app.sourceforge.io/),
 [Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader) is also fun to have
 when working on LaTeX projects.
@@ -93,8 +96,8 @@ Example of what you should get from 'classic' template with Yale's darkblue as m
     <td>Sections layout</td>
   </tr>
   <tr>
-    <td><img src="/../screenshots/screenshots/Classic/title_screen.png" width=360 height=480></td>
-    <td><img src="/../screenshots/screenshots/Classic/mid_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Classic/title_screen.png" width=360 height=440></td>
+    <td><img src="/../screenshots/screenshots/Classic/mid_screen.png" width=360 height=440></td>
   </tr>
  </table>
 
@@ -104,8 +107,8 @@ Example of what you should get from 'classic' template with Yale's darkblue as m
     <td>References</td>
   </tr>
   <tr>
-    <td><img src="/../screenshots/screenshots/Classic/math_screen.png" width=360 height=480></td>
-    <td><img src="/../screenshots/screenshots/Classic/refs_screen.png" width=360 height=480></td>
+    <td><img src="/../screenshots/screenshots/Classic/math_screen.png" width=360 height=440></td>
+    <td><img src="/../screenshots/screenshots/Classic/refs_screen.png" width=360 height=440></td>
   </tr>
  </table>
  
