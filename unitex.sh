@@ -5,7 +5,7 @@
 # GitHub: @BCarnaval
 
 # UniTeX: UniTeX is a collection of scientific oriented and minimalistic 
-# LaTeX templates suitable for many assignement types.
+# LaTeX templates suitable for many assignment types.
 
 RED="$(printf '\033[31m')"
 CYAN="$(printf '\033[36m')"
