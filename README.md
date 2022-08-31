@@ -163,7 +163,7 @@ IN DEVELOPPEMENT.
 - [x] 'Homework' template (Overleaf's rebuild)
 - [x] Install/uninstall scripts
 - [ ] Test on fresh Linux and Mac OS (Docker)
-  - [x] Installation.
+  - [x] Installation fresh ubuntu (git & sudo post installed).
   - [ ] Build template.
 - [ ] Man pages (MacOS, Linux)
 - [ ] Version control
