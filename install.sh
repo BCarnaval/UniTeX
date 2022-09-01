@@ -67,7 +67,6 @@ main () {
     build_directory
     echo -e "${WHITE}\n--------------------------\n"
     fill_directory
-    echo -e "${WHITE}\n--------------------------"
     reset_terminal
 }
 

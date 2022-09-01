@@ -47,7 +47,7 @@ usage () {
 
     ${CYAN}-v,          -version            ${WHITE}Display current installation version of UniTex.
 
-    ${CYAN}-b,          -build              ${WHITE}Build specified template using latexmk compiler (ex: classic, article, homework).
+    ${CYAN}-b,          -build              ${WHITE}Build specified template using latexmk compiler (ex: classic, article, homework, cover).
 
     ${CYAN}-d,          -dir                ${WHITE}Specifies where to build chosen template.
 
@@ -57,12 +57,11 @@ EOF
 }
 
 check_pdflatex () {
-    if [[ -x $(command -version pdflatex) ]]; then
-        echo -e "${GREEN}[@] Using pdf generator version: ${WHITE}$(pdflatex -version)${GREEN}."
+    if [[ $(pdflatex -version) ]]; then
+        echo -e "${GREEN}[@] Using pdf generator version: ${WHITE}$(pdflatex -version)."
         reset_terminal
     else
-        echo -e "${RED}[X] Program 'pdflatex' is not installed on your
-        system !"
+        echo -e "${RED}[X] Program 'pdflatex' is not installed on your system !"
         echo -e "${ORANGE}[!] Verify your 'TeX' installation: ${WHITE}exiting..."
         reset_terminal
         exit 1
@@ -71,7 +70,7 @@ check_pdflatex () {
 
 check_latexmk () {
     if [[ -x $(command -v latexmk) ]]; then
-        echo -e "${GREEN}[@] Using compiler 'latexmk' version: ${WHITE}$(latexmk -v)${GREEN}."
+        echo -e "${GREEN}[@] Using compiler 'latexmk' version: ${WHITE}$(latexmk -v)."
         reset_terminal
     else
         echo -e "${RED}[X] Compiler 'latexmk' is not installed on your system:${WHITE} exiting..."
@@ -81,19 +80,25 @@ check_latexmk () {
 }
 
 copy_template () {
+    echo -e "${GREEN}Copying template to ${WHITE}${BUILD_DIR}${GREEN} directory...${WHITE}"
     mkdir ${BUILD_DIR}/${BUILD_TEMP}
     cp -r ${PROJ_DIR}/${BUILD_TEMP}/ ${BUILD_DIR}/${BUILD_TEMP}
 }
 
 build_template () {
+    echo -e "${GREEN}Building template inside ${WHITE}${BUILD_DIR}..."
     make ${MAKE_OPT} -C ${BUILD_DIR}/${BUILD_TEMP}
 }
 
 main () {
     reset_terminal
+    echo -e "${WHITE}\n--------------------------\n"
     check_pdflatex
+    echo -e "${WHITE}\n--------------------------\n"
     check_latexmk
+    echo -e "${WHITE}\n--------------------------\n"
     copy_template
+    echo -e "${WHITE}\n--------------------------\n"
     build_template
 }
 
@@ -112,7 +117,7 @@ while getopts ":b:d:o:vh" opt; do
                     ;;
                 *)
                     echo -e "${ORANGE}[!] UniTeX doesn't have a template named '${OPTARG}'. ${WHITE}Run $(basename ${0}) -h."
-                    echo -e "${ORANGE}[!] Supported templates are at this time: ${WHITE}classic, article and homework${ORANGE}."
+                    echo -e "${ORANGE}[!] Supported templates are at this time: ${WHITE}classic, article, homework and cover${ORANGE}."
                     reset_terminal
                     exit 0
                     ;;
