@@ -18,7 +18,7 @@ MAN_DIR=/usr/local/share/man/
 shopt -s extglob 
 
 reset_terminal () {
-    tput init
+    tput -x init
 }
 
 build_directory () {

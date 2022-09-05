@@ -16,7 +16,7 @@ ORANGE="$(printf '\033[33m')"
 PROJ_DIR=/usr/local/share/UniTeX
 
 reset_terminal () {
-    tput init
+    tput -x init
 }
 
 display_version () {
@@ -82,12 +82,12 @@ check_latexmk () {
 copy_template () {
     echo -e "${GREEN}Copying template to ${WHITE}${BUILD_DIR}${GREEN} directory...${WHITE}"
     mkdir ${BUILD_DIR}/${BUILD_TEMP}
-    cp -r ${PROJ_DIR}/${BUILD_TEMP}/ ${BUILD_DIR}/${BUILD_TEMP}
+    cp -r ${PROJ_DIR}/${BUILD_TEMP}/ ${BUILD_DIR}/
 }
 
 build_template () {
     echo -e "${GREEN}Building template inside ${WHITE}${BUILD_DIR}..."
-    make ${MAKE_OPT} -C ${BUILD_DIR}/${BUILD_TEMP}
+    make ${MAKE_OPT} -C ${BUILD_DIR}
 }
 
 main () {
@@ -117,14 +117,32 @@ while getopts ":b:d:o:vh" opt; do
                     ;;
                 *)
                     echo -e "${ORANGE}[!] UniTeX doesn't have a template named '${OPTARG}'. ${WHITE}Run $(basename ${0}) -h."
-                    echo -e "${ORANGE}[!] Supported templates are at this time: ${WHITE}classic, article, homework and cover${ORANGE}."
+                    echo -e "${ORANGE}[!] Supported templates are at this
+                    time: ${WHITE}classic, article, homework and cover."
                     reset_terminal
                     exit 0
                     ;;
             esac
             ;;
         d)
-            BUILD_DIR=${OPTARG}
+            if [[ -d ${OPTARG} ]]; then
+                BUILD_DIR=${OPTARG}
+            else
+                echo -e "${ORANGE}[!] ${WHITE}'${OPTARG}'${ORANGE} not a directory."
+                echo "${ORANGE}[!] Do you wish to use ${WHITE}$(pwd)${ORANGE} instead?"
+                select yn in "Yes" "No"; do
+                    case ${yn} in
+                        Yes)
+                            BUILD_DIR=$(pwd)
+                            break
+                            ;;
+                        No) 
+                            exit 0
+                            ;;
+                    esac
+                done
+                
+            fi
             ;;
 
         o)
@@ -134,7 +152,7 @@ while getopts ":b:d:o:vh" opt; do
                     ;;
                 *)
                     echo -e "${RED}[X] Unknown option for 'make' tool: '${MAKE_OPT}'. ${WHITE}Run $(basename ${0}) -h."
-                    echo -e "${RED}[X] Supported options for 'make' tool are: ${WHITE}clean, targz, zip and dry${RED}."
+                    echo -e "${RED}[X] Supported options for 'make' tool are: ${WHITE}clean, targz, zip and dry."
                     reset_terminal
                     exit 0
                     ;;
@@ -154,7 +172,7 @@ while getopts ":b:d:o:vh" opt; do
             exit 1
             ;;
         :)
-            echo -e "${ORANGE}[!] Invalid command: ${WHITE}'${OPTARG}' ${ORANGE}requires an argument."
+            echo -e "${ORANGE}[!] Invalid command: ${WHITE}'${OPTARG}' ${ORANGE}requires an argument${WHITE}."
             reset_terminal
             exit 1
             ;;
@@ -162,9 +180,4 @@ while getopts ":b:d:o:vh" opt; do
 done
 
 # Main run
-if [[ "${BUILD_TEMP}" && "${BUILD_DIR}" ]]; then
-    main
-else
-    usage
-    exit 0
-fi
+main
