@@ -10,16 +10,37 @@ ORANGE="$(printf '\033[33m')"
 OS=$(uname)
 PROJ=UniTeX
 CURRENT_DIR=$( pwd )
+TAG=$(cat version.txt)
 DESTINATION=/usr/local/share
 LINK_DIR=/usr/local/bin/unitex
-MAN_DIR=/usr/local/share/man/
-TAG=$(cat version.txt)
+MAN_DIR=/usr/local/share/man
+CONFIG=~/.config/latexmk
 
 # Turn on extended globbing in bash shell
 shopt -s extglob 
 
 reset_terminal () {
     tput -x init
+}
+
+use_viewer () {
+    if [[ -x $(command -v zathura) ]]; then 
+        echo -e "${GREEN}[@] Pdf viewer ${WHITE}$(zathura -v) ${GREEN} has been found on your system."
+        echo -e "${WHITE}Do you want to use this viewer as default for compiling templates?"
+        select yn in "Yes" "No"; do
+            case ${yn} in
+                Yes)
+                    mkdir ${CONFIG}
+                    touch ${CONFIG}/latexmkrc
+                    echo "$pdf_previewer = 'zathura';" >> ${CONFIG}/latexmkrc
+                    break
+                    ;;
+                No) 
+                    exit 0
+                    ;;
+            esac
+        done
+    fi
 }
 
 build_directory () {
@@ -74,6 +95,8 @@ fill_directory () {
 }
 
 main () {
+    echo -e "${WHITE}\n--------------------------\n"
+    use_viewer
     echo -e "${WHITE}\n--------------------------\n"
     build_directory
     echo -e "${WHITE}\n--------------------------\n"
