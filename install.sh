@@ -8,6 +8,7 @@ ORANGE="$(printf '\033[33m')"
 
 # Paths
 PROJ=UniTeX
+OS=$(uname)
 TAG=$(git describe)
 CURRENT_DIR=$( pwd )
 DESTINATION=/usr/local/share
@@ -28,7 +29,12 @@ build_directory () {
         # Updating directories
         echo -e "${GREEN}[@] Wiping old version if any inside ${WHITE}${DESTINATION}${GREEN}."
         sudo rm -rf ${DESTINATION}/${PROJ}
-        sudo rm ${MAN_DIR}/unitex.1
+        
+        if [[ "${OS}" = "Darwin" ]]; then
+            sudo rm ${MAN_DIR}/man1/unitex.1
+        else
+            sudo rm ${MAN_DIR}/unitex.1
+        fi
 
         echo -e "${GREEN}[@] Building new dirs inside ${WHITE}${DESTINATION}${GREEN}."
         sudo mkdir -p ${DESTINATION}/${PROJ}
@@ -42,6 +48,12 @@ fill_directory () {
     echo -e "${GREEN}[@] Filling dirs with templates..."
     sudo cp -r ${CURRENT_DIR}/!(*.md|*.1) ${DESTINATION}/${PROJ}
     sudo cp ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/
+
+    if [[ "${OS}" = "Darwin" ]]; then
+        sudo cp ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/man1/unitex.1
+    else
+        sudo cp ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/unitex.1
+    fi
 
     # Make scripts executable
     sudo chmod +x ${DESTINATION}/${PROJ}/unitex.sh

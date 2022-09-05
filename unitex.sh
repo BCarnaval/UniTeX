@@ -182,7 +182,8 @@ done
 if [[ ${BUILD_TEMP} ]]; then
     main
 else
-    echo -e "${ORANGE}[!] You must chose a template using ${WHITE}'b' flag."
-    echo -e "${ORANGE}[!] Options are currently ${WHITE}'classic, article, homework and cover'."
-    exit 0
+    usage
+    # echo -e "${ORANGE}[!] You must chose a template using ${WHITE}'b' flag."
+    # echo -e "${ORANGE}[!] Options are currently ${WHITE}'classic, article, homework and cover'."
+    # exit 0
 fi
