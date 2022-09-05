@@ -6,6 +6,7 @@ GREEN="$(printf '\033[32m')"
 WHITE="$(printf '\033[37m')"
 ORANGE="$(printf '\033[33m')"
 
+OS=$(uname)
 PROJ=UniTeX
 DESTINATION=/usr/local/share
 MAN_DIR=/usr/local/share/man
@@ -21,7 +22,9 @@ rm_directory () {
         sudo rm -rf ${DESTINATION}/${PROJ}
     fi
 
-    if [[ -a ${MAN_DIR}/unitex.1 ]]; then
+    if [[ "${OS}" = "Darwin" ]]; then
+        sudo rm ${MAN_DIR}/man1/unitex.1
+    else
         sudo rm ${MAN_DIR}/unitex.1
     fi
 }

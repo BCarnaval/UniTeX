@@ -7,8 +7,8 @@ WHITE="$(printf '\033[37m')"
 ORANGE="$(printf '\033[33m')"
 
 # Paths
-PROJ=UniTeX
 OS=$(uname)
+PROJ=UniTeX
 CURRENT_DIR=$( pwd )
 DESTINATION=/usr/local/share
 LINK_DIR=/usr/local/bin/unitex
