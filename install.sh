@@ -9,11 +9,11 @@ ORANGE="$(printf '\033[33m')"
 # Paths
 PROJ=UniTeX
 OS=$(uname)
-TAG=$(git describe)
 CURRENT_DIR=$( pwd )
 DESTINATION=/usr/local/share
 LINK_DIR=/usr/local/bin/unitex
 MAN_DIR=/usr/local/share/man/
+TAG=$(cat version.txt)
 
 # Turn on extended globbing in bash shell
 shopt -s extglob 
@@ -60,8 +60,7 @@ fill_directory () {
     sudo chmod +x ${DESTINATION}/${PROJ}/uninstall.sh
 
     # Version control
-    sudo touch ${DESTINATION}/${PROJ}/version.txt
-    echo "${TAG%-*}" | sudo tee -a ${DESTINATION}/${PROJ}/version.txt &> /dev/null
+    echo "${TAG%-*}" | sudo tee ${DESTINATION}/${PROJ}/version.txt &> /dev/null
 
     # Create symlink
     echo -e "${GREEN}[@] Updating symlink from ${WHITE}${LINK_DIR}${GREEN}."

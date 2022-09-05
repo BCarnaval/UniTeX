@@ -31,7 +31,7 @@ rm_symlink() {
         echo -e "${ORANGE}[!] Destroying ${WHITE}'unitex' ${ORANGE}symlink."
         sudo rm /usr/local/bin/unitex
     fi
-    echo -e "${GREEN}[@] ${WHITE}${PROJ}${GREEN} Uninstalled successfully."
+    echo -e "${GREEN}[@] ${WHITE}${PROJ}${GREEN} Uninstalled successfully${WHITE}."
 }
 
 main () {
