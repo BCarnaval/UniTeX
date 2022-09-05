@@ -79,7 +79,7 @@ $ unitex -b classic -d ~/test -o dry
 Here, the `dry` option means that latexmk will not compile your project continuously and not clean the directory either. It will simply build the template inside the specified directory and leave all files there. To clean it, you must use the option `clean` with the `-o` flag. These commands being done (`dry` and `clean`), you should have the following content inside your **test** folder
 
 ```shell
-$ ls ~/test/Classic
+$ ls ~/test
 Makefile
 PageTitre.tex
 colors.sty
