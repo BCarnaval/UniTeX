@@ -84,7 +84,7 @@ fill_directory () {
     sudo chmod +x ${DESTINATION}/${PROJ}/uninstall.sh
 
     # Version control
-    echo "${TAG%-*}" | sudo tee ${DESTINATION}/${PROJ}/version.txt &> /dev/null
+    echo "${TAG}" | cut -d '-' -f 1 | sudo tee ${DESTINATION}/${PROJ}/version.txt &> /dev/null
 
     # Create symlink
     echo -e "${GREEN}[@] Updating symlink from ${WHITE}${LINK_DIR}${GREEN}."
