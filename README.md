@@ -174,7 +174,7 @@ IN DEVELOPPEMENT.
 - [x] 'Classic' template
 - [x] Add MIT license
 - [ ] 'Article' template (RevTeX)
-- [ ] 'Cover Letter' template
+- [x] 'Cover Letter' template
 - [x] 'Homework' template (Overleaf's rebuild)
 - [x] Install/uninstall scripts
 - [ ] Test on fresh Linux and Mac OS (Docker)
