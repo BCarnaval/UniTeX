@@ -98,7 +98,7 @@ style.sty
 
 ### Classic
 
-Example of what you should get from 'classic' template with Yale's darkblue as main color
+Example of what you should get from 'classic' template with [Yale](https://en.wikipedia.org/wiki/Yale_University)'s darkblue as main color
 
 <table>
   <tr>
@@ -128,7 +128,7 @@ IN DEVELOPPEMENT
 
 ### Homework
 
-Example of what you should get from 'homework' template with Princeton's orange as main color
+Example of what you should get from 'homework' template with [Princeton](https://en.wikipedia.org/wiki/Princeton_University)'s orange as main color
 
 <table>
   <tr>
@@ -154,7 +154,16 @@ Example of what you should get from 'homework' template with Princeton's orange 
  
 ### Cover Letter
 
-IN DEVELOPPEMENT
+Example of what you should get from 'cover' template with [Cornflower blue](https://en.wikipedia.org/wiki/Cornflower_blue) as main color
+
+<table>
+  <tr>
+    <td>Default cover letter</td>
+  </tr>
+  <tr>
+    <td><img src="/../screenshots/screenshots/Cover/cover_screen.png" width=360 height=480></td>
+  </tr>
+ </table>
  
 ## Features
 
