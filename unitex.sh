@@ -20,7 +20,7 @@ reset_terminal () {
 }
 
 display_version () {
-    echo -e "${CYAN}UniTeX $(cat ${PROJ_DIR}/version.txt), BCarnaval."
+    echo -e "${CYAN}[~] UniTeX $(cat ${PROJ_DIR}/version.txt), BCarnaval."
 }
 
 usage () {
@@ -76,18 +76,18 @@ check_latexmk () {
 }
 
 copy_template () {
-    echo -e "${GREEN}Copying template to ${WHITE}${BUILD_DIR}${GREEN} directory...${WHITE}"
+    echo -e "${GREEN}[@] Copying template to ${WHITE}${BUILD_DIR}${GREEN} directory...${WHITE}"
     mkdir ${BUILD_DIR}/${BUILD_TEMP}
     cp -r ${PROJ_DIR}/${BUILD_TEMP}/ ${BUILD_DIR}/
 }
 
 build_template () {
-    echo -e "${GREEN}Building template inside ${WHITE}${BUILD_DIR}..."
+    echo -e "${GREEN}[@] Building template inside ${WHITE}${BUILD_DIR}..."
     make ${MAKE_OPT} -C ${BUILD_DIR}
 }
 
 main () {
-    echo -e "${WHITE}\n--------------------------\n"
+    echo -e "${WHITE}--------------------------\n"
     check_pdflatex
     echo -e "${WHITE}\n--------------------------\n"
     check_latexmk
@@ -95,6 +95,7 @@ main () {
     copy_template
     echo -e "${WHITE}\n--------------------------\n"
     build_template
+    echo -e "${WHITE}\n--------------------------"
     reset_terminal
 }
 

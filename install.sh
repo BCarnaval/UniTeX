@@ -26,17 +26,20 @@ reset_terminal () {
 use_viewer () {
     if [[ -x $(command -v zathura) ]]; then 
         echo -e "${GREEN}[@] Pdf viewer ${WHITE}$(zathura -v) ${GREEN} has been found on your system."
-        echo -e "${WHITE}Do you want to use this viewer as default for compiling templates?"
-        select yn in "Yes" "No"; do
-            case ${yn} in
-                Yes)
+        while true; do
+            read -p "${GREEN}[@] Do you want to use this viewer as default for compiling templates? (y/n)" yn
+            case $yn in
+                [Yy]*)
                     mkdir ${CONFIG}
                     touch ${CONFIG}/latexmkrc
                     echo "\$ pdf_previewer = 'zathura';" >> ${CONFIG}/latexmkrc
                     break
                     ;;
-                No) 
+                [Nn]*)
                     break
+                    ;;
+                *)
+                    echo -e "${ORANGE}[!] Please answer yes or no."
                     ;;
             esac
         done
@@ -95,12 +98,13 @@ fill_directory () {
 }
 
 main () {
-    echo -e "${WHITE}\n--------------------------\n"
+    echo -e "${WHITE}--------------------------\n"
     use_viewer
     echo -e "${WHITE}\n--------------------------\n"
     build_directory
     echo -e "${WHITE}\n--------------------------\n"
     fill_directory
+    echo -e "${WHITE}\n--------------------------"
     reset_terminal
 }
 
