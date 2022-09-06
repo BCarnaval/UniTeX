@@ -83,7 +83,7 @@ copy_template () {
 
 build_template () {
     echo -e "${GREEN}[@] Building template inside ${WHITE}${BUILD_DIR}..."
-    make ${MAKE_OPT} -C ${BUILD_DIR}
+    make ${MAKE_OPT} --directory=${BUILD_DIR}
 }
 
 main () {
