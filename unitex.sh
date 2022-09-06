@@ -115,7 +115,7 @@ while getopts ":b:d:o:vh" opt; do
                     echo -e "${ORANGE}[!] UniTeX doesn't have a template named '${OPTARG}'. ${WHITE}Run $(basename ${0}) -h."
                     echo -e "${ORANGE}[!] Supported templates are currently ${WHITE}classic, article, homework and cover."
                     reset_terminal
-                    exit 0
+                    exit 1
                     ;;
             esac
             ;;
@@ -150,7 +150,7 @@ while getopts ":b:d:o:vh" opt; do
                     echo -e "${RED}[X] Unknown option for 'make' tool: '${MAKE_OPT}'. ${WHITE}Run $(basename ${0}) -h."
                     echo -e "${RED}[X] Supported options for 'make' tool are: ${WHITE}clean, targz, zip and dry."
                     reset_terminal
-                    exit 0
+                    exit 1
                     ;;
             esac
             ;;
@@ -184,5 +184,6 @@ else
     echo -e "${ORANGE}[!] You must chose a template using ${WHITE}'b' flag."
     echo -e "${ORANGE}[!] Options are currently ${WHITE}'classic, article, homework and cover'."
     echo -e "${GREEN}[@] Run ${WHITE}$(basename ${0}) -h."
-    exit 0
+    reset_terminal
+    exit 1
 fi
