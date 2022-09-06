@@ -184,5 +184,6 @@ IN DEVELOPPEMENT.
 - [x] Version control
 - [ ] REAME.md
 - [ ] Add all well explained commands and features
+- [ ] Setup default pdf viewer based on OS
 
 ## Credits
