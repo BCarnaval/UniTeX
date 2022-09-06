@@ -16,7 +16,7 @@ ORANGE="$(printf '\033[33m')"
 PROJ_DIR=/usr/local/share/UniTeX
 
 reset_terminal () {
-    tput -x init
+    tput sgr0
 }
 
 display_version () {

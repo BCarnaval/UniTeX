@@ -20,7 +20,7 @@ CONFIG=~/.config/latexmk
 shopt -s extglob 
 
 reset_terminal () {
-    tput -x init
+    tput sgr0
 }
 
 use_viewer () {
@@ -32,11 +32,11 @@ use_viewer () {
                 Yes)
                     mkdir ${CONFIG}
                     touch ${CONFIG}/latexmkrc
-                    echo "$pdf_previewer = 'zathura';" >> ${CONFIG}/latexmkrc
+                    echo "\$ pdf_previewer = 'zathura';" >> ${CONFIG}/latexmkrc
                     break
                     ;;
                 No) 
-                    exit 0
+                    break
                     ;;
             esac
         done

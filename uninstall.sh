@@ -12,7 +12,7 @@ DESTINATION=/usr/local/share
 MAN_DIR=/usr/local/share/man
 
 reset_terminal () {
-    tput -x init
+    tput sgr0
 }
 
 rm_directory () {
