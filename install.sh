@@ -27,7 +27,7 @@ use_viewer () {
     if [[ -x $(command -v zathura) ]]; then 
         echo -e "${GREEN}[@] Pdf viewer ${WHITE}$(zathura -v) ${GREEN} has been found on your system."
         while true; do
-            read -p "${GREEN}[@] Do you want to use this viewer as default for compiling templates? (y/n)" yn
+            read -p "${GREEN}[@] Do you want to use this viewer as default while compiling templates? (y/n)" yn
             case $yn in
                 [Yy]*)
                     mkdir ${CONFIG}
