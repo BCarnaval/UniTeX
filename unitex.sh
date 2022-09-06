@@ -20,7 +20,6 @@ reset_terminal () {
 }
 
 display_version () {
-    clear
     echo -e "${CYAN}UniTeX $(cat ${PROJ_DIR}/version.txt), BCarnaval."
     reset_terminal
 }
