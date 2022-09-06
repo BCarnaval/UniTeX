@@ -21,7 +21,6 @@ reset_terminal () {
 
 display_version () {
     echo -e "${CYAN}UniTeX $(cat ${PROJ_DIR}/version.txt), BCarnaval."
-    reset_terminal
 }
 
 usage () {
@@ -58,7 +57,6 @@ EOF
 check_pdflatex () {
     if [[ $(pdflatex -version) ]]; then
         echo -e "${GREEN}[@] Using pdf generator version: ${WHITE}$(pdflatex -version)."
-        reset_terminal
     else
         echo -e "${RED}[X] Program 'pdflatex' is not installed on your system !"
         echo -e "${ORANGE}[!] Verify your 'TeX' installation: ${WHITE}exiting..."
@@ -70,7 +68,6 @@ check_pdflatex () {
 check_latexmk () {
     if [[ -x $(command -v latexmk) ]]; then
         echo -e "${GREEN}[@] Using compiler 'latexmk' version: ${WHITE}$(latexmk -v)."
-        reset_terminal
     else
         echo -e "${RED}[X] Compiler 'latexmk' is not installed on your system:${WHITE} exiting..."
         reset_terminal
@@ -90,7 +87,6 @@ build_template () {
 }
 
 main () {
-    reset_terminal
     echo -e "${WHITE}\n--------------------------\n"
     check_pdflatex
     echo -e "${WHITE}\n--------------------------\n"
@@ -99,6 +95,7 @@ main () {
     copy_template
     echo -e "${WHITE}\n--------------------------\n"
     build_template
+    reset_terminal
 }
 
 while getopts ":b:d:o:vh" opt; do
@@ -135,6 +132,7 @@ while getopts ":b:d:o:vh" opt; do
                             break
                             ;;
                         No) 
+                            reset_terminal
                             exit 0
                             ;;
                     esac
@@ -158,10 +156,12 @@ while getopts ":b:d:o:vh" opt; do
             ;;
         v)
             display_version
+            reset_terminal
             exit 0
             ;;
         h)
             usage
+            reset_terminal
             exit 0
             ;;
         \?)
