@@ -10,7 +10,7 @@ STY = $(shell find . -name "*.sty" -type f)
 TEX = $(shell find . -name "*.tex" -type f)
 
 SOURCE = $(BIB) $(STY) $(TEX) $(FIGS)
-GARBAGE = {bbl,synctex.gz}
+GARBAGE = {bbl,synctex.gz,aux,fdb_latexmk,fls,log}
 
 # Setting LaTeX compile (latexmk) options & flags
 MK = latexmk
@@ -48,7 +48,7 @@ dry: $(SOURCE)
 	$(MK) -$(OUT) -$(GENERATOR)="pdflatex $(OPT)" $(MAIN)
 
 clean:
-	$(HIDE)$(RM) $(MAIN).$(GARBAGE)
+	$(HIDE)$(RM) *.$(GARBAGE)
 	$(MK) -c
 	$(HIDE)echo -e "\n'Classic' template cleaned !"
 

@@ -77,13 +77,12 @@ check_latexmk () {
 
 copy_template () {
     echo -e "${GREEN}[@] Copying template to ${WHITE}${BUILD_DIR}${GREEN} directory...${WHITE}"
-    mkdir ${BUILD_DIR}/${BUILD_TEMP}
     cp -r ${PROJ_DIR}/${BUILD_TEMP}/ ${BUILD_DIR}/
 }
 
 build_template () {
     echo -e "${GREEN}[@] Building template inside ${WHITE}${BUILD_DIR}..."
-    make ${MAKE_OPT} --directory=${BUILD_DIR}
+    make ${MAKE_OPT} --directory=${BUILD_DIR}/
 }
 
 main () {
@@ -111,6 +110,9 @@ while getopts ":b:d:o:vh" opt; do
                     ;;
                 homework)
                     BUILD_TEMP=Homework
+                    ;;
+                cover)
+                    BUILD_TEMP=Cover
                     ;;
                 *)
                     echo -e "${ORANGE}[!] UniTeX doesn't have a template named '${OPTARG}'. ${WHITE}Run $(basename ${0}) -h."
