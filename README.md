@@ -48,7 +48,7 @@ $ git clone https://github.com/BCarnaval/UniTeX
 $ cd UniTeX && chmod +x install.sh && ./install.sh
 ```
 
-By doing it like so, you will be able to use UniTeX's commands `unitex -...`.
+By doing it like so, you will be able to use UniTeX's commands `unitex -h`.
 
 <table>
   <tr>
@@ -61,7 +61,7 @@ By doing it like so, you will be able to use UniTeX's commands `unitex -...`.
 
 ## Quick start
 
-Once [installation](#Installation) properly done and `unitex` command outputs no error, you can directly build
+Once [installation](#Installation) properly done and `unitex -h` command outputs no error, you can directly build
 your first UniTeX template
 
 1. Select a directory (folder) on your machine in which store template's files that you'll edit later. For the example, we will use a folder named **test** in home directory.
@@ -171,8 +171,8 @@ IN DEVELOPPEMENT.
 - [ ] Test on fresh Linux and Mac OS (Docker)
   - [x] Installation fresh ubuntu (git & sudo post installed).
   - [ ] Build template.
-- [ ] Man pages (MacOS, Linux)
-- [ ] Version control
+- [x] Man pages (MacOS, Linux)
+- [x] Version control
 - [ ] REAME.md
 - [ ] Add all well explained commands and features
 
