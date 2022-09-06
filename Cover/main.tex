@@ -1,0 +1,51 @@
+\documentclass[12pt]{letter}
+\usepackage{colors, info}
+
+\HeadColor {CAROLINABLUE}
+
+
+\begin{document}
+
+  \PlaceHeader
+
+  \begin{center}
+    {
+      \fontsize{28}{0}\selectfont\scshape \Name
+    } \\[0.5cm]
+
+    \faEnvelope\enspace \Email \hfill
+    \faPhone\enspace \Phone \hfill
+    \faMapMarker\enspace \Location
+
+  \end{center}
+
+  \vspace{0.5cm}
+
+  % Opening block
+  \Date \\
+
+  \vspace{-0.5cm}
+  \Company \\
+  \Street \\
+  \City, \State\, \Zip \\
+
+  \Object \\
+
+  \Recipient, \\
+
+  % Body
+  \setlength\parindent{24pt}
+  \subfile{sections/body}
+
+  % Closer
+  \vfill
+
+  \begin{flushleft}
+    \Closer,
+    
+    \includegraphics[width=5cm]{figs/signature.png}
+
+  \end{flushleft}
+
+\end{document}
+
