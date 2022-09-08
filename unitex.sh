@@ -55,7 +55,7 @@ EOF
 }
 
 check_pdflatex () {
-    if type pdflatex; then
+    if type pdflatex &> /dev/null; then
         echo -e "${GREEN}[@] Using pdf generator version: ${WHITE}$(pdflatex -version)."
     else
         echo -e "${RED}[X] Program 'pdflatex' is not installed on your system !"
@@ -66,7 +66,7 @@ check_pdflatex () {
 }
 
 check_latexmk () {
-    if type latexmk; then
+    if type latexmk &> /dev/null; then
         echo -e "${GREEN}[@] Using compiler 'latexmk' version: ${WHITE}$(latexmk -v)."
     else
         echo -e "${RED}[X] Compiler 'latexmk' is not installed on your system:${WHITE} exiting..."
@@ -77,12 +77,12 @@ check_latexmk () {
 
 copy_template () {
     echo -e "${GREEN}[@] Copying template to ${WHITE}${BUILD_DIR}${GREEN} directory...${WHITE}"
-    cp -r ${PROJ_DIR}/${BUILD_TEMP}/ ${BUILD_DIR}/
+    rsync -a ${PROJ_DIR}/${BUILD_TEMP}/ ${BUILD_DIR}/
 }
 
 build_template () {
     echo -e "${GREEN}[@] Building template inside ${WHITE}${BUILD_DIR}..."
-    make ${MAKE_OPT} --directory=${BUILD_DIR}/${BUILD_TEMP}
+    make ${MAKE_OPT} --directory=${BUILD_DIR}
 }
 
 main () {

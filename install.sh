@@ -6,15 +6,14 @@ GREEN="$(printf '\033[32m')"
 WHITE="$(printf '\033[37m')"
 ORANGE="$(printf '\033[33m')"
 
-# Paths
 OS=$(uname)
 PROJ=UniTeX
 CURRENT_DIR=$( pwd )
+CONFIG=~/.config/latexmk
 TAG=$(git describe --tags)
 DESTINATION=/usr/local/share
 LINK_DIR=/usr/local/bin/unitex
 MAN_DIR=/usr/local/share/man
-CONFIG=~/.config/latexmk
 
 # Turn on extended globbing in bash shell
 shopt -s extglob 
@@ -56,23 +55,26 @@ use_viewer () {
         echo -e "${WHITE}--------------------------\n"
         echo -e "${GREEN}[@] This pdf viewer has been found on your system: \n${WHITE}$(zathura -v)"
 
-        while true; do
-            read -p "${GREEN}[@] Do you want to use this viewer as default while compiling templates? [y/n]" yn
-            case $yn in
-                [Yy]*)
-                    mkdir -p ${CONFIG}
-                    echo -n  "" > ${CONFIG}/latexmkrc
-                    echo "\$ pdf_previewer = 'zathura';" >> ${CONFIG}/latexmkrc
-                    break
-                    ;;
-                [Nn]*)
-                    break
-                    ;;
-                *)
-                    echo -e "${ORANGE}[!] Please answer yes or no."
-                    ;;
-            esac
-        done
+        if ! grep -s -e "\$ pdf_previewer = 'zathura';" ${CONFIG}/latexmkrc &> /dev/null; then
+            while true; do
+                read -p "${GREEN}[@] Do you want to use this viewer as default while compiling templates? [y/n]" yn
+                case $yn in
+                    [Yy]*)
+                        mkdir -p ${CONFIG}
+                        echo -n  "" > ${CONFIG}/latexmkrc
+                        echo "\$ pdf_previewer = 'zathura';" >> ${CONFIG}/latexmkrc
+                        break
+                        ;;
+                    [Nn]*)
+                        break
+                        ;;
+                    *)
+                        echo -e "${ORANGE}[!] Please answer yes or no."
+                        ;;
+                esac
+            done
+        fi
+
     fi
 }
 
@@ -104,7 +106,7 @@ fill_directory () {
     echo -e "${WHITE}\n--------------------------\n"
     echo -e "${GREEN}[@] Filling dirs with templates..."
 
-    sudo rsync -r --exclude='*.md,*.1' ${CURRENT_DIR}/ ${DESTINATION}/${PROJ}
+    sudo rsync -a --exclude='*.md,*.1' ${CURRENT_DIR}/ ${DESTINATION}/${PROJ}
 
     if [[ "${OS}" = "Darwin" ]]; then
         sudo rsync ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/man1/unitex.1
