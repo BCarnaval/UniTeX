@@ -23,14 +23,44 @@ reset_terminal () {
     tput sgr0
 }
 
+check_rsync () {
+    if ! type rsync &> /dev/null; then
+        echo -e "${WHITE}--------------------------\n"
+        echo -e "${ORANGE}[!] Please install ${WHITE}rsync ${ORANGE}command on your system!"
+
+        while true; do
+            read -p "${GREEN}[@] Do you want ${WHITE}UniTeX${GREEN} to install this command on your system? [y/n]" yn
+            case $yn in
+                [Yy]*)
+                    if [[ ${OS} = 'Darwin' ]]; then
+                        brew install --quiet rsync
+                    elif [[ ${OS} = 'Linux' ]]; then
+                        sudo apt-get install -qq rsync
+                    fi
+                    echo -e "\n${GREEN}[@] Installation done!\n"
+                    break
+                    ;;
+                [Nn]*)
+                    break
+                    ;;
+                *)
+                    echo -e "${ORANGE}[!] Please answer yes or no."
+                    ;;
+            esac
+        done
+    fi
+}
+
 use_viewer () {
-    if [[ -x $(command -v zathura) ]]; then 
-        echo -e "${GREEN}[@] Pdf viewer ${WHITE}$(zathura -v) ${GREEN} has been found on your system."
+    if command -v zathura &> /dev/null; then 
+        echo -e "${WHITE}--------------------------\n"
+        echo -e "${GREEN}[@] This pdf viewer has been found on your system: \n${WHITE}$(zathura -v)"
+
         while true; do
             read -p "${GREEN}[@] Do you want to use this viewer as default while compiling templates? [y/n]" yn
             case $yn in
                 [Yy]*)
-                    mkdir ${CONFIG}
+                    mkdir -p ${CONFIG}
                     echo -n  "" > ${CONFIG}/latexmkrc
                     echo "\$ pdf_previewer = 'zathura';" >> ${CONFIG}/latexmkrc
                     break
@@ -47,7 +77,9 @@ use_viewer () {
 }
 
 build_directory () {
+    echo -e "${WHITE}\n--------------------------\n"
     echo -e "${GREEN}[@] Installing ${WHITE}${PROJ}${GREEN}..."
+
     if [[ -d "${DESTINATION}"/UniTeX ]]; then
 
         # Updating directories
@@ -69,14 +101,15 @@ build_directory () {
 }
 
 fill_directory () {
+    echo -e "${WHITE}\n--------------------------\n"
     echo -e "${GREEN}[@] Filling dirs with templates..."
-    sudo cp -r ${CURRENT_DIR}/!(*.md|*.1) ${DESTINATION}/${PROJ}
-    sudo cp ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/
+
+    sudo rsync -r --exclude='*.md,*.1' ${CURRENT_DIR}/ ${DESTINATION}/${PROJ}
 
     if [[ "${OS}" = "Darwin" ]]; then
-        sudo cp ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/man1/unitex.1
+        sudo rsync ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/man1/unitex.1
     else
-        sudo cp ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/unitex.1
+        sudo rsync ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/unitex.1
     fi
 
     # Make scripts executable
@@ -94,17 +127,16 @@ fill_directory () {
     else
         sudo ln -s ${DESTINATION}/${PROJ}/unitex.sh ${LINK_DIR}
     fi
+
     echo -e "${GREEN}[@] ${WHITE}${PROJ}${GREEN} Installed successfully:${WHITE} Execute 'unitex' to verify installation."
+    echo -e "${WHITE}\n--------------------------"
 }
 
 main () {
-    echo -e "${WHITE}--------------------------\n"
+    check_rsync
     use_viewer
-    echo -e "${WHITE}\n--------------------------\n"
     build_directory
-    echo -e "${WHITE}\n--------------------------\n"
     fill_directory
-    echo -e "${WHITE}\n--------------------------"
     reset_terminal
 }
 

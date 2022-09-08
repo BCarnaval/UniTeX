@@ -55,7 +55,7 @@ EOF
 }
 
 check_pdflatex () {
-    if [[ $(pdflatex -version) ]]; then
+    if type pdflatex; then
         echo -e "${GREEN}[@] Using pdf generator version: ${WHITE}$(pdflatex -version)."
     else
         echo -e "${RED}[X] Program 'pdflatex' is not installed on your system !"
@@ -66,7 +66,7 @@ check_pdflatex () {
 }
 
 check_latexmk () {
-    if [[ -x $(command -v latexmk) ]]; then
+    if type latexmk; then
         echo -e "${GREEN}[@] Using compiler 'latexmk' version: ${WHITE}$(latexmk -v)."
     else
         echo -e "${RED}[X] Compiler 'latexmk' is not installed on your system:${WHITE} exiting..."
