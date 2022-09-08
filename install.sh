@@ -130,7 +130,7 @@ fill_directory () {
         sudo ln -s ${DESTINATION}/${PROJ}/unitex.sh ${LINK_DIR}
     fi
 
-    echo -e "${GREEN}[@] ${WHITE}${PROJ}${GREEN} Installed successfully:${WHITE} Execute 'unitex' to verify installation."
+    echo -e "${GREEN}[@] ${WHITE}${PROJ}${GREEN} Installed successfully:${WHITE} Execute 'unitex -h' to verify installation."
     echo -e "${WHITE}\n--------------------------"
 }
 
