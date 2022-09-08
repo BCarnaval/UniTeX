@@ -29,7 +29,7 @@ check_rsync () {
         echo -e "${ORANGE}[!] Please install ${WHITE}rsync ${ORANGE}command on your system!"
 
         while true; do
-            read -p "${GREEN}[@] Do you want ${WHITE}UniTeX${GREEN} to install this command on your system? [y/n]" yn
+            read -p "${GREEN}[@] Do you want ${WHITE}UniTeX${GREEN} to install this command on your system? [y/n]${WHITE}" yn
             case $yn in
                 [Yy]*)
                     if [[ ${OS} = 'Darwin' ]]; then
@@ -37,7 +37,7 @@ check_rsync () {
                     elif [[ ${OS} = 'Linux' ]]; then
                         sudo apt-get install -qq rsync
                     fi
-                    echo -e "\n${GREEN}[@] Installation done!\n"
+                    echo -e "\n${GREEN}[@] Installation done!"
                     break
                     ;;
                 [Nn]*)
