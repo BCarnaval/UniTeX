@@ -94,7 +94,7 @@ main () {
     copy_template
     echo -e "${WHITE}\n--------------------------\n"
     build_template
-    echo -e "${WHITE}\n--------------------------"
+    echo -e "${WHITE}--------------------------"
     reset_terminal
 }
 
