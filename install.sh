@@ -16,7 +16,7 @@ LINK_DIR=/usr/local/bin/unitex
 MAN_DIR=/usr/local/share/man
 
 # Turn on extended globbing in bash shell
-shopt -s extglob 
+shopt -s extglob
 
 reset_terminal () {
     tput sgr0
@@ -34,7 +34,7 @@ check_rsync () {
                     if [[ ${OS} = 'Darwin' ]]; then
                         brew install --quiet rsync
                     elif [[ ${OS} = 'Linux' ]]; then
-                        sudo apt-get install -qq rsync
+                        sudo apt-get install -qq rsync  # Tssss Debian Exclusive
                     fi
                     echo -e "\n${GREEN}[@] Installation done!"
                     break
@@ -51,7 +51,7 @@ check_rsync () {
 }
 
 use_viewer () {
-    if command -v zathura &> /dev/null; then 
+    if command -v zathura &> /dev/null; then
         echo -e "${WHITE}--------------------------\n"
         echo -e "${GREEN}[@] This pdf viewer has been found on your system: \n${WHITE}$(zathura -v)"
 
@@ -87,7 +87,7 @@ build_directory () {
         # Updating directories
         echo -e "${GREEN}[@] Wiping old version if any inside ${WHITE}${DESTINATION}${GREEN}."
         sudo rm -rf ${DESTINATION}/${PROJ}
-        
+
         if [[ "${OS}" = "Darwin" ]]; then
             sudo rm ${MAN_DIR}/man1/unitex.1
         else
