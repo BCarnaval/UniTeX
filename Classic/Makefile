@@ -27,12 +27,12 @@ MAKE = make
 
 # OS commands specific part
 ifeq ($(OS), Windows_NT)
-    RM = del /F /Q 
+    RM = del /F /Q
     RMDIR = -RMDIR /S /Q
     MKDIR = -mkdir
 else
-    RM = -rm -f 
-    RMDIR = -rm -rf 
+    RM = -rm -f
+    RMDIR = -rm -rf
     MKDIR = -mkdir -p
 endif
 
