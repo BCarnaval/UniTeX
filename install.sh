@@ -34,7 +34,7 @@ check_rsync () {
                     if [[ ${OS} = 'Darwin' ]]; then
                         brew install --quiet rsync
                     elif [[ ${OS} = 'Linux' ]]; then
-                        sudo apt-get install -qq rsync
+                        sudo apt-get install -qq rsync  # Tssss Debian Exclusive
                     fi
                     echo -e "\n${GREEN}[@] Installation done!"
                     break
