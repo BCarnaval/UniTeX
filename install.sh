@@ -26,27 +26,9 @@ check_rsync () {
     if ! type rsync &> /dev/null; then
         echo -e "${WHITE}--------------------------\n"
         echo -e "${ORANGE}[!] Please install ${WHITE}rsync ${ORANGE}command on your system!"
-
-        while true; do
-            read -p "${GREEN}[@] Do you want ${WHITE}UniTeX${GREEN} to install this command on your system? [y/n]${WHITE}" yn
-            case $yn in
-                [Yy]*)
-                    if [[ ${OS} = 'Darwin' ]]; then
-                        brew install --quiet rsync
-                    elif [[ ${OS} = 'Linux' ]]; then
-                        sudo apt-get install -qq rsync
-                    fi
-                    echo -e "\n${GREEN}[@] Installation done!"
-                    break
-                    ;;
-                [Nn]*)
-                    break
-                    ;;
-                *)
-                    echo -e "${ORANGE}[!] Please answer yes or no."
-                    ;;
-            esac
-        done
+        echo -e "${ORANGE}[!] For MacOS intallation, run ${WHITE}'brew install rsync'}."
+        echo -e "${ORANGE}[!] For common Linux distribution, run ${WHITE}'sudo apt-get install rsync'."
+        echo -e "${GREEN} [@] Exiting..."
     fi
 }
 

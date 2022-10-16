@@ -185,5 +185,9 @@ IN DEVELOPPEMENT.
 - [ ] REAME.md
 - [ ] Add all well explained commands and features
 - [ ] Setup default pdf viewer based on OS
+- [ ] Rearrange structure
+- [ ] Build nice CLI
+- [ ] Make it OS proof
+- [ ] Make file instead of .sh?????
 
 ## Credits
