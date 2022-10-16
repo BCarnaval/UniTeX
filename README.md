@@ -11,6 +11,9 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
   - [Shell](#shell)
   - [PDF viewer (optional)](#pdf-viewer-optional)
 - [Installation](#installation)
+  - [Unix based OS](#unix-based-os)
+  - [Windows](#windows)
+- [Overleaf support](#overleaf-support)
 - [Quick start](#quick-start)
 - [Screenshots](#screenshots)
   - [Classic](#classic)
@@ -40,6 +43,8 @@ when working on LaTeX projects.
 
 ## Installation
 
+### Unix based OS
+
 The ideal way to install UniTeX is via the install script `install.sh`.
 
 ```shell
@@ -49,6 +54,18 @@ $ cd UniTeX && chmod +x install.sh && ./install.sh
 ```
 
 By doing it like so, you will be able to use UniTeX's commands `unitex -h`.
+
+### Windows
+
+If you are on Windows, script `install.sh` might be not the best way for user to user UniTeX. I personnally suggest people in this situation to simply clone the repository somewhere on their system and use directly template's folder `Classic`, `Article`, `Homework` and `Cover`. Makefiles should work properly so one can simply copy `Homework` template for some homework and, in this directory, use
+```shell
+$ make <dry, clean, all, zip, targz>
+```
+to work with it.
+
+## Overleaf support
+
+Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project, is also encouraged and pretty simple to setup. User has to download the .zip file associated with wanted template and upload it inside [Overleaf](https://www.overleaf.com/) by selecting `New project > Upload project > Select a .zip file`.
 
 ## Quick start
 
