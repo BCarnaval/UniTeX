@@ -62,5 +62,5 @@ zip:
 	$(MAKE) clean
 	$(MAKE) dry
 	$(MAKE) clean
-	zip -q $(PROJECT)_$(DATE).zip $(SOURCE)
+	zip -q -r $(PROJECT)_$(DATE).zip $(SOURCE) ./figs/
 
