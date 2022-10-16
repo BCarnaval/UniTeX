@@ -50,15 +50,6 @@ $ cd UniTeX && chmod +x install.sh && ./install.sh
 
 By doing it like so, you will be able to use UniTeX's commands `unitex -h`.
 
-<table>
-  <tr>
-    <td>Usage outputed by unitex</td>
-  </tr>
-  <tr>
-    <td><img src="/../screenshots/screenshots/unitex_cmd.png" width=880 height=320></td>
-  </tr>
- </table>
-
 ## Quick start
 
 Once [installation](#Installation) properly done and `unitex -h` command outputs no error, you can directly build
@@ -188,6 +179,5 @@ IN DEVELOPPEMENT.
 - [ ] Rearrange structure
 - [ ] Build nice CLI
 - [ ] Make it OS proof
-- [ ] Make file instead of .sh?????
 
 ## Credits
