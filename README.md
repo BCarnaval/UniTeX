@@ -5,24 +5,42 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 ![LaTeX](https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white) ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white) ![LICENSE](https://img.shields.io/github/license/BCarnaval/UniTeX?color=blue&style=for-the-badge) ![release](https://img.shields.io/github/v/tag/BCarnaval/UniTeX?color=gree&style=for-the-badge)
 
 ## Table of contents
+<details>
+  <summary><a href="#requirements">Requirements</a></summary>
+  <OL, TYPE="square">
+    <li><a href="#tex">TeX</a></li>
+    <li><a href="#shell">Shell</a></li>
+    <li><a href="#pdf-viewer-optional">PDF viewer (optional)</a></li>
+  </OL>
+</details>
 
-- [Requirements](#requirements)
-  - [TeX](#tex)
-  - [Shell](#shell)
-  - [PDF viewer (optional)](#pdf-viewer-optional)
-- [Installation](#installation)
-  - [Unix based OS](#unix-based-os)
-  - [Windows](#windows)
-- [Overleaf support](#overleaf-support)
-- [Quick start](#quick-start)
-- [Screenshots](#screenshots)
-  - [Classic](#classic)
-  - [Article](#article)
-  - [Homework](#homework)
-  - [Cover Letter](#cover-letter)
-- [Features](#features)
-- [TODO](#todo)
-- [Credits](#credits)
+<details>
+  <summary><a href="#installation">Installation</a></summary>
+  <OL, TYPE="square">
+    <li><a href="#unix-based-os">Unix based OS</a></li>
+    <li><a href="#windows">Windows</a></li>
+  </OL>
+</details>
+
+[Overleaf support](#overleaf-support)
+
+[Quick start](#quick-start)
+
+<details>
+  <summary><a href="#screenshots">Screenshots</a></summary>
+  <OL, TYPE="square">
+    <li><a href="#classic">Classic</a></li>
+    <li><a href="#article">Article</a></li>
+    <li><a href="#homework">Homework</a></li>
+    <li><a href="#cover-letter">Cover letter</a></li>
+  </OL>
+</details>
+
+[Features](#features)
+
+[TODO](#todo)
+
+[Credits](#credits)
 
 ## Requirements
 
