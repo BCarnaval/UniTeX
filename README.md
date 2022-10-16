@@ -83,7 +83,13 @@ to work with it.
 
 ## Overleaf support
 
-Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project, is also encouraged and pretty simple to setup. User has to download the .zip file associated with wanted template and upload it inside [Overleaf](https://www.overleaf.com/) by selecting `New project > Upload project > Select a .zip file`.
+Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project is also encouraged and pretty simple to setup. User has to download the .zip file associated with wanted template and upload it inside [Overleaf](https://www.overleaf.com/) by selecting `New project > Upload project > Select a .zip file`.
+
+To do so, user must at least clone the repository on his machine using
+```shell
+$ git clone https://github.com/BCarnaval/UniTeX.git
+```
+and then navigate to zips directory by doing `cd ./UniTeX/zips/` and import wanted template directly from [Overleaf](https://www.overleaf.com/).
 
 ## Quick start
 
