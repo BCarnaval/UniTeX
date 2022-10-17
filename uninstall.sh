@@ -22,13 +22,6 @@ rm_config () {
 
     # remove zathura from latexmk config file
     sed "/\$ pdf_previewer = 'zathura';/d" ${CONFIG}/latexmkrc > ${CONFIG}/latexmkrc
-
-    # remove rsync command
-    if [[ ${OS} = 'Darwin' ]]; then
-        brew uninstall --quiet rsync
-    elif [[ ${OS} = 'Linux' ]]; then
-        sudo apt remove -qq rsync
-    fi
 }
 
 rm_directory () {
