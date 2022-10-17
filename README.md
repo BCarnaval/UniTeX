@@ -75,7 +75,7 @@ By doing it like so, you will be able to use UniTeX's commands `unitex -h`.
 
 ### Windows
 
-If you are on Windows, script `install.sh` might be not the best way for user to user UniTeX. I personnally suggest people in this situation to simply clone the repository somewhere on their system and use directly template's folder `Classic`, `Article`, `Homework` and `Cover`. Makefiles should work properly so one can simply copy `Homework` template for some homework and, in this directory, use
+If you are on Windows, script `install.sh` might be not the best way to use UniTeX. I personnally suggest to people in this situation to clone the repository somewhere on their system and use directly template's folder `Classic`, `Article`, `Homework` and `Cover`. Makefiles should work properly so one can copy `Homework` template for some homework and, in the same directory, use
 ```shell
 $ make <dry, clean, all, zip, targz>
 ```
