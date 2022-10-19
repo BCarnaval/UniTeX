@@ -215,10 +215,10 @@ done
 if [[ ${BUILD_TEMP} && ${BUILD_DIR} ]]; then
     main
 else
-    echo -e "${ORANGE}[!] You must chose a template using ${WHITE}'b' ${ORANGE}flag."
-    echo -e "[!] AND a directory using ${WHITE} 'd' ${ORANGE} flag."
-    echo -e "${ORANGE}[!] Options are currently ${WHITE}'classic, article, homework and cover'.\n"
-    echo -e "${GREEN}[@] Run ${WHITE}$(basename ${0}) -h."
+    echo -e "${ORANGE}[!] You must chose a template using ${WHITE}'b' ${ORANGE}option."
+    echo -e "[!] AND a directory using ${WHITE} 'd' ${ORANGE} option."
+    echo -e "${ORANGE}[!] Options are currently ${WHITE}'classic, article, homework and cover'${ORANGE}."
+    echo -e "${ORANGE}[!] Run ${WHITE}$(basename ${0}) -h${ORANGE}."
     reset_terminal
     exit 1
 fi
