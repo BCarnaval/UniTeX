@@ -13,6 +13,7 @@ CYAN="$(printf '\033[36m')"
 GREEN="$(printf '\033[32m')"
 WHITE="$(printf '\033[37m')"
 ORANGE="$(printf '\033[33m')"
+BLUE="$(printf '\033[34m')"
 
 # Font style
 BOLD="$(printf '\033[1m')"
@@ -29,47 +30,54 @@ display_version () {
 }
 
 usage () {
+    display_version
     cat << EOF
-${BOLD}${CYAN}
- _   _       _ _____
-| | | |_ __ (_)_   _|____  __
-| | | | '_ \| | | |/ _ \ \/ /
-| |_| | | | | | | |  __/>  <
- \___/|_| |_|_| |_|\___/_/\_\
+${BOLD}${WHITE}
+USAGE
 
-${WHITE}
-Usage: ${REG}${CYAN}$(basename $0) ${WHITE}-h <help> -v <version> -b <build> -d <dir> -o <opt> [-hvbdo]
-
-${BOLD}${CYAN}-h,          -help               ${REG}${WHITE}Display help.
-
-${BOLD}${CYAN}-v,          -version            ${REG}${WHITE}Display current installation version of UniTex.
-
-${BOLD}${CYAN}-b,          -build              ${REG}${WHITE}Build specified template using latexmk compiler (ex: classic, article, homework, cover).
-
-${BOLD}${CYAN}-d,          -dir                ${REG}${WHITE}Specifies where to build chosen template.
-
-${BOLD}${CYAN}-o,          -opt     ${REG}${WHITE}(optional) Specifies 'make' tool option (clean, targz, zip or dry). No option means 'make all'.
+    ${BOLD}${CYAN}$(basename $0) -h ${REG}${WHITE}<help> ${BOLD}${CYAN}-v ${REG}${WHITE}<version> ${BOLD}${CYAN}-b ${REG}${WHITE}<build> ${BOLD}${CYAN}-d ${REG}${WHITE}<dir> ${BOLD}${CYAN}-o ${REG}${WHITE}<opt> ${BOLD}${CYAN}[-hvbdo]
 ${WHITE}${BOLD}
-Examples:
+OPTIONS (required)
 
-1) $ ${CYAN}unitex -b classic -d ./ -o dry${WHITE}
-${REG}
-This command is used to build (in none continuous mode) the ${CYAN}classic ${WHITE}template in current directory.
+    ${BOLD}${CYAN}-b,        -build      ${REG}${WHITE}Build specified template (${BLUE}classic${WHITE}, ${BLUE}article${WHITE}, ${BLUE}homework${WHITE}, ${BLUE}cover${WHITE}).
+
+    ${BOLD}${CYAN}-d,        -dir        ${REG}${WHITE}Specifies where to build chosen template.
+${WHITE}${BOLD}
+OPTIONS (optionnal)
+
+    ${BOLD}${CYAN}-h,        -help       ${REG}${WHITE}Display help.
+
+    ${BOLD}${CYAN}-v,        -version    ${REG}${WHITE}Display current installation version of ${CYAN}UniTeX${WHITE}.
+
+    ${BOLD}${CYAN}-o,        -opt        ${REG}${WHITE}Specifies 'make' tool option (${BLUE}clean${WHITE}, ${BLUE}targz${WHITE}, ${BLUE}zip${WHITE} or ${BLUE}dry${WHITE}).
 ${BOLD}
-2) $ ${CYAN}unitex -b classic -d ~/some/assignement/directory/${WHITE}
+EXAMPLES
 ${REG}
-This command is used to build the ${CYAN}classic ${WHITE}template in given directory.
-
-    If one wants to share the project to some collaborator(s), he/she could go to
-    his/her ${CYAN}UniTeX ${WHITE}project and use
-    ${BOLD}
-    2.1) ~/some/assignement/directory/ $ ${CYAN}make zip${WHITE}
+The following command should be used to build (in non-continuous mode) the
+${BLUE}classic ${WHITE}template in current directory:
+${BOLD}
+1) $ ${CYAN}unitex -b ${REG}${BLUE}classic ${BOLD}${CYAN}-d ${REG}${BLUE}./ ${BOLD}${CYAN}-o ${REG}${BLUE}dry${BOLD}${WHITE}
+   $ ...
+${REG}
+The following is used to build (in continuous mode) the ${BLUE}homework ${WHITE}template
+in '~/assignement/directory' directory:
+${BOLD}
+2) $ ${CYAN}unitex -b ${REG}${BLUE}homework ${BOLD}${CYAN}-d ${REG}${BLUE}~/assignement/directory/${BOLD}${WHITE}
+   $ ...
     ${REG}
-    and it will build a zip of the project in project's directory. Obviously, the command
+    If one wants to share the project to some collaborator(s), the user could
+    go to the ${CYAN}UniTeX ${WHITE}project and use
     ${BOLD}
-    2.2) ~/some/assignement/directory/ $ ${CYAN}make clean${WHITE}
+    2.1) ~/assignement/directory/ $ ${CYAN}make ${REG}${BLUE}zip${BOLD}${WHITE}
+         ~/assignement/directory/ $ ...
     ${REG}
-    also exists and doesn't need any explanation.
+    and it will build a zip of the project in project's directory. Obviously,
+    the command:
+    ${BOLD}
+    2.2) ~/assignement/directory/ $ ${CYAN}make ${REG}${BLUE}clean${BOLD}${WHITE}
+         ~/assignement/directory/ $ ...
+    ${REG}
+    also exists and doesn't need any further explanation.
 EOF
 }
 
