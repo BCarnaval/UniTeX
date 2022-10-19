@@ -30,8 +30,9 @@ display_version () {
 }
 
 usage () {
-    display_version
     cat << EOF
+UniTeX is a collection of scientific oriented and minimalistic LaTeX templates
+suitable for many assignment types.
 ${BOLD}${WHITE}
 USAGE
 
@@ -52,32 +53,32 @@ OPTIONS (optionnal)
     ${BOLD}${CYAN}-o,        -opt        ${REG}${WHITE}Specifies 'make' tool option (${BLUE}clean${WHITE}, ${BLUE}targz${WHITE}, ${BLUE}zip${WHITE} or ${BLUE}dry${WHITE}).
 ${BOLD}
 EXAMPLES
-${REG}
-The following command should be used to build (in non-continuous mode) the
-${BLUE}classic ${WHITE}template in current directory:
-${BOLD}
-1) $ ${CYAN}unitex -b ${REG}${BLUE}classic ${BOLD}${CYAN}-d ${REG}${BLUE}./ ${BOLD}${CYAN}-o ${REG}${BLUE}dry${BOLD}${WHITE}
-   $ ...
-${REG}
-The following is used to build (in continuous mode) the ${BLUE}homework ${WHITE}template
-in '~/assignement/directory' directory:
-${BOLD}
-2) $ ${CYAN}unitex -b ${REG}${BLUE}homework ${BOLD}${CYAN}-d ${REG}${BLUE}~/assignement/directory/${BOLD}${WHITE}
-   $ ...
     ${REG}
-    If one wants to share the project to some collaborator(s), the user could
-    go to the ${CYAN}UniTeX ${WHITE}project and use
+    The following command should be used to build (in non-continuous mode) the
+    ${BLUE}classic ${WHITE}template in current directory:
     ${BOLD}
-    2.1) ~/assignement/directory/ $ ${CYAN}make ${REG}${BLUE}zip${BOLD}${WHITE}
-         ~/assignement/directory/ $ ...
+    1) $ ${CYAN}unitex -b ${REG}${WHITE}classic ${BOLD}${CYAN}-d ${REG}${WHITE}./ ${BOLD}${CYAN}-o ${REG}${WHITE}dry${BOLD}
+       $ ...
     ${REG}
-    and it will build a zip of the project in project's directory. Obviously,
-    the command:
+    The following is used to build (in continuous mode) the ${BLUE}homework ${WHITE}template
+    in ${BLUE}'~/assignement/directory'${WHITE} directory:
     ${BOLD}
-    2.2) ~/assignement/directory/ $ ${CYAN}make ${REG}${BLUE}clean${BOLD}${WHITE}
-         ~/assignement/directory/ $ ...
-    ${REG}
-    also exists and doesn't need any further explanation.
+    2) $ ${CYAN}unitex -b ${REG}${WHITE}homework ${BOLD}${CYAN}-d ${REG}${WHITE}~/assignement/directory/${BOLD}
+       $ ...
+        ${REG}
+        If one wants to share the project to some collaborator(s), the user could
+        go to the ${CYAN}UniTeX ${WHITE}project and use
+        ${BOLD}
+        2.1) ~/assignement/directory/ $ ${CYAN}make ${REG}${WHITE}zip${BOLD}
+             ~/assignement/directory/ $ ...
+        ${REG}
+        and it will build a zip of the project in project's directory. Obviously,
+        the command:
+        ${BOLD}
+        2.2) ~/assignement/directory/ $ ${CYAN}make ${REG}${WHITE}clean${BOLD}
+             ~/assignement/directory/ $ ...
+        ${REG}
+        also exists and doesn't need any further explanation.
 EOF
 }
 
@@ -216,7 +217,7 @@ if [[ ${BUILD_TEMP} && ${BUILD_DIR} ]]; then
 else
     echo -e "${ORANGE}[!] You must chose a template using ${WHITE}'b' ${ORANGE}flag."
     echo -e "[!] AND a directory using ${WHITE} 'd' ${ORANGE} flag."
-    echo -e "${ORANGE}[!] Options are currently ${WHITE}'classic, article, homework and cover'."
+    echo -e "${ORANGE}[!] Options are currently ${WHITE}'classic, article, homework and cover'.\n"
     echo -e "${GREEN}[@] Run ${WHITE}$(basename ${0}) -h."
     reset_terminal
     exit 1
