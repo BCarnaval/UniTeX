@@ -40,9 +40,9 @@ Make it as detailed as necessary!}}
 % Global information
 \newcommand{\Date}{\today}
 
-\newcommand{\PlaceHeader}{
+\newcommand{\PlaceHeader}[1]{
   \AddToShipoutPictureBG{
-    \color{\HeadColor}
+    \color{#1}
     \AtPageUpperLeft{\hspace{-0.1cm}\rule[-3.2cm]{\paperwidth}{3.2cm}}
   }
 }
