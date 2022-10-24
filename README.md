@@ -5,6 +5,7 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 ![LaTeX](https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white) ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white) ![LICENSE](https://img.shields.io/github/license/BCarnaval/UniTeX?color=blue&style=for-the-badge) ![release](https://img.shields.io/github/v/tag/BCarnaval/UniTeX?color=gree&style=for-the-badge)
 
 ## Table of contents
+
 <details>
   <summary><a href="#requirements">Requirements</a></summary>
   <OL, TYPE="square">
@@ -76,9 +77,11 @@ By doing it like so, you will be able to use UniTeX's commands `unitex -h`.
 ### Windows
 
 If you are on Windows, script `install.sh` might be not the best way to use UniTeX. I personnally suggest to people in this situation to clone the repository somewhere on their system and use directly template's folder `Classic`, `Article`, `Homework` and `Cover`. Makefiles should work properly so one can copy `Homework` template for some homework and, in the same directory, use
+
 ```shell
 $ make <dry, clean, all, zip, targz>
 ```
+
 to work with it.
 
 ## Overleaf support
@@ -86,9 +89,11 @@ to work with it.
 Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project is also encouraged and pretty simple to setup. User has to download the .zip file associated with wanted template and upload it inside [Overleaf](https://www.overleaf.com/) by selecting `New project > Upload project > Select a .zip file`.
 
 To do so, user must at least clone the repository on his machine using
+
 ```shell
 $ git clone https://github.com/BCarnaval/UniTeX.git
 ```
+
 and then navigate to zips directory by doing `cd ./UniTeX/zips/` and import wanted template directly from [Overleaf](https://www.overleaf.com/).
 
 ## Quick start
@@ -186,7 +191,7 @@ Example of what you should get from 'homework' template with [Princeton](https:/
  
 ### Cover Letter
 
-Example of what you should get from 'cover' template with [Cornflower blue](https://en.wikipedia.org/wiki/Cornflower_blue) as main color
+Example of what you should get from 'cover' template with [Light blue](https://www.w3schools.com/colors/color_tryit.asp?color=LightBlue) as main color
 
 <table>
   <tr>
