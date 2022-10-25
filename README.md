@@ -49,7 +49,7 @@ Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project i
 
 | Classic | Homework | Cover | Article |
 |---------|----------|-------|---------|
-|    [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/zips/UniTeX_Classic_2022-10-25-16.zip)     |     [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/zips/UniTeX_Homework_2022-10-25-16.zip)     |   [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/zips/UniTeX_Cover_2022-10-24-18.zip)    |     IN DEVELOPPEMENT    |
+|    [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/zips/UniTeX_Classic_2022-10-25-16)     |     [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/zips/UniTeX_Homework_2022-10-25-16.zip)     |   [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/zips/UniTeX_Cover_2022-10-24-18.zip)    |     IN DEVELOPPEMENT    |
 
 then import wanted template directly from [Overleaf](https://www.overleaf.com/).
 
