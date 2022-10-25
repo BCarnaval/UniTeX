@@ -45,11 +45,11 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 
 ## Overleaf support
 
-Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project is encouraged and pretty simple to setup. User has to download the .zip file associated with wanted template and upload it inside [Overleaf](https://www.overleaf.com/) by selecting `New project > Upload project > Select a .zip file`.
+Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project is encouraged and pretty simple to setup. User has to download the .zip file associated with wanted template and upload it inside [Overleaf](https://www.overleaf.com/) by selecting `New project > Upload project > Select a .zip file`. To do so, one can download `zips` folder using the links:
 
-To do so, one can download `zips` folder using this link:
-
-<https://downgit.github.io/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/zips>
+| Classic | Homework | Cover | Article |
+|---------|----------|-------|---------|
+|    [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/zips/UniTeX_Classic_2022-10-25-16.zip)     |     [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/zips/UniTeX_Homework_2022-10-25-16.zip)     |   [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/zips/UniTeX_Cover_2022-10-24-18.zip)    |     IN DEVELOPPEMENT    |
 
 then import wanted template directly from [Overleaf](https://www.overleaf.com/).
 
