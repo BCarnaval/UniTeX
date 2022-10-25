@@ -1,8 +1,12 @@
+<div align="center">
+
 # UniTeX
 
 UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://www.latex-project.org/) templates suitable for many assignment types.
 
 ![LaTeX](https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white) ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white) ![LICENSE](https://img.shields.io/github/license/BCarnaval/UniTeX?color=blue&style=for-the-badge) ![release](https://img.shields.io/github/v/tag/BCarnaval/UniTeX?color=gree&style=for-the-badge)
+
+</div>
 
 ## Table of contents
 
@@ -47,9 +51,13 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 
 Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project is encouraged and pretty simple to setup. User has to download the .zip file associated with wanted template and upload it inside [Overleaf](https://www.overleaf.com/) by selecting `New project > Upload project > Select a .zip file`. To do so, one can download any template folder using the links:
 
+<div align="center">
+
 | Classic | Homework | Cover | Article |
 |---------|----------|-------|---------|
 |    [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Classic)     |     [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Homework)     |   [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/zips/Cover)    |     IN DEVELOPPEMENT    |
+
+</div>
 
 then import wanted template directly from [Overleaf](https://www.overleaf.com/).
 
@@ -135,27 +143,29 @@ style.sty
 
 Example of what you should get from 'classic' template with [Yale](https://en.wikipedia.org/wiki/Yale_University)'s darkblue as main color
 
-<table>
-  <tr>
-    <td>Default title page</td>
-    <td>Sections layout</td>
-  </tr>
-  <tr>
-    <td><img src="/../screenshots/screenshots/Classic/title_screen.png" width=360 height=480></td>
-    <td><img src="/../screenshots/screenshots/Classic/mid_screen.png" width=360 height=480></td>
-  </tr>
- </table>
+<div align="center">
+  <table>
+    <tr>
+      <td>Default title page</td>
+      <td>Sections layout</td>
+    </tr>
+    <tr>
+      <td><img src="/../screenshots/screenshots/Classic/title_screen.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Classic/mid_screen.png" width=360 height=480></td>
+    </tr>
+   </table>
 
-<table>
-  <tr>
-    <td>Maths display</td>
-    <td>References</td>
-  </tr>
-  <tr>
-    <td><img src="/../screenshots/screenshots/Classic/math_screen.png" width=360 height=480></td>
-    <td><img src="/../screenshots/screenshots/Classic/refs_screen.png" width=360 height=480></td>
-  </tr>
- </table>
+  <table>
+    <tr>
+      <td>Maths display</td>
+      <td>References</td>
+    </tr>
+    <tr>
+      <td><img src="/../screenshots/screenshots/Classic/math_screen.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Classic/refs_screen.png" width=360 height=480></td>
+    </tr>
+   </table>
+</div>
  
 ### Article
 
@@ -165,40 +175,44 @@ IN DEVELOPPEMENT
 
 Example of what you should get from 'homework' template with [Princeton](https://en.wikipedia.org/wiki/Princeton_University)'s orange as main color
 
-<table>
-  <tr>
-    <td>Default title page</td>
-    <td>Problem(s) presentation</td>
-  </tr>
-  <tr>
-    <td><img src="/../screenshots/screenshots/Homework/title_screen.png" width=360 height=480></td>
-    <td><img src="/../screenshots/screenshots/Homework/problem_screen.png" width=360 height=480></td>
-  </tr>
- </table>
+<div align="center">
+  <table>
+    <tr>
+      <td>Default title page</td>
+      <td>Problem(s) presentation</td>
+    </tr>
+    <tr>
+      <td><img src="/../screenshots/screenshots/Homework/title_screen.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Homework/problem_screen.png" width=360 height=480></td>
+    </tr>
+   </table>
 
-<table>
-  <tr>
-    <td>Basic problem solving</td>
-    <td>References</td>
-  </tr>
-  <tr>
-    <td><img src="/../screenshots/screenshots/Homework/res_screen.png" width=360 height=480></td>
-    <td><img src="/../screenshots/screenshots/Homework/refs_screen.png" width=360 height=480></td>
-  </tr>
- </table>
+  <table>
+    <tr>
+      <td>Basic problem solving</td>
+      <td>References</td>
+    </tr>
+    <tr>
+      <td><img src="/../screenshots/screenshots/Homework/res_screen.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Homework/refs_screen.png" width=360 height=480></td>
+    </tr>
+   </table>
+</div>
  
 ### Cover Letter
 
 Example of what you should get from 'cover' template with [Light blue](https://www.w3schools.com/colors/color_tryit.asp?color=LightBlue) as main color
 
-<table>
-  <tr>
-    <td>Default cover letter</td>
-  </tr>
-  <tr>
-    <td><img src="/../screenshots/screenshots/Cover/cover_screen.png" width=360 height=480></td>
-  </tr>
- </table>
+<div align="center">
+  <table>
+    <tr>
+      <td>Default cover letter</td>
+    </tr>
+    <tr>
+      <td><img src="/../screenshots/screenshots/Cover/cover_screen.png" width=360 height=480></td>
+    </tr>
+  </table>
+</div>
  
 ## Features
 
