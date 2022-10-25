@@ -6,6 +6,8 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 
 ## Table of contents
 
+[Overleaf support](#overleaf-support)
+
 <details>
   <summary><a href="#requirements">Requirements</a></summary>
   <OL, TYPE="square">
@@ -22,8 +24,6 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
     <li><a href="#windows">Windows</a></li>
   </OL>
 </details>
-
-[Overleaf support](#overleaf-support)
 
 [Quick start](#quick-start)
 
@@ -42,6 +42,16 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 [TODO](#todo)
 
 [Credits](#credits)
+
+## Overleaf support
+
+Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project is also encouraged and pretty simple to setup. User has to download the .zip file associated with wanted template and upload it inside [Overleaf](https://www.overleaf.com/) by selecting `New project > Upload project > Select a .zip file`.
+
+To do so, user can download `zips` folder using this link:
+
+<https://downgit.github.io/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/zips>
+
+then import wanted template directly from [Overleaf](https://www.overleaf.com/).
 
 ## Requirements
 
@@ -83,18 +93,6 @@ $ make <dry, clean, all, zip, targz>
 ```
 
 to work with it.
-
-## Overleaf support
-
-Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project is also encouraged and pretty simple to setup. User has to download the .zip file associated with wanted template and upload it inside [Overleaf](https://www.overleaf.com/) by selecting `New project > Upload project > Select a .zip file`.
-
-To do so, user must at least clone the repository on his machine using
-
-```shell
-$ git clone https://github.com/BCarnaval/UniTeX.git
-```
-
-and then navigate to zips directory by doing `cd ./UniTeX/zips/` and import wanted template directly from [Overleaf](https://www.overleaf.com/).
 
 ## Quick start
 
