@@ -25,7 +25,12 @@
 \usepackage[utf8]{inputenc} % Telling LaTeX what encoding is used
 \usepackage[titles]{tocloft} % Table of contents (ToC) customization
 \usepackage[most]{tcolorbox} % Colored boxes support
+
+% ----------------
+% Language support
+% ----------------
 \usepackage[greek, english, french]{babel} % Using different languages
+\newcommand{\Language}[1]{\selectlanguage{#1}}
 
 % --------------
 % Math & Physics
@@ -52,6 +57,15 @@
 % -----------------
 % Table of contents
 % -----------------
+
+% Removing TOC's header
+\makeatletter
+\renewcommand\tableofcontents{
+    \section*{Table des matières}
+    \@starttoc{toc}
+}
+\makeatother
+
 \renewcommand{\cftsecfont}{\bfseries\color{\MasterColor}}
 \renewcommand{\cftsubsecfont}{\color{\MasterColor}}
 \renewcommand{\cftsubsubsecfont}{\color{\MasterColor}}
