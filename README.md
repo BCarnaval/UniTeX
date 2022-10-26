@@ -55,7 +55,7 @@ Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project i
 
 | Classic | Homework | Cover | Article |
 |---------|----------|-------|---------|
-|    [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Classic)     |     [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Homework)     |   [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/zips/Cover)    |     IN DEVELOPPEMENT    |
+|    [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Classic)     |     [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Homework)     |   [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Cover)    |     IN DEVELOPPEMENT    |
 
 </div>
 
