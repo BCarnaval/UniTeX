@@ -56,7 +56,7 @@ targz:
 	$(MAKE) clean
 	$(MAKE) dry
 	$(MAKE) clean
-	tar czf $(PROJECT)_$(DATE).tgz $(SOURCE)
+	tar czf $(PROJECT)_$(DATE).tgz $(SOURCE) ./figs
 
 zip:
 	$(MAKE) clean

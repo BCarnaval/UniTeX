@@ -113,8 +113,8 @@
 % Headers & Footers
 % -----------------
 \pagestyle{fancy}
-\renewcommand{\sectionmark}[1]{\markright{\color{\MasterColor}#1}{}}
-\renewcommand{\subsectionmark}[1]{\markboth{\color{\MasterColor}#1}{}}
+\renewcommand{\subsectionmark}[1]{\markboth{\color{\MasterColor}\thesubsection\;\;#1}{}}
+\renewcommand{\sectionmark}[1]{\markboth{}{\color{\MasterColor}\thesection\;\;#1}}
 \renewcommand{\headrulewidth}{0pt}
 
 % --------------------------------------
