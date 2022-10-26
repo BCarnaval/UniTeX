@@ -13,7 +13,7 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 [Overleaf support](#overleaf-support)
 
 <details>
-  <summary><a href="#requirements">Requirements</a></summary>
+  <summary><a href="#requirements-full-installation">Requirements (full installation)</a></summary>
   <OL, TYPE="square">
     <li><a href="#tex">TeX</a></li>
     <li><a href="#shell">Shell</a></li>
@@ -31,6 +31,8 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 
 [Quick start](#quick-start)
 
+[Features](#features)
+
 <details>
   <summary><a href="#screenshots">Screenshots</a></summary>
   <OL, TYPE="square">
@@ -40,8 +42,6 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
     <li><a href="#cover-letter">Cover letter</a></li>
   </OL>
 </details>
-
-[Features](#features)
 
 [TODO](#todo)
 
@@ -61,7 +61,7 @@ Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project i
 
 then import wanted template directly from [Overleaf](https://www.overleaf.com/).
 
-## Requirements
+## Requirements (full installation)
 
 ### TeX
 
@@ -136,6 +136,10 @@ style.sty
 ```
 
 3. If you read this I am assuming that your **test** directory isn't missing any files and you now are ready to configure/customize the template to satisfy the nature of your project. To do this, you simply open your favorite text editor and remove default values from `main.tex`, all the files inside `sections/` and `figs/` directories, references from `refs.bib` and feel free to add your personnal commands/style features inside `commands.sty`, `style.sty`.
+
+## Features
+
+IN DEVELOPPEMENT.
 
 ## Screenshots
 
@@ -214,10 +218,6 @@ Example of what you should get from 'cover' template with [Light blue](https://w
   </table>
 </div>
  
-## Features
-
-IN DEVELOPPEMENT.
-
 ## TODO
 
 - [x] 'Classic' template
