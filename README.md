@@ -229,6 +229,8 @@ Example of what you should get from 'cover' template with [Light blue](https://w
 - [x] Version control
 - [ ] REAME.md
 - [ ] Add all well explained commands and features
+  - [ ] Supported colors
+  - [ ] Supported Universities (emblems + colors)
 - [ ] Setup default pdf viewer based on OS
 
 ## Credits
