@@ -221,21 +221,14 @@ IN DEVELOPPEMENT.
 ## TODO
 
 - [x] 'Classic' template
-- [x] Add MIT license
-- [ ] 'Article' template (RevTeX)
-- [x] 'Cover Letter' template
 - [x] 'Homework' template (Overleaf's rebuild)
+- [x] 'Cover Letter' template
+- [ ] 'Article' template (RevTeX)
+
 - [x] Install/uninstall scripts
-- [ ] Test on fresh Linux and Mac OS (Docker)
-  - [x] Installation fresh ubuntu (git & sudo post installed).
-  - [ ] Build template.
-- [x] Man pages (MacOS, Linux)
 - [x] Version control
 - [ ] REAME.md
 - [ ] Add all well explained commands and features
 - [ ] Setup default pdf viewer based on OS
-- [ ] Rearrange structure
-- [ ] Build nice CLI
-- [ ] Make it OS proof
 
 ## Credits
