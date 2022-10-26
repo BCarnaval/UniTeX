@@ -6,11 +6,9 @@ GREEN="$(printf '\033[32m')"
 WHITE="$(printf '\033[37m')"
 ORANGE="$(printf '\033[33m')"
 
-OS=$(uname)
 PROJ=UniTeX
 CONFIG=~/.config/latexmk
 DESTINATION=/usr/local/share
-MAN_DIR=/usr/local/share/man
 
 reset_terminal () {
     tput sgr0
@@ -31,12 +29,6 @@ rm_directory () {
     if [[ -d ${DESTINATION}/${PROJ} ]]; then
         echo -e "${ORANGE}[!] Removing dirs from ${WHITE}${DESTINATION}${ORANGE}."
         sudo rm -rf ${DESTINATION}/${PROJ}
-    fi
-
-    if [[ "${OS}" = "Darwin" ]]; then
-        sudo rm -f ${MAN_DIR}/man1/unitex.1
-    else
-        sudo rm -f ${MAN_DIR}/unitex.1
     fi
 }
 

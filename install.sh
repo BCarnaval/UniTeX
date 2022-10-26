@@ -6,14 +6,12 @@ GREEN="$(printf '\033[32m')"
 WHITE="$(printf '\033[37m')"
 ORANGE="$(printf '\033[33m')"
 
-OS=$(uname)
 PROJ=UniTeX
 CURRENT_DIR=$( pwd )
 CONFIG=~/.config/latexmk
 TAG=$(git describe --tags)
 DESTINATION=/usr/local/share
 LINK_DIR=/usr/local/bin/unitex
-MAN_DIR=/usr/local/share/man
 
 # Turn on extended globbing in bash shell
 shopt -s extglob
@@ -71,12 +69,6 @@ build_directory () {
         echo -e "${GREEN}[@] Wiping old version if any inside ${WHITE}${DESTINATION}${GREEN}."
         sudo rm -rf ${DESTINATION}/${PROJ}
 
-        if [[ "${OS}" = "Darwin" ]]; then
-            sudo rm ${MAN_DIR}/man1/unitex.1
-        else
-            sudo rm ${MAN_DIR}/unitex.1
-        fi
-
         echo -e "${GREEN}[@] Building new dirs inside ${WHITE}${DESTINATION}${GREEN}."
         sudo mkdir -p ${DESTINATION}/${PROJ}
     else
@@ -89,13 +81,7 @@ fill_directory () {
     echo -e "${WHITE}\n--------------------------\n"
     echo -e "${GREEN}[@] Filling dirs with templates..."
 
-    sudo rsync -a --exclude='*.md,*.1' ${CURRENT_DIR}/ ${DESTINATION}/${PROJ}
-
-    if [[ "${OS}" = "Darwin" ]]; then
-        sudo rsync ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/man1/unitex.1
-    else
-        sudo rsync ${CURRENT_DIR}/unitex.1 ${MAN_DIR}/unitex.1
-    fi
+    sudo rsync -a --exclude='*.md' ${CURRENT_DIR}/ ${DESTINATION}/${PROJ}
 
     # Make scripts executable
     sudo chmod +x ${DESTINATION}/${PROJ}/unitex.sh
