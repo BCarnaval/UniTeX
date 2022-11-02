@@ -38,13 +38,13 @@ USAGE
 
     ${BOLD}${CYAN}$(basename $0) -h ${REG}${WHITE}<help> ${BOLD}${CYAN}-v ${REG}${WHITE}<version> ${BOLD}${CYAN}-b ${REG}${WHITE}<build> ${BOLD}${CYAN}-d ${REG}${WHITE}<dir> ${BOLD}${CYAN}-o ${REG}${WHITE}<opt> ${BOLD}${CYAN}[-hvbdo]
 ${WHITE}${BOLD}
-OPTIONS (required)
+ARGUMENTS
 
     ${BOLD}${CYAN}-b,        -build      ${REG}${WHITE}Build specified template (${BLUE}classic${WHITE}, ${BLUE}article${WHITE}, ${BLUE}homework${WHITE}, ${BLUE}cover${WHITE}).
 
     ${BOLD}${CYAN}-d,        -dir        ${REG}${WHITE}Specifies where to build chosen template.
 ${WHITE}${BOLD}
-OPTIONS (optionnal)
+OPTIONS
 
     ${BOLD}${CYAN}-h,        -help       ${REG}${WHITE}Display help.
 
