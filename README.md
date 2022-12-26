@@ -37,7 +37,6 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
   <summary><a href="#screenshots">Screenshots</a></summary>
   <OL, TYPE="square">
     <li><a href="#classic">Classic</a></li>
-    <li><a href="#article">Article</a></li>
     <li><a href="#homework">Homework</a></li>
     <li><a href="#cover-letter">Cover letter</a></li>
   </OL>
@@ -53,9 +52,9 @@ Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project i
 
 <div align="center">
 
-| Classic | Homework | Cover | Article |
-|---------|----------|-------|---------|
-|    [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Classic)     |     [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Homework)     |   [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Cover)    |     IN DEVELOPPEMENT    |
+| Classic                                                                                                  | Homework                                                                                                  | Cover                                                                                                  |
+| -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Classic) | [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Homework) | [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Cover) |
 
 </div>
 
@@ -170,10 +169,6 @@ Example of what you should get from 'classic' template with [Yale](https://en.wi
     </tr>
    </table>
 </div>
- 
-### Article
-
-IN DEVELOPPEMENT
 
 ### Homework
 
@@ -223,7 +218,6 @@ Example of what you should get from 'cover' template with [Light blue](https://w
 - [x] 'Classic' template
 - [x] 'Homework' template (Overleaf's rebuild)
 - [x] 'Cover Letter' template
-- [ ] 'Article' template (RevTeX)
 
 - [x] Install/uninstall scripts
 - [x] Version control
