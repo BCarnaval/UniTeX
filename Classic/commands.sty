@@ -73,7 +73,7 @@
 % -------------
 \newtcolorbox{mybox}{
   tcbox width=auto limited,capture=hbox,on line,
-  colback=white,colframe=\MasterColor,size=fbox,arc=0pt
+  colback=white,colframe=\MasterColor,size=fbox,arc=0pt,boxrule=1pt
 }
 
 \newtcbox{\mymath}[1][]{
@@ -81,6 +81,28 @@
     enhanced, colframe=\MasterColor,
     colback=white, boxrule=1pt, arc=0pt
     #1
+}
+
+\newtcolorbox{bracedbox}{
+  enhanced jigsaw, breakable, frame hidden, colback=white, overlay={
+        \draw [
+            fill=none,
+            decoration={brace,amplitude=0.5em},
+            decorate,
+            ultra thick,
+            \MasterColor,
+        ]
+        (frame.north east) -- (frame.south east);
+        \draw [
+            fill=none,
+            decoration={brace,amplitude=0.5em, mirror},
+            decorate,
+            ultra thick,
+            \MasterColor,
+        ]
+        (frame.north west) -- (frame.south west);
+    },
+    parbox=false
 }
 
 % Classic colored boxes
@@ -112,6 +134,13 @@
       \section{#1}
       \vspace{-0.5cm}
   \end{tcolorbox}
+}
+
+% Braces boxed
+\newcommand{\Braced}[1]{
+  \begin{bracedbox}
+    #1
+  \end{bracedbox}
 }
 
 % ---------------
