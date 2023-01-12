@@ -128,10 +128,18 @@
   \end{empheq}
 }
 
-% Sections blueboxes
-\newcommand{\Boxed}[1]{
+% Subsections blueboxes
+\newcommand{\SecBoxed}[1]{
   \begin{tcolorbox}[colback=white,colframe=\MasterColor,arc=0pt]
       \section{#1}
+      \vspace{-0.5cm}
+  \end{tcolorbox}
+}
+
+% Sections blueboxes
+\newcommand{\SubBoxed}[1]{
+  \begin{tcolorbox}[colback=white,colframe=\MasterColor,arc=0pt]
+      \subsection{#1}
       \vspace{-0.5cm}
   \end{tcolorbox}
 }

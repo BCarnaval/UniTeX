@@ -114,37 +114,37 @@
 
 % Numbered equation colored boxes
 \newcommand{\MNboxed}[2]{
-  \begin{empheq}[box=\mymath]{align}
-      \label{#1}
-      #2
-  \end{empheq}
+    \begin{empheq}[box=\mymath]{align}
+        \label{#1}
+        #2
+    \end{empheq}
 }
 
 % Unnumbered equation colored boxes
 \newcommand{\Mboxed}[1]{
-  \begin{empheq}[box=\mymath]{align*}
-      #1
-  \end{empheq}
+    \begin{empheq}[box=\mymath]{align*}
+        #1
+    \end{empheq}
 }
 
 % Sections boxes
 \newcommand{\Boxed}[1]{
-  \begin{tcolorbox}[colback=white,colframe=\MasterColor,colback=\MinorColor,arc=0pt]
-      \vspace{0.2cm}
-      \section*{
+    \begin{tcolorbox}[colback=white,colframe=\MasterColor,colback=\MinorColor,arc=0pt]
+        \vspace{0.2cm}
+        \section*{
         \centering
         #1
-      }
-      \vspace{-0.3cm}
-  \end{tcolorbox}
-  \vspace{0.5cm}
+        }
+        \vspace{-0.3cm}
+    \end{tcolorbox}
+    \vspace{0.5cm}
 }
 
 % Braces boxed
 \newcommand{\Braced}[1]{
-  \begin{bracedbox}
-    #1
-  \end{bracedbox}
+    \begin{bracedbox}
+        #1
+    \end{bracedbox}
 }
 
 % ---------------
@@ -161,8 +161,8 @@
 \newcommand{\rom}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
 
 \newcommand{\question}[2]{
-\begin{enumerate}[label=\textit{(#1)}]
-  \item \textit{#2}
-  \end{enumerate}
+    \begin{enumerate}[label=\textit{(#1)}]
+        \item \textit{#2}
+    \end{enumerate}
 }
 
