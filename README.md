@@ -96,26 +96,26 @@ By doing it like so, you will be able to use UniTeX's commands `unitex -h`.
 If you are on Windows, script `install.sh` might be not the best way to use UniTeX. I personnally suggest to people in this situation to clone the repository somewhere on their system and use directly template's folder `Classic`, `Article`, `Homework` and `Cover`. Makefiles should work properly so one can copy `Homework` template for some homework and, in the same directory, use
 
 ```shell
-$ make <dry, clean, all, zip, targz>
+make <dry, clean, all, zip, targz>
 ```
 
 to work with it.
 
 ## Quick start
 
-Once [installation](#Installation) properly done and `unitex -h` command outputs no error, you can directly build
+Once [installation](#installation) properly done and `unitex -h` command outputs no error, you can directly build
 your first UniTeX template
 
 1. Select a directory (folder) on your machine in which store template's files that you'll edit later. For the example, we will use a folder named **test** in home directory.
 
 ```shell
-$ mkdir ~/test
+mkdir ~/test
 ```
 
 2. Build your template inside this directory using `unitex` by specifying the flags **-b build**: template (classic, article, homework, cover), **-d directory**: directory in which build it (directory created in step 1.) and **-o opt**: building options (`clean`, `dry`, `targz`, `zip` or empty to tell latexmk to continuously compile your project on save).
 
 ```shell
-$ unitex -b classic -d ~/test -o dry
+unitex -b classic -d ~/test -o dry
 ```
 
 Here, the `dry` option means that latexmk will not compile your project continuously and not clean the directory either. It will simply build the template inside the specified directory and leave all files there. To clean it, you must use the option `clean` with the `-o` flag. These commands being done (`dry` and `clean`), you should have the following content inside your **test** folder
@@ -172,7 +172,7 @@ Example of what you should get from 'classic' template with [Yale](https://en.wi
 
 ### Homework
 
-Example of what you should get from 'homework' template with [Princeton](https://en.wikipedia.org/wiki/Princeton_University)'s orange as main color
+Example of what you should get from 'homework' template with [Pennsylvania](https://en.wikipedia.org/wiki/University_of_Pennsylvania)'s red as main color
 
 <div align="center">
   <table>
@@ -197,7 +197,7 @@ Example of what you should get from 'homework' template with [Princeton](https:/
     </tr>
    </table>
 </div>
- 
+
 ### Cover Letter
 
 Example of what you should get from 'cover' template with [Light blue](https://www.w3schools.com/colors/color_tryit.asp?color=LightBlue) as main color
@@ -212,7 +212,7 @@ Example of what you should get from 'cover' template with [Light blue](https://w
     </tr>
   </table>
 </div>
- 
+
 ## TODO
 
 - [x] 'Classic' template
