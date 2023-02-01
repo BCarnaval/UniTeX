@@ -2,8 +2,15 @@
 
 \begin{document}
 
-  \section*{Conclusion}
-  \blindtext[2]
+    % Removing titlerule from section: Conclusion
+    \titleformat{\section}{
+    \normalfont\Large\bfseries{
+      \color{\MasterColor}\titlerule[0.0pt]
+      }
+    }{\thesection}{1em}{}
+
+    \section*{Conclusion}
+    \blindtext[2]
 
 \end{document}
 

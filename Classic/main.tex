@@ -1,38 +1,48 @@
-\documentclass[12pt]{article}
+\documentclass[12pt, twoside]{article}
 \usepackage{colors,style,commands}
 
-\MasterColor  {YALE1}
+\MasterColor  {BISHOP_MASTER}
 
-\Nom          {Votre Magnifique Nom}
+% Title page variables
 \Titre        {le travail}
 \SousTitre    {précision(s)}
+
 \NomCours     {nom du cours}
 \CodeCours    {code}
+
+\Nom          {Votre nom complet}
+
 \Enseignant   {l'enseignant}
+
+\Emblem       {BISHOP} % Choose (UDS, UQTR, BISHOP, MCGILL, ULAVAL, UDEM)
+\University   {Bishop's University}
 \Faculte      {la faculté}
 \Departement  {le département}
 \Date         {\today}
 
 
 \begin{document}
-  
-  \subfile{PageTitre}
-  
-  \tableofcontents
 
-  \clearpage
+    \Language{french}
 
-  \subfile{sections/introduction}
+    \subfile{PageTitre}
 
-  \subfile{sections/num_1}
+    \tableofcontents
 
-  \subfile{sections/num_2}
+    \clearpage
 
-  \subfile{sections/conclusion}
+    \subfile{sections/introduction}
 
-  \clearpage
+    \subfile{sections/num_1}
 
-  \bibliography{refs}
+    \subfile{sections/num_2}
+
+    \subfile{sections/conclusion}
+
+    \clearpage
+
+    \pagestyle{plain} % Remove header for references
+    \bibliography{refs}
 
 \end{document}
 

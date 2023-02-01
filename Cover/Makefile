@@ -1,16 +1,16 @@
 MAIN = main
 SHELL = /bin/bash
-PROJECT = UniTeX_Article
+PROJECT = UniTeX_Cover
 DATE = $(shell date +"%F-%H")
 
 # Retreiving all source files
-BIB = $(shell find . -name "*.bib" -type f)
 FIGS = $(shell find . -name "figs/*" -type f)
 STY = $(shell find . -name "*.sty" -type f)
 TEX = $(shell find . -name "*.tex" -type f)
 
-SOURCE = $(BIB) $(STY) $(TEX) $(FIGS)
-GARBAGE = {bbl,synctex.gz}
+SOURCE = $(STY) $(TEX) $(FIGS)
+GARBAGE = {bbl,synctex.gz,aux,fdb_latexmk,fls,log}
+
 
 # Setting LaTeX compile (latexmk) options & flags
 MK = latexmk
@@ -25,14 +25,14 @@ OPT = -interaction=batchmode
 HIDE = @
 MAKE = make
 
-# OS specific part
+# OS commands specific part
 ifeq ($(OS), Windows_NT)
-    RM = del /F /Q 
+    RM = del /F /Q
     RMDIR = -RMDIR /S /Q
     MKDIR = -mkdir
 else
-    RM = -rm -f 
-    RMDIR = -rm -rf 
+    RM = -rm -f
+    RMDIR = -rm -rf
     MKDIR = -mkdir -p
 endif
 
@@ -48,19 +48,19 @@ dry: $(SOURCE)
 	$(MK) -$(OUT) -$(GENERATOR)="pdflatex $(OPT)" $(MAIN)
 
 clean:
-	$(HIDE)$(RM) $(MAIN).$(GARBAGE)
+	$(HIDE)$(RM) *.$(GARBAGE)
 	$(MK) -c
-	$(HIDE)echo -e "\n'Article' template cleaned !"
+	$(HIDE)echo -e "\n'Cover' template cleaned !"
 
 targz:
 	$(MAKE) clean
 	$(MAKE) dry
 	$(MAKE) clean
-	tar czf $(PROJECT)_$(DATE).tgz $(SOURCE)
+	tar czf $(PROJECT)_$(DATE).tgz $(SOURCE) ./figs
 
 zip:
 	$(MAKE) clean
 	$(MAKE) dry
 	$(MAKE) clean
-	zip -q $(PROJECT)_$(DATE).zip $(SOURCE)
+	zip -q -r $(PROJECT)_$(DATE).zip $(SOURCE) ./figs
 

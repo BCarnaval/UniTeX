@@ -10,7 +10,7 @@ STY = $(shell find . -name "*.sty" -type f)
 TEX = $(shell find . -name "*.tex" -type f)
 
 SOURCE = $(BIB) $(STY) $(TEX) $(FIGS)
-GARBAGE = {bbl,synctex.gz}
+GARBAGE = {bbl,synctex.gz,aux,fdb_latexmk,fls,log}
 
 # Setting LaTeX compile (latexmk) options & flags
 MK = latexmk
@@ -27,12 +27,12 @@ MAKE = make
 
 # OS specific part
 ifeq ($(OS), Windows_NT)
-    RM = del /F /Q 
+    RM = del /F /Q
     RMDIR = -RMDIR /S /Q
     MKDIR = -mkdir
 else
-    RM = -rm -f 
-    RMDIR = -rm -rf 
+    RM = -rm -f
+    RMDIR = -rm -rf
     MKDIR = -mkdir -p
 endif
 
@@ -48,7 +48,7 @@ dry: $(SOURCE)
 	$(MK) -$(OUT) -$(GENERATOR)="pdflatex $(OPT)" $(MAIN)
 
 clean:
-	$(HIDE)$(RM) $(MAIN).$(GARBAGE)
+	$(HIDE)$(RM) *.$(GARBAGE)
 	$(MK) -c
 	$(HIDE)echo -e "\n'Homework' template cleaned !"
 
@@ -56,11 +56,10 @@ targz:
 	$(MAKE) clean
 	$(MAKE) dry
 	$(MAKE) clean
-	tar czf $(PROJECT)_$(DATE).tgz $(SOURCE)
+	tar czf $(PROJECT)_$(DATE).tgz $(SOURCE) ./figs
 
 zip:
 	$(MAKE) clean
 	$(MAKE) dry
 	$(MAKE) clean
-	zip -q $(PROJECT)_$(DATE).zip $(SOURCE)
-
+	zip -q -r $(PROJECT)_$(DATE).zip $(SOURCE) ./figs

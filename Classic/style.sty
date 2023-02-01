@@ -25,7 +25,12 @@
 \usepackage[utf8]{inputenc} % Telling LaTeX what encoding is used
 \usepackage[titles]{tocloft} % Table of contents (ToC) customization
 \usepackage[most]{tcolorbox} % Colored boxes support
+
+% ----------------
+% Language support
+% ----------------
 \usepackage[greek, english, french]{babel} % Using different languages
+\newcommand{\Language}[1]{\selectlanguage{#1}}
 
 % --------------
 % Math & Physics
@@ -36,7 +41,6 @@
 \usepackage{physics}
 \usepackage{enumerate}
 \usepackage{amsmath, amsfonts, amsthm, amssymb, dsfont}
-\AtBeginDocument{\RenewCommandCopy\qty\physics}
 
 % -------
 % Figures
@@ -52,6 +56,15 @@
 % -----------------
 % Table of contents
 % -----------------
+% Removing TOC's header
+\makeatletter
+\renewcommand\tableofcontents{
+    \thispagestyle{empty}
+    \section*{Table des matières}
+    \@starttoc{toc}
+}
+\makeatother
+
 \renewcommand{\cftsecfont}{\bfseries\color{\MasterColor}}
 \renewcommand{\cftsubsecfont}{\color{\MasterColor}}
 \renewcommand{\cftsubsubsecfont}{\color{\MasterColor}}
@@ -69,6 +82,7 @@
 % ---------------
 \geometry{left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm}
 \setlength{\headheight}{16pt}
+\setlength\parindent{0pt} % No indentation
 
 % ----------------------------------------------
 % Titles (sections, subsections, subsubsections)
@@ -99,10 +113,14 @@
 % -----------------
 % Headers & Footers
 % -----------------
-\pagestyle{fancy}
-\renewcommand{\sectionmark}[1]{\markright{\color{\MasterColor}#1}{}}
-\renewcommand{\subsectionmark}[1]{\markboth{\color{\MasterColor}#1}{}}
-\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{mypagestyle}{
+  \fancyhf{} % Clear header/footer
+  \fancyhead[OR]{\color{\MasterColor}\textit{\rightmark}} % Subsection name on odd pages
+  \fancyhead[EL]{\color{\MasterColor}\nouppercase{\textit{\leftmark}}} % Section name on even pages
+  \fancyfoot[C]{\thepage} % Page number centered
+  \renewcommand{\headrulewidth}{0pt} % Header rule of 0pt
+}
+\pagestyle{mypagestyle}
 
 % --------------------------------------
 % Title Page shortcuts & French captions

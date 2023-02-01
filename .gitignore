@@ -1,4 +1,3 @@
-*.1
 *.DS_Store
 
 ## Core latex/pdflatex auxiliary files:
@@ -92,7 +91,7 @@ acs-*.bib
 #(r)(e)ledmac/(r)(e)ledpar
 *.end
 *.?end
-*.[1-9]
+# *.[1-9]
 *.[1-9][0-9]
 *.[1-9][0-9][0-9]
 *.[1-9]R

@@ -1,7 +1,8 @@
 \documentclass[12pt]{article}
 \usepackage{colors,style,commands}
 
-\MasterColor  {PRINCETON}
+\MasterColor  {UQTR_MASTER}
+\MinorColor   {UQTR_MINOR}
 
 % Title page variables
 \NomCours     {nom du cours}
@@ -16,21 +17,26 @@
 
 \Enseignant   {l'enseignant}
 
+\Emblem       {UDS} % Choose (UDS, UQTR, BISHOP, MCGILL, ULAVAL, UDEM)
+\University   {Université de Sherbrooke}
 \Faculte      {la faculté}
 \Departement  {le département}
 \Date         {\today}
 
 \begin{document}
-  
-  \subfile{PageTitre}
 
-  \clearpage
+    \Language{french}
 
-  \subfile{sections/num_1}
+    \subfile{PageTitre}
 
-  \clearpage
+    \clearpage
 
-  \bibliography{refs}
+    \subfile{sections/num_1}
+
+    \clearpage
+
+    \pagestyle{plain}
+    \bibliography{refs}
 
 \end{document}
 

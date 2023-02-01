@@ -28,7 +28,12 @@
 \usepackage[11pt]{moresize} % To use '\HUGE' fontsize
 \usepackage[utf8]{inputenc} % Telling LaTeX what encoding is used
 \usepackage[most]{tcolorbox} % Colored boxes support
+
+% ----------------
+% Language support
+% ----------------
 \usepackage[greek, english, french]{babel} % Using different languages
+\newcommand{\Language}[1]{\selectlanguage{#1}}
 
 % --------------
 % Math & Physics
@@ -38,7 +43,6 @@
 \usepackage{empheq}
 \usepackage{physics}
 \usepackage{amsmath, amsfonts, amsthm, amssymb, dsfont}
-\AtBeginDocument{\RenewCommandCopy\qty\physics}
 
 % -------
 % Figures
@@ -56,11 +60,11 @@
 % ---------------
 \geometry{left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm}
 \setlength{\headheight}{16pt}
+\setlength\parindent{0pt} % No indentation
 
 % ----------------------------------------------
 % Titles (sections, subsections, subsubsections)
 % ----------------------------------------------
-
 % \titleformat{\section}{
 %   \normalfont\Large\bfseries{
 %     \color{\MasterColor}\titlerule[2pt]
@@ -86,8 +90,8 @@
 % Headers & Footers
 % -----------------
 \pagestyle{fancy}
-\lhead{\color{\MasterColor}\NomCours, \CodeCours}
-\rhead{\color{\MasterColor}\Titre}
+\lhead{\color{\MasterColor}\textit{\NomCours, \CodeCours}}
+\rhead{\color{\MasterColor}\textit{\Titre}}
 \renewcommand{\headrulewidth}{0pt}
 
 % --------------------------------------
