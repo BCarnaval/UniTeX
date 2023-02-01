@@ -6,6 +6,8 @@
 % --------------
 % Math & Physics
 % --------------
+% Blacksquare math proof env.
+\renewcommand{\qedsymbol}{\hfill\rule{0.7em}{0.7em}}
 
 % Blacksquare math proof env.
 \renewcommand{\qedsymbol}{\rule{0.7em}{0.7em}}
@@ -22,6 +24,12 @@
 
 % Styled Lagrangian
 \newcommand{\Lagr}{\mathcal{L}}
+
+% Basis vector notation
+\newcommand{\basis}[1]{\bm{\hat{#1}}}
+
+% Identity caracter
+\newcommand{\identity}{\ensuremath{\mathbb{1}}}
 
 % SI units
 \newcommand{\V}[1]{\SI{#1}{\volt}}
@@ -47,9 +55,6 @@
 \newcommand{\s}[1]{\SI{#1}{\second}}
 \newcommand{\T}[1]{\SI{#1}{\tesla}}
 \newcommand{\W}[1]{\SI{#1}{\watt}}
-
-% Identity caracter
-\newcommand{\identity}{\ensuremath{\mathbb{1}}}
 
 % Derivatives
 \newcommand{\ddv}[1]{\, \mathrm{d} \vec{#1}}

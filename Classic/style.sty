@@ -60,6 +60,7 @@
 % Removing TOC's header
 \makeatletter
 \renewcommand\tableofcontents{
+    \thispagestyle{empty}
     \section*{Table des matières}
     \@starttoc{toc}
 }
@@ -91,7 +92,7 @@
 
 \titleformat{\section}{
   \normalfont\Large\bfseries{
-    \color{\MasterColor}\titlerule[1.5pt]
+    \color{\MasterColor}\titlerule[2pt]
     }
   \vspace{0.25cm}
 }{\thesection}{1em}{}
@@ -113,10 +114,14 @@
 % -----------------
 % Headers & Footers
 % -----------------
-\pagestyle{fancy}
-\renewcommand{\subsectionmark}[1]{\markboth{\color{\MasterColor}\thesubsection\;\;#1}{}}
-\renewcommand{\sectionmark}[1]{\markboth{}{\color{\MasterColor}\thesection\;\;#1}}
-\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{mypagestyle}{
+  \fancyhf{} % Clear header/footer
+  \fancyhead[OR]{\color{\MasterColor}\textit{\rightmark}} % Subsection name on odd pages
+  \fancyhead[EL]{\color{\MasterColor}\nouppercase{\textit{\leftmark}}} % Section name on even pages
+  \fancyfoot[C]{\thepage} % Page number centered
+  \renewcommand{\headrulewidth}{0pt} % Header rule of 0pt
+}
+\pagestyle{mypagestyle}
 
 % --------------------------------------
 % Title Page shortcuts & French captions
