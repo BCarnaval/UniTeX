@@ -40,15 +40,15 @@ USAGE
 ${WHITE}${BOLD}
 ARGUMENTS
 
-    ${BOLD}${CYAN}-b,        -build      ${REG}${WHITE}Build specified template (${BLUE}classic${WHITE}, ${BLUE}homework${WHITE}, ${BLUE}cover${WHITE}).
+    ${BOLD}${CYAN}-b,        -build      ${REG}${WHITE}Builds specified template (${BLUE}classic${WHITE}, ${BLUE}homework${WHITE}, ${BLUE}cover${WHITE}).
 
     ${BOLD}${CYAN}-d,        -dir        ${REG}${WHITE}Specifies where to build chosen template.
 ${WHITE}${BOLD}
 OPTIONS
 
-    ${BOLD}${CYAN}-h,        -help       ${REG}${WHITE}Display help.
+    ${BOLD}${CYAN}-h,        -help       ${REG}${WHITE}Displays help.
 
-    ${BOLD}${CYAN}-v,        -version    ${REG}${WHITE}Display current installation version of ${CYAN}UniTeX${WHITE}.
+    ${BOLD}${CYAN}-v,        -version    ${REG}${WHITE}Displays current installation version of ${CYAN}UniTeX${WHITE}.
 
     ${BOLD}${CYAN}-o,        -opt        ${REG}${WHITE}Specifies 'make' tool option (${BLUE}clean${WHITE}, ${BLUE}targz${WHITE}, ${BLUE}zip${WHITE} or ${BLUE}dry${WHITE}).
 ${BOLD}
