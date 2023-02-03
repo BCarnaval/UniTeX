@@ -218,6 +218,7 @@ Example of what you should get from 'cover' template with [Light blue](https://w
 - [x] 'Classic' template
 - [x] 'Homework' template (Overleaf's rebuild)
 - [x] 'Cover Letter' template
+- [ ] 'RevTeX' template
 
 - [x] Install/uninstall scripts
 - [x] Version control
@@ -226,5 +227,6 @@ Example of what you should get from 'cover' template with [Light blue](https://w
   - [ ] Supported colors
   - [ ] Supported Universities (emblems + colors)
 - [ ] Setup default pdf viewer based on OS
+- [ ] Rebuild 'Homework' template's `quesiton{}{}` command as newenvironnement
 
 ## Credits
