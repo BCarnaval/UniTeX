@@ -78,12 +78,12 @@
 % Colored Boxes
 % -------------
 \newtcolorbox{mybox}{
-  tcbox width=auto limited,capture=hbox,on line,
+  sharp corners, tcbox width=auto limited,capture=hbox,on line,
   colback=white,colframe=\MasterColor,size=fbox,arc=0pt,boxrule=1pt
 }
 
 \newtcbox{\mymath}[1][]{
-    nobeforeafter, math upper, tcbox raise base,
+    sharp corners, nobeforeafter, math upper, tcbox raise base,
     enhanced, colframe=\MasterColor,
     colback=white, boxrule=1pt, arc=0pt
     #1
@@ -135,7 +135,8 @@
 
 % Sections boxes
 \newcommand{\Boxed}[1]{
-    \begin{tcolorbox}[colback=white,colframe=\MasterColor,colback=\MinorColor,arc=0pt]
+    \begin{tcolorbox}[sharp corners, colback=white,colframe=\MasterColor,
+      colback=\MinorColor,arc=0pt]
         \vspace{0.2cm}
         \section*{
         \centering
