@@ -81,7 +81,7 @@ fill_directory () {
     echo -e "${WHITE}\n--------------------------\n"
     echo -e "${GREEN}[@] Filling dirs with templates..."
 
-    sudo rsync -a --exclude='*.md' ${CURRENT_DIR}/ ${DESTINATION}/${PROJ}
+    sudo rsync -a --exclude='*.md' --exclude='.*' ${CURRENT_DIR}/ ${DESTINATION}/${PROJ}
 
     # Make scripts executable
     sudo chmod +x ${DESTINATION}/${PROJ}/unitex.sh
