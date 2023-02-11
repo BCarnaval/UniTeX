@@ -5,37 +5,39 @@
 % Custom commands & variables
 \newcommand{\CustomRule}{\rule{13cm}{0.75pt} \\}
 
-	\begin{titlepage}
+\begin{titlepage}
 
-		\centering
+    \centering
 
-		{
-			\textsc{\Huge\MakeLowercase{\Titre}} \\[0.5cm]
-			\textsc{\Large\MakeLowercase{\SousTitre}} \\[1.5cm]
-		}
-		\vspace{0.5cm}
-		\CustomRule
-		\vspace{0.5cm}
-		{
-			\textsc{\LARGE\color{\MasterColor}\MakeLowercase{\NomCours}} \\[0.5cm]
-			\textsc{\Large\color{\MasterColor}\MakeLowercase{\CodeCours}} \\
-		}
-		\CustomRule
-		\vspace{2.5cm}
-		{
-			\emph{\large par} \\[0.25cm]
-			{\Large\Nom} \\[2.5cm]
-			\emph{\large Remis à} \\[0.25cm]
-			\Large\Enseignant \\[2.5cm]
-		}
-		\includegraphics[scale=0.15]{\Emblem} \\
-		{ \large \University \\
-			\large Faculté \Faculte \\
-			\large Département \Departement \\
-			\large \Date
-		}
+    {
+        \textsc{\LARGE\MakeLowercase{\Titre}} \\[0.5cm]
+        \textsc{\Large\MakeLowercase{\SousTitre}} \\[1.5cm]
+    }
+    \vspace{0.5cm}
+    \CustomRule
+    \vspace{0.3cm}
+    {
+        \textsc{\Large\color{\MasterColor}\MakeLowercase{\NomCours}} \\[0.5cm]
+        \textsc{\Large\color{\MasterColor}\CodeCours} \\
+    }
+    \CustomRule
+    \vspace{2.5cm}
+    {
+        \emph{\large par} \\[0.25cm]
+        {\large\Nom} \\[2.5cm]
+        \emph{\large Remis à} \\[0.25cm]
+        \large\Enseignant \\
+            \vfill
+    }
+    \includegraphics[scale=0.125]{\Emblem} \\
+    {
+        \large \University \\
+        \large Faculté \Faculte \\
+        \large Département \Departement \\
+        \large \Date
+    }
 
-	\end{titlepage}
+\end{titlepage}
 
 \end{document}
 
