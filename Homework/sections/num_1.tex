@@ -1,58 +1,52 @@
-\documentclass[../main.tex]{subfiles}
+\Boxed{Problème I: Nom du problème I}
 
-\begin{document}
+% Énoncé
+\blindtext[1]\cite{texbook}
 
-    \Boxed{Problème I: Nom du problème I}
+% Représentation du problème
+\begin{figure}[h!]
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{figs/sphere.pdf}
+    \end{center}
+    \caption{Une sphère molle?}
+    \label{fig: oui_une_sphere}
+\end{figure}
 
-    % Énoncé
-    \blindtext[1]\cite{texbook}
+\noindent
 
-    % Représentation du problème
-    \begin{figure}[h!]
-        \begin{center}
-            \includegraphics[width=0.5\textwidth]{figs/sphere.pdf}
-        \end{center}
-        \caption{Une sphère molle?}
-        \label{fig: oui_une_sphere}
-    \end{figure}
+\question{a}{
+    Premiere sous-question. Premiere sous-question. Premiere sous-question.
+}
 
-    \noindent
+\fullindent
 
-    \question{a}{
-        Premiere sous-question. Premiere sous-question. Premiere sous-question.
-    }
+\blindduck[maths=both]
 
-    \fullindent
+\rindent
 
-    \blindduck[maths=both]
+\question{b}{
+    Seconde sous-question. Seconde sous-question. Seconde sous-question.
+}
 
-    \rindent
+\fullindent
 
-    \question{b}{
-        Seconde sous-question. Seconde sous-question. Seconde sous-question.
-    }
+\blindduck{num1-num3}
 
-    \fullindent
+\MNboxed{eq: test_2}{
+    d = ra^k e.
+}
 
-    \blindduck{num1-num3}
+\rindent
 
-    \MNboxed{eq: test_2}{
-        d = ra^k e.
-    }
+\question{c}{
+    Troisieme sous-question. Troisieme sous-question. Troisieme sous-question.
+}
 
-    \rindent
+\fullindent
 
-    \question{c}{
-        Troisieme sous-question. Troisieme sous-question. Troisieme sous-question.
-    }
+\blindtext
 
-    \fullindent
+\rindent
 
-    \blindtext
-
-    \rindent
-
-    \clearpage
-
-\end{document}
+\clearpage
 

@@ -1,17 +1,10 @@
-\documentclass[../main.tex]{subfiles}
+% Removing titlerule from section: Conclusion
+\titleformat{\section}{
+\normalfont\Large\bfseries{
+  \color{\MasterColor}\titlerule[0.0pt]
+  }
+}{\thesection}{1em}{}
 
-\begin{document}
-
-    % Removing titlerule from section: Conclusion
-    \titleformat{\section}{
-    \normalfont\Large\bfseries{
-      \color{\MasterColor}\titlerule[0.0pt]
-      }
-    }{\thesection}{1em}{}
-
-    \section*{Conclusion}
-    \blindtext[2]
-
-\end{document}
-
+\section*{Conclusion}
+\blindtext[2]
 
