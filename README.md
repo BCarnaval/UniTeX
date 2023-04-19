@@ -183,8 +183,8 @@ Example of what you should get from 'homework' template with [Pennsylvania](http
       <td>Problem(s) presentation</td>
     </tr>
     <tr>
-      <td><img src="/../screenshots/screenshots/Homework/title_screen.png" width=360 height=480></td>
-      <td><img src="/../screenshots/screenshots/Homework/problem_screen.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Homework/title.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Homework/problem.png" width=360 height=480></td>
     </tr>
    </table>
 
@@ -194,8 +194,8 @@ Example of what you should get from 'homework' template with [Pennsylvania](http
       <td>References</td>
     </tr>
     <tr>
-      <td><img src="/../screenshots/screenshots/Homework/res_screen.png" width=360 height=480></td>
-      <td><img src="/../screenshots/screenshots/Homework/refs_screen.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Homework/body.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Homework/refs.png" width=360 height=480></td>
     </tr>
    </table>
 </div>
