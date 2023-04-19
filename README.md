@@ -184,7 +184,7 @@ Example of what you should get from 'homework' template with [Pennsylvania](http
     </tr>
     <tr>
       <td><img src="/../screenshots/screenshots/Homework/title.png" width=360 height=480></td>
-      <td><img src="/../screenshots/screenshots/Homework/problem.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Homework/problem_1.png" width=360 height=480></td>
     </tr>
    </table>
 
@@ -194,8 +194,8 @@ Example of what you should get from 'homework' template with [Pennsylvania](http
       <td>References</td>
     </tr>
     <tr>
-      <td><img src="/../screenshots/screenshots/Homework/body.png" width=360 height=480></td>
-      <td><img src="/../screenshots/screenshots/Homework/refs.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Homework/body_1.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Homework/problem_2.png" width=360 height=480></td>
     </tr>
    </table>
 </div>
