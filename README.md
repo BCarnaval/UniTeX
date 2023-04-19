@@ -4,7 +4,7 @@
 
 UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://www.latex-project.org/) templates suitable for many assignment types.
 
-![LaTeX](https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white) ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white) ![Overleaf](https://img.shields.io/badge/Overleaf-47A141?style=for-the-badge&logo=Overleaf&logoColor=white) 
+![LaTeX](https://img.shields.io/badge/latex-%23008080.svg?style=for-the-badge&logo=latex&logoColor=white) ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white) ![Overleaf](https://img.shields.io/badge/Overleaf-47A141?style=for-the-badge&logo=Overleaf&logoColor=white)
 
 ![LICENSE](https://img.shields.io/github/license/BCarnaval/UniTeX?color=blue&style=for-the-badge) ![release](https://img.shields.io/github/v/tag/BCarnaval/Unitex?color=%23FF7F50&style=for-the-badge)
 
@@ -155,8 +155,8 @@ Example of what you should get from 'classic' template with [Yale](https://en.wi
       <td>Sections layout</td>
     </tr>
     <tr>
-      <td><img src="/../screenshots/screenshots/Classic/title_screen.png" width=360 height=480></td>
-      <td><img src="/../screenshots/screenshots/Classic/mid_screen.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Classic/title.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Classic/body.png" width=360 height=480></td>
     </tr>
    </table>
 
@@ -166,8 +166,8 @@ Example of what you should get from 'classic' template with [Yale](https://en.wi
       <td>References</td>
     </tr>
     <tr>
-      <td><img src="/../screenshots/screenshots/Classic/math_screen.png" width=360 height=480></td>
-      <td><img src="/../screenshots/screenshots/Classic/refs_screen.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Classic/math.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Classic/refs.png" width=360 height=480></td>
     </tr>
    </table>
 </div>
