@@ -210,7 +210,7 @@ Example of what you should get from 'cover' template with [Light blue](https://w
       <td>Default cover letter</td>
     </tr>
     <tr>
-      <td><img src="/../screenshots/screenshots/Cover/cover_screen.png" width=360 height=480></td>
+      <td><img src="/../screenshots/screenshots/Cover/cover.png" width=360 height=480></td>
     </tr>
   </table>
 </div>
