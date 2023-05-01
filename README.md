@@ -174,7 +174,7 @@ Example of what you should get from 'classic' template with [Yale](https://en.wi
 
 ### Homework
 
-Example of what you should get from 'homework' template with [Pennsylvania](https://en.wikipedia.org/wiki/University_of_Pennsylvania)'s red as main color
+Example of what you should get from 'homework' template with [lavender](https://www.w3schools.com/colors/color_tryit.asp?color=Lavender) as main color
 
 <div align="center">
   <table>
@@ -191,7 +191,7 @@ Example of what you should get from 'homework' template with [Pennsylvania](http
   <table>
     <tr>
       <td>Basic problem solving</td>
-      <td>References</td>
+      <td>Problem(s) presentation</td>
     </tr>
     <tr>
       <td><img src="/../screenshots/screenshots/Homework/body_1.png" width=360 height=480></td>
@@ -202,7 +202,7 @@ Example of what you should get from 'homework' template with [Pennsylvania](http
 
 ### Cover Letter
 
-Example of what you should get from 'cover' template with [Light blue](https://www.w3schools.com/colors/color_tryit.asp?color=LightBlue) as main color
+Example of what you should get from 'cover' template with [light blue](https://www.w3schools.com/colors/color_tryit.asp?color=LightBlue) as main color
 
 <div align="center">
   <table>
