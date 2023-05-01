@@ -7,7 +7,7 @@
 % Global page style settings
 % --------------------------
 \usepackage{cite} % Bibliography support
-\usepackage[bitstream-charter, cal]{mathdesign} % Font
+\usepackage[charter, cal]{mathdesign} % Font
 \usepackage{sectsty} % Control sectional headers
 
 % Using 'subfiles', the user can compile each of the project's file
@@ -78,6 +78,17 @@
 
 % Load hyperred package after 'tocloft' settings to color Toc
 \usepackage{hyperref}
+\hypersetup{
+    hyperindex=true,
+    bookmarks=true,
+    pdfa,
+    colorlinks=true,
+    breaklinks=true,
+    urlcolor=YALE1_MASTER,
+    linkcolor=YALE1_MASTER,
+    citecolor=YALE1_MASTER,
+    bookmarksopen=true,
+}
 
 % ---------------
 % Page dimensions

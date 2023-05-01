@@ -6,18 +6,17 @@
 % --------------
 % Math & Physics
 % --------------
-
 % Blacksquare math proof env.
 \renewcommand{\qedsymbol}{\hfill\rule{0.7em}{0.7em}}
-
-% Blacksquare math proof env.
-\renewcommand{\qedsymbol}{\rule{0.7em}{0.7em}}
 
 % Partial derivative shortcut
 \newcommand{\pd}{\partial}
 
 % Space between equations in math environnement
 \newcommand{\betspace}{\hspace{0.5cm}\text{et}\hspace{0.5cm}}
+
+% Add text at the end of an equation in math env.
+\newcommand{\eqtext}[1]{,\hspace{0.5cm}\text{#1 }}
 
 % Spin's indices
 \renewcommand{\up}{\uparrow}
@@ -27,9 +26,38 @@
 \newcommand{\Lagr}{\mathcal{L}}
 
 % Basis vector notation
-\newcommand{\basis}[1]{\bm{\hat{#1}}}
+\newcommand{\basis}[1]{\mathbf{\hat{#1}}}
 
-% Identity caracter
+% Always better epsilon
+\renewcommand{\epsilon}{\varepsilon}
+
+% Nothing else matter
+\newcommand{\washer}{\oslash}
+
+% Mean notation
+\newcommand{\mean}[1]{\left\langle #1\right\rangle}
+
+% Levi-civita tensor
+\newcommand{\levici}{\varepsilon_{ijk}}
+
+% Vectorial subspace epsilon
+\newcommand{\subspace}{\mathcal{E}}
+
+% Add space and comma between equations
+\newcommand{\beq}{,\hspace{0.5cm}}
+
+% Correct braket notation
+\renewcommand{\ket}[1]{|{#1}\rangle}
+\renewcommand{\bra}[1]{\langle{#1}|}
+\renewcommand{\braket}[2]{\langle{#1}|{#2}\rangle}
+
+% Complete set quantum mechanics
+\newcommand{\compset}[1]{\ket{#1}\bra{#1}}
+
+% Vectors upright convention
+\renewcommand{\bm}[1]{\mathbf{#1}}
+
+% Identity operator
 \newcommand{\identity}{\ensuremath{\mathbb{1}}}
 
 % Derivatives
