@@ -1,6 +1,6 @@
 # Maintainer: Dimitri Bonanni-Surprenant <bond2102@usherbrooke.ca>
 pkgname=UniTeX
-pkgver=1.0.2
+pkgver=1.0.3
 pkgrel=1
 pkgdesc="A collection of scientific oriented and minimalistic LaTeX templates suitable for many assignment types"
 arch=("x86_64")
@@ -19,7 +19,7 @@ install=
 changelog=
 source=($pkgname-$pkgver.tar.gz)
 noextract=()
-sha256sums=('8f5b6f9e47411376fc4962a9191532e2fab8c614e9d476f122ab61bee702f3ad')
+sha256sums=('5c40dd325b9cb7cc1ff9e7ed663bb6805fe1308cd5bb011af01e30bdce644016')
 
 build() {
 	echo "$PWD"
