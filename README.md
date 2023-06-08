@@ -19,7 +19,7 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
   <OL, TYPE="square">
     <li><a href="#tex">TeX</a></li>
     <li><a href="#shell">Shell</a></li>
-    <li><a href="#pdf-viewer-optional">PDF viewer (optional)</a></li>
+    <li><a href="#pdf-viewer">PDF viewer</a></li>
   </OL>
 </details>
 
@@ -73,11 +73,16 @@ UniTeX requires a complete TeX distribution (you can find the most used TeX dist
 
 A Unix shell is better to install UniTeX properly. Commands such as `mkdir`, `cp`, `ln` and others are used within install script and makefiles so it's important for you to have access to this type of shell to install UniTeX correctly.
 
-### PDF viewer (optional)
+### PDF viewer
 
 A responsive pdf viewer like [Skim](https://skim-app.sourceforge.io/),
 [Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader) is also a must have
-when working on LaTeX projects. These are some viewers that provide automatic refresh on file change and this is why they are working very well with `latexmk`.
+when working on LaTeX projects. These are some viewers that provide automatic refresh on file change and this is why they are working very well with `latexmk`. For example, using Skim on MacOS, the viewer settings offer to check automatically for changes and reload the pdf
+<div align="center">
+    <tr>
+      <td><img src="/../screenshots/screenshots/skim_example.png" width=320 height=200></td>
+    </tr>
+</div>
 
 # Installation
 
