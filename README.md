@@ -75,9 +75,9 @@ A Unix shell is better to install UniTeX properly. Commands such as `mkdir`, `cp
 
 ### PDF viewer (optional)
 
-A pdf viewer like [Skim](https://skim-app.sourceforge.io/),
-[Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader) is also fun to have
-when working on LaTeX projects.
+A responsive pdf viewer like [Skim](https://skim-app.sourceforge.io/),
+[Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader) is also a must have
+when working on LaTeX projects. These are some viewers that provide automatic refresh on file change and this is why they are working very well with `latexmk`.
 
 # Installation
 
