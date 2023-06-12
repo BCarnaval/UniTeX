@@ -92,7 +92,8 @@ The ideal way to install UniTeX is via the install script `install.sh`.
 
 ```shell
 git clone https://github.com/BCarnaval/UniTeX
-...
+```
+```shell
 cd UniTeX && chmod +x install.sh && ./install.sh
 ```
 
