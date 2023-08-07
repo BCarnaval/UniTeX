@@ -1,0 +1,91 @@
+% --------------------
+% Color theme settings
+% --------------------
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+
+% -----------------
+% Language settings
+% -----------------
+\usepackage[style=verbose]{biblatex}
+\usepackage[greek, english, french]{babel} % Using different languages
+% File is created and written to disk by the above package
+
+% Bibliography
+\addbibresource{refs.bib}
+
+\usepackage{bm} % Any character in bold.
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage{standalone}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+
+% ----------------
+% Language support
+% ----------------
+\usepackage[greek, english, french]{babel} % Using different languages
+\newcommand{\Language}[1]{\selectlanguage{#1}}
+
+% Vectors upright convention
+\renewcommand{\bm}[1]{\mathbf{#1}}
+
+% -------------
+% Font settings
+% -------------
+\usefonttheme{professionalfonts} % using non standard fonts for beamer
+\usefonttheme{serif} % default family is serif
+\usepackage{charter}
+
+% ------------
+% TOC settings
+% ------------
+\setbeamercolor{section in toc}{fg=black}
+\setbeamertemplate{section in toc}[square]
+\setbeamertemplate{subsection in toc}{%
+  \vspace{0.25em}\hspace{2em}{\color{sweet_blue}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
+
+% ----------------------
+% Global frames settings
+% ----------------------
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{section number projected}{fg=black, bg=sweet_blue}
+
+% ------------------------
+% Colored Boxes and blocks
+% ------------------------
+% Colored blocks
+\definecolor{sweet_blue}{RGB}{214, 214, 239} % #09376e
+\definecolor{sweet_green}{RGB}{163, 209, 175} % #a3d1af
+\definecolor{sweet_orange}{RGB}{250, 200, 152} % #FAC898
+
+\newenvironment{defblock}[1]{
+    \tcolorbox[noparskip, colback=white,
+    colframe=sweet_green, boxrule=1pt, arc=0pt, title=#1, coltitle=black]}
+    {\endtcolorbox
+}
+\newenvironment{noteblock}[1]{
+    \tcolorbox[noparskip, colback=white,
+    colframe=sweet_orange, boxrule=1pt, arc=0pt, title=#1, coltitle=black]}
+    {\endtcolorbox
+}
+\newenvironment{colorblock}[1]{
+    \tcolorbox[noparskip, colback=white,
+    colframe=sweet_blue, boxrule=1pt, arc=0pt, title=#1, coltitle=black]}
+    {\endtcolorbox
+}
+
+% Colored boxes
+\newtcolorbox{mybox}{
+  sharp corners, tcbox width=auto limited, capture=hbox, on line,
+  colback=white, colframe=sweet_blue, arc=0pt, boxrule=1pt
+}
+
+% Classic colored boxes
+\renewcommand{\boxed}[1]{
+  \begin{mybox}
+      #1
+  \end{mybox}
+}
