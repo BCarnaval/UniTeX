@@ -1,0 +1,35 @@
+\documentclass{beamer}
+
+\usepackage{preamble, commands}
+
+% Title page details:
+\title{Résumé de Stage E2023}
+\author{Dimitri Bonanni-Surprenant}
+\date{\today}
+\logo{
+    \includegraphics[width=2cm]{figs/emblems/emblem_UQTR.png}
+}
+
+
+\begin{document}
+    %Set language
+    \Language{french}
+
+    % Title page frame
+    \begin{frame}
+        \titlepage
+    \end{frame}
+
+    % Remove logo from the next slides
+    \logo{}
+
+
+    % Outline frame
+    \begin{frame}{Table des matières}
+        \tableofcontents
+    \end{frame}
+
+    \input{sections/intro}
+
+
+\end{document}
