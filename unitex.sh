@@ -114,11 +114,11 @@ build_template () {
 }
 
 main () {
-    echo -e "${WHITE}--------------------------\n"
+    echo -e "${WHITE}--------------------------"
     check_pdflatex
-    echo -e "${WHITE}\n--------------------------\n"
+    echo -e "${WHITE}\n--------------------------"
     check_latexmk
-    echo -e "${WHITE}\n--------------------------\n"
+    echo -e "${WHITE}\n--------------------------"
     copy_template
     echo -e "${WHITE}\n--------------------------\n"
     build_template

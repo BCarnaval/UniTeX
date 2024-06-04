@@ -25,7 +25,7 @@ check_rsync () {
         echo -e "${WHITE}--------------------------\n"
         echo -e "${ORANGE}[!] Please install ${WHITE}rsync ${ORANGE}command on your system!"
         echo -e "${ORANGE}[!] For MacOS intallation, run ${WHITE}'brew install rsync'}."
-        echo -e "${ORANGE}[!] For common Linux distribution, run ${WHITE}'sudo apt-get install rsync'."
+        echo -e "${ORANGE}[!] For common Linux distribution, run ${WHITE}'apt-get install rsync'."
         echo -e "${GREEN} [@] Exiting..."
         exit 0
     fi
