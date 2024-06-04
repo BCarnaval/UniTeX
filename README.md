@@ -40,13 +40,11 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
   <OL, TYPE="square">
     <li><a href="#classic">Classic</a></li>
     <li><a href="#homework">Homework</a></li>
-    <li><a href="#cover-letter">Cover letter</a></li>
+    <li><a href="#Presentation">Presentation</a></li>
   </OL>
 </details>
 
 [TODO](#todo)
-
-[Credits](#credits)
 
 # Overleaf support
 
@@ -54,9 +52,9 @@ Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project i
 
 <div align="center">
 
-| Classic                                                                                                  | Homework                                                                                                  | Cover                                                                                                  |
-| -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Classic) | [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Homework) | [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Cover) |
+| Classic                                                                                                  | Homework                                                                                                  | Presentation                                                                                                  |
+| -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Classic) | [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Homework) | [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Presentation) |
 
 </div>
 
@@ -78,6 +76,7 @@ A Unix shell is better to install UniTeX properly. Commands such as `mkdir`, `cp
 A responsive pdf viewer like [Skim](https://skim-app.sourceforge.io/),
 [Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader) is also a must have
 when working on LaTeX projects. These are some viewers that provide automatic refresh on file change and this is why they are working very well with `latexmk`. For example, using Skim on MacOS, the viewer settings offer to check automatically for changes and reload the pdf
+
 <div align="center">
     <tr>
       <td><img src="/../screenshots/screenshots/skim_example.png" width=320 height=200></td>
@@ -93,6 +92,7 @@ The ideal way to install UniTeX is via the install script `install.sh`.
 ```shell
 git clone https://github.com/BCarnaval/UniTeX
 ```
+
 ```shell
 cd UniTeX && chmod +x install.sh && ./install.sh
 ```
@@ -205,35 +205,21 @@ Example from 'homework' template with [lavender](https://www.w3schools.com/color
    </table>
 </div>
 
-### Cover Letter
+### Presentation
 
-Example from 'cover' template with [light blue](https://www.w3schools.com/colors/color_tryit.asp?color=LightBlue) as main color
+Example from 'presentation' template with [light blue](https://www.w3schools.com/colors/color_tryit.asp?color=LightBlue) as main color
 
-<div align="center">
-  <table>
-    <tr>
-      <td>Default cover letter</td>
-    </tr>
-    <tr>
-      <td><img src="/../screenshots/screenshots/Cover/cover.png" width=360 height=480></td>
-    </tr>
-  </table>
-</div>
+WIP.
 
 # TODO
 
 - [x] 'Classic' template
 - [x] 'Homework' template (Overleaf's rebuild)
-- [x] 'Cover Letter' template
 - [ ] 'RevTeX' template
-- [ ] 'Beamer' template
+- [x] 'Beamer' template
 - [x] Install/uninstall scripts
 - [x] Version control
 - [ ] REAME.md
 - [ ] Add all well explained commands and features
   - [ ] Supported colors
   - [ ] Supported Universities (emblems + colors)
-- [ ] Setup default pdf viewer based on OS
-- [ ] Rebuild 'Homework' template's `quesiton{}{}` command as newenvironnement
-
-# Credits

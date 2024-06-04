@@ -1,16 +1,16 @@
 MAIN = main
 SHELL = /bin/bash
-PROJECT = UniTeX_Cover
+PROJECT = UniTeX_presentation
 DATE = $(shell date +"%F-%H")
 
 # Retreiving all source files
+BIB = $(shell find . -name "*.bib" -type f)
 FIGS = $(shell find . -name "figs/*" -type f)
 STY = $(shell find . -name "*.sty" -type f)
 TEX = $(shell find . -name "*.tex" -type f)
 
-SOURCE = $(STY) $(TEX) $(FIGS)
-GARBAGE = {bbl,synctex.gz,aux,fdb_latexmk,fls,log}
-
+SOURCE = $(BIB) $(STY) $(TEX) $(FIGS)
+GARBAGE = {bbl,synctex.gz,aux,fdb_latexmk,fls,log,nav,snm,xml}
 
 # Setting LaTeX compile (latexmk) options & flags
 MK = latexmk
@@ -50,7 +50,7 @@ dry: $(SOURCE)
 clean:
 	$(HIDE)$(RM) *.$(GARBAGE)
 	$(MK) -c
-	$(HIDE)echo -e "\n'Cover' template cleaned !"
+	$(HIDE)echo -e "\n'Presentation' template cleaned !"
 
 targz:
 	$(MAKE) clean
@@ -63,4 +63,3 @@ zip:
 	$(MAKE) dry
 	$(MAKE) clean
 	zip -q -r $(PROJECT)_$(DATE).zip $(SOURCE) ./figs
-

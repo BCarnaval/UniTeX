@@ -1,0 +1,110 @@
+% -------
+% THEORIE
+% -------
+
+% Defining TOC's sections before content
+\section{Théorie}
+
+\subsection{Modèle d'impureté d'Anderson}
+
+\subsection{Formalisme de Green dans la base mixte}
+
+
+\begin{frame}
+    \begin{center}
+    \vspace{0.5cm}
+    \boxed{
+        Théorie
+        }
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Théorie - Modèle d'impureté d'Anderson}
+    Hamiltonien du modèle d'impureté d'Anderson\footcite{CHARLEBOIS}:
+    \begin{align}
+        \vb{H}_{\text{AIM}} &= \sum_{i,j,\sigma}t_{ij}c_{i,\sigma}^\dagger c_{j,\sigma} + U\sum_in_{i\uparrow}n_{i\downarrow} - \mu\sum_{i,\sigma}n_{i,\sigma} + \nonumber\\
+            &\hspace{0.45cm}\sum_{i,\nu,\sigma}(\theta_{i\nu,\sigma}c_{i,\sigma}^\dagger a_{\nu,\sigma} + \text{h.c.}) + \sum_{\nu,\sigma}\epsilon_{\nu,\sigma}a^\dagger_{\nu,\sigma}a_{\nu,\sigma},
+        \label{eq: H_AIM}
+    \end{align}
+    \pause
+    \begin{defblock}{Définition: Opérateurs d'échelle}
+        Les opérateurs $c^\dagger, c$ sont des opérateurs de création anihilation dans la base des
+        sites. $a^\dagger, a$ jouent le même rôle dans la base des sites de bain.
+    \end{defblock}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Théorie - Modèle d'impureté d'Anderson}
+    \begin{columns}
+        \column{0.5\linewidth}
+        Termes de Hubbard:
+        {\scriptsize
+        \begin{align*}
+            \vb{H}_{\text{AIM}} &= \sum_{i,j,\sigma}t_{ij}c_{i,\sigma}^\dagger c_{j,\sigma} + U\sum_in_{i\uparrow}n_{i\downarrow} \\
+                                &- \mu\sum_{i,\sigma}n_{i,\sigma} + \dots
+        \end{align*}
+        }
+        \column{0.5\linewidth}
+        \begin{figure}
+           \centering
+            \includegraphics[scale=0.95]{./figures/theory/2d_lattice.pdf}
+            \caption{Schéma du modèle de Hubbard pour un réseau cristallin en 2 dimensions.}
+            \label{fig: hubbard_2d}
+        \end{figure}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Théorie - Modèle d'impureté d'Anderson}
+    \begin{columns}
+        \column{0.55\linewidth}
+        Termes liés à l'impureté:
+        {\scriptsize
+        \begin{align*}
+            \vb{H}_{\text{AIM}} &= \dots + \sum_{i,\nu,\sigma}(\theta_{i\nu,\sigma}c_{i,\sigma}^\dagger a_{\nu,\sigma} + \text{h.c.}) \\
+                                &\hspace{0.8cm}+\sum_{\nu,\sigma}\epsilon_{\nu,\sigma}a^\dagger_{\nu,\sigma}a_{\nu,\sigma}+ \dots
+        \end{align*}
+        }
+        \column{0.45\linewidth}
+        \begin{figure}
+           \centering
+            \includegraphics[scale=1.15]{./figures/results/clusters/1D_2s_4b_cluster.pdf}
+            \caption{Schéma d'un amas de deux sites réels liés à 4 sites de bain.}
+            \label{fig: 1D_2s_4b_HAIM}
+        \end{figure}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Théorie - Formalisme de Green \& base mixte}
+    \framesubtitle{Formalisme de Green}
+    L'accès aux observables se fait via la fonction de Green retardée
+    \begin{align}
+        G_{\mu\nu}(t) = -i\Theta(t)\langle c_\mu(t)c_\nu^\dagger + c_\nu^\dagger c_\mu(t)\rangle.
+        \label{eq: green_retarded}
+    \end{align}
+    \vspace{1cm}
+    \pause
+    \begin{noteblock}{Note}
+      La dépendance de $G_{\mu\nu}(t)$ au hamiltonien $\vb{H}$ est dissimulée dans la dépendance
+         temporelle de l'opérateur $c_\mu(t) = e^{i\vb{H}t}c_\mu e^{-i\vb{H}t}$.
+    \end{noteblock}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Théorie - Formalisme de Green \& base mixte}
+    \framesubtitle{Formalisme de Green}
+    Équations matricielles obtenues grâce aux éqs. du mouvement $\dot{G}_{\mu\nu}(t)$
+    \begin{align}
+      \underbrace{\vb{G}_0^{-1}(z) = z - \vb{t}(\vb{\tilde{k}}),}_{\text{sans interactions}}
+        &&\underbrace{\vb{G}^{-1}(\vb{\Tilde{k}}, z) = \vb{G}_0^{-1}(z) - \vb{\Sigma}(\vb{\Tilde{k}}, z)}_{\text{avec interactions}}
+        \label{eq: greens}
+    \end{align}
+    \vfill
+    \pause
+    \begin{defblock}{Définition: \textit{self-énergie} $\vb{\Sigma}$}
+      La \textit{self-énergie} est une quantité dont nous avons peu d'information.
+      On peut la voir comme l'effet de l'interaction sur la propagation d'un électron (ex: piscine à balles).
+    \end{defblock}
+\end{frame}

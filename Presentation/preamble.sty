@@ -1,0 +1,87 @@
+% --------------------
+% Color theme settings
+% --------------------
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+
+% -----------------
+% Language settings
+% -----------------
+\usepackage[style=verbose]{biblatex}
+\usepackage[greek, english, french]{babel} % Using different languages
+% File is created and written to disk by the above package
+
+% ------------
+% Bibliography
+% ------------
+\addbibresource{refs.bib}
+\renewcommand{\footnotesize}{\tiny} % resize foot citation
+\definecolor{refs}{RGB}{45, 52, 175} % Refs colors
+\definecolor{sweet_refs}{RGB}{121, 123, 202}
+
+% --------------
+% Math & Physics
+% --------------
+\usepackage{xcolor}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+
+% -------------
+% Font settings
+% -------------
+\setbeamerfont{framesubtitle}{size=\small}
+\usefonttheme{professionalfonts} % using non standard fonts for beamer
+\usefonttheme{serif} % default family is serif
+\usepackage{charter}
+
+% ------------
+% TOC settings
+% ------------
+\setbeamercolor{section in toc}{fg=black}
+\setbeamertemplate{section in toc}[square]
+\setbeamertemplate{subsection in toc}{%
+  \vspace{0.25em}\hspace{2em}{\color{sweet_blue}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
+
+% ----------------------
+% Global frames settings
+% ----------------------
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{section number projected}{fg=black, bg=sweet_blue}
+
+% ------------------------
+% Colored Boxes and blocks
+% ------------------------
+% Colored blocks
+\definecolor{sweet_blue}{RGB}{214, 214, 239} % #09376e
+\definecolor{sweet_green}{RGB}{163, 209, 175} % #a3d1af
+\definecolor{hard_green}{RGB}{119, 187, 137} % #66b27b
+\definecolor{sweet_orange}{RGB}{250, 200, 152} % #FAC898
+
+\newenvironment{defblock}[1]{
+    \tcolorbox[noparskip, colback=white,
+    colframe=sweet_green, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
+    {\endtcolorbox
+}
+\newenvironment{noteblock}[1]{
+    \tcolorbox[noparskip, colback=white,
+    colframe=sweet_orange, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
+    {\endtcolorbox
+}
+\newenvironment{colorblock}[1]{
+    \tcolorbox[noparskip, colback=white,
+    colframe=sweet_blue, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
+    {\endtcolorbox
+}
+
+% Colored boxes
+\newtcolorbox{mybox}{
+    tcbox width=auto limited, capture=hbox, on line,
+  colback=white, colframe=sweet_blue, arc=1pt, boxrule=1pt
+}
+
+\renewcommand{\boxed}[1]{
+  \begin{mybox}
+      \hspace{0.05cm}#1
+  \end{mybox}
+}
