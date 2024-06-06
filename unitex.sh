@@ -136,7 +136,7 @@ while getopts ":b:d:o:vh" opt; do
                 homework)
                     BUILD_TEMP=Homework
                     ;;
-                cover)
+                presentation)
                     BUILD_TEMP=Presentation
                     ;;
                 *)
