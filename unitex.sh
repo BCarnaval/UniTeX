@@ -40,7 +40,7 @@ USAGE
 ${WHITE}${BOLD}
 ARGUMENTS
 
-    ${BOLD}${CYAN}-b,        -build      ${REG}${WHITE}Builds specified template (${BLUE}classic${WHITE}, ${BLUE}homework${WHITE}, ${BLUE}cover${WHITE}).
+    ${BOLD}${CYAN}-b,        -build      ${REG}${WHITE}Builds specified template (${BLUE}classic${WHITE}, ${BLUE}homework${WHITE}, ${BLUE}presentation${WHITE}).
 
     ${BOLD}${CYAN}-d,        -dir        ${REG}${WHITE}Specifies where to build chosen template.
 ${WHITE}${BOLD}
@@ -137,11 +137,11 @@ while getopts ":b:d:o:vh" opt; do
                     BUILD_TEMP=Homework
                     ;;
                 cover)
-                    BUILD_TEMP=Cover
+                    BUILD_TEMP=Presentation
                     ;;
                 *)
                     echo -e "${ORANGE}[!] UniTeX doesn't have a template named '${OPTARG}'. ${WHITE}Run $(basename ${0}) -h."
-                    echo -e "${ORANGE}[!] Supported templates are currently ${WHITE}classic, homework and cover."
+                    echo -e "${ORANGE}[!] Supported templates are currently ${WHITE}classic, homework and presentation."
                     reset_terminal
                     exit 1
                     ;;
@@ -214,7 +214,7 @@ if [[ ${BUILD_TEMP} && ${BUILD_DIR} ]]; then
 else
     echo -e "${ORANGE}[!] You must chose a template using ${WHITE}'b' ${ORANGE}argument."
     echo -e "[!] AND a directory using ${WHITE} 'd' ${ORANGE} argument."
-    echo -e "${ORANGE}[!] Available templates are currently ${WHITE}'classic, homework and cover'${ORANGE}."
+    echo -e "${ORANGE}[!] Available templates are currently ${WHITE}'classic, homework and presentation'${ORANGE}."
     echo -e "${ORANGE}[!] Run ${WHITE}$(basename ${0}) -h${ORANGE}."
     reset_terminal
     exit 1
