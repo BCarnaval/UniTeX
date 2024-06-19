@@ -1,7 +1,7 @@
 % --------------------
 % Color theme settings
 % --------------------
-\usetheme{Madrid}
+\usetheme{default}
 \usecolortheme{seahorse}
 
 % -----------------
@@ -48,6 +48,14 @@
 % ----------------------
 \beamertemplatenavigationsymbolsempty
 \setbeamercolor{section number projected}{fg=black, bg=sweet_blue}
+
+% Frame number
+\addtobeamertemplate{navigation symbols}{}{
+    \usebeamerfont{footline}
+    \usebeamercolor{footline}
+    \hspace{1em}
+    \insertframenumber/\inserttotalframenumber
+}
 
 % ------------------------
 % Colored Boxes and blocks
