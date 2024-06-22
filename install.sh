@@ -13,9 +13,6 @@ TAG=$(git describe --tags)
 DESTINATION=${INSTALL_DIR:-${1:-${HOME}/.local/share}}
 LINK_DIR=${2:-${HOME}/.local/bin/unitex}
 
-# DESTINATION=${HOME}/.local/share
-# LINK_DIR=${HOME}/.local/bin/unitex
-
 # Turn on extended globbing in bash shell
 shopt -s extglob
 
