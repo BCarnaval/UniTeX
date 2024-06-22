@@ -9,8 +9,6 @@ ORANGE="$(printf '\033[33m')"
 PROJ=UniTeX
 CURRENT_DIR=$( pwd )
 TAG=$(git describe --tags)
-# DESTINATION=/usr/local/share
-# LINK_DIR=/usr/local/bin/unitex
 DESTINATION=${HOME}/.local/share
 LINK_DIR=${HOME}/.local/bin/unitex
 
@@ -61,7 +59,7 @@ fill_directory () {
     chmod +x ${DESTINATION}/${PROJ}/uninstall.sh
 
     # Version control
-    echo "${TAG}" | cut -d '-' -f 1 | sudo tee ${DESTINATION}/${PROJ}/version.txt &> /dev/null
+    echo "${TAG}" | cut -d '-' -f 1 | tee ${DESTINATION}/${PROJ}/version.txt &> /dev/null
 
     # Create symlink
     echo -e "${GREEN}[@] Updating symlink from ${WHITE}${LINK_DIR}${GREEN}."
