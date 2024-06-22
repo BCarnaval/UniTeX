@@ -19,7 +19,7 @@ BLUE="$(printf '\033[34m')"
 BOLD="$(printf '\033[1m')"
 REG="$(printf '\033[0m')"
 
-PROJ_DIR=/usr/local/share/UniTeX
+PROJ_DIR=${HOME}/.local/share/UniTeX
 
 reset_terminal () {
     tput sgr0

@@ -8,10 +8,11 @@ ORANGE="$(printf '\033[33m')"
 
 PROJ=UniTeX
 CURRENT_DIR=$( pwd )
-CONFIG=~/.config/latexmk
 TAG=$(git describe --tags)
-DESTINATION=/usr/local/share
-LINK_DIR=/usr/local/bin/unitex
+# DESTINATION=/usr/local/share
+# LINK_DIR=/usr/local/bin/unitex
+DESTINATION=${HOME}/.local/share
+LINK_DIR=${HOME}/.local/bin/unitex
 
 # Turn on extended globbing in bash shell
 shopt -s extglob
@@ -31,34 +32,6 @@ check_rsync () {
     fi
 }
 
-use_viewer () {
-    if command -v zathura &> /dev/null; then
-        echo -e "${WHITE}--------------------------\n"
-        echo -e "${GREEN}[@] This pdf viewer has been found on your system: \n${WHITE}$(zathura -v)"
-
-        if ! grep -s -e "\$ pdf_previewer = 'zathura';" ${CONFIG}/latexmkrc &> /dev/null; then
-            while true; do
-                read -p "${GREEN}[@] Do you want to use this viewer as default while compiling templates? [y/n]" yn
-                case $yn in
-                    [Yy]*)
-                        mkdir -p ${CONFIG}
-                        echo -n  "" > ${CONFIG}/latexmkrc
-                        echo "\$ pdf_previewer = 'zathura';" >> ${CONFIG}/latexmkrc
-                        break
-                        ;;
-                    [Nn]*)
-                        break
-                        ;;
-                    *)
-                        echo -e "${ORANGE}[!] Please answer yes or no."
-                        ;;
-                esac
-            done
-        fi
-
-    fi
-}
-
 build_directory () {
     echo -e "${WHITE}\n--------------------------\n"
     echo -e "${GREEN}[@] Installing ${WHITE}${PROJ}${GREEN}..."
@@ -67,13 +40,13 @@ build_directory () {
 
         # Updating directories
         echo -e "${GREEN}[@] Wiping old version if any inside ${WHITE}${DESTINATION}${GREEN}."
-        sudo rm -rf ${DESTINATION}/${PROJ}
+        rm -rf ${DESTINATION}/${PROJ}
 
         echo -e "${GREEN}[@] Building new dirs inside ${WHITE}${DESTINATION}${GREEN}."
-        sudo mkdir -p ${DESTINATION}/${PROJ}
+        mkdir -p ${DESTINATION}/${PROJ}
     else
         echo -e "${GREEN}[@] Building dirs inside ${WHITE}${DESTINATION}${GREEN}."
-        sudo mkdir -p ${DESTINATION}/${PROJ}
+        mkdir -p ${DESTINATION}/${PROJ}
     fi
 }
 
@@ -81,11 +54,11 @@ fill_directory () {
     echo -e "${WHITE}\n--------------------------\n"
     echo -e "${GREEN}[@] Filling dirs with templates..."
 
-    sudo rsync -a --exclude='*.md' --exclude='.*' ${CURRENT_DIR}/ ${DESTINATION}/${PROJ}
+    rsync -a --exclude='*.md' --exclude='.*' ${CURRENT_DIR}/ ${DESTINATION}/${PROJ}
 
     # Make scripts executable
-    sudo chmod +x ${DESTINATION}/${PROJ}/unitex.sh
-    sudo chmod +x ${DESTINATION}/${PROJ}/uninstall.sh
+    chmod +x ${DESTINATION}/${PROJ}/unitex.sh
+    chmod +x ${DESTINATION}/${PROJ}/uninstall.sh
 
     # Version control
     echo "${TAG}" | cut -d '-' -f 1 | sudo tee ${DESTINATION}/${PROJ}/version.txt &> /dev/null
@@ -93,10 +66,10 @@ fill_directory () {
     # Create symlink
     echo -e "${GREEN}[@] Updating symlink from ${WHITE}${LINK_DIR}${GREEN}."
     if [[ -L ${LINK_DIR} ]]; then
-        sudo rm ${LINK_DIR}
-        sudo ln -s ${DESTINATION}/${PROJ}/unitex.sh ${LINK_DIR}
+        rm ${LINK_DIR}
+        ln -s ${DESTINATION}/${PROJ}/unitex.sh ${LINK_DIR}
     else
-        sudo ln -s ${DESTINATION}/${PROJ}/unitex.sh ${LINK_DIR}
+        ln -s ${DESTINATION}/${PROJ}/unitex.sh ${LINK_DIR}
     fi
 
     echo -e "${GREEN}[@] ${WHITE}${PROJ}${GREEN} Installed successfully:${WHITE} Execute 'unitex -h' to verify installation."
@@ -105,7 +78,6 @@ fill_directory () {
 
 main () {
     check_rsync
-    use_viewer
     build_directory
     fill_directory
     reset_terminal
