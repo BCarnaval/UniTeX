@@ -9,8 +9,12 @@ ORANGE="$(printf '\033[33m')"
 PROJ=UniTeX
 CURRENT_DIR=$( pwd )
 TAG=$(git describe --tags)
-DESTINATION=${HOME}/.local/share
-LINK_DIR=${HOME}/.local/bin/unitex
+
+DESTINATION=${INSTALL_DIR:-${1:-${HOME}/.local/share}}
+LINK_DIR=${2:-${HOME}/.local/bin/unitex}
+
+# DESTINATION=${HOME}/.local/share
+# LINK_DIR=${HOME}/.local/bin/unitex
 
 # Turn on extended globbing in bash shell
 shopt -s extglob
@@ -81,4 +85,4 @@ main () {
     reset_terminal
 }
 
-main
+main "${@}"
