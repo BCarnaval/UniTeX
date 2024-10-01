@@ -2,7 +2,7 @@
 % Color theme settings
 % --------------------
 \usetheme{default}
-\usecolortheme{seahorse}
+\usecolortheme{spruce}
 
 % -----------------
 % Language settings
@@ -16,12 +16,11 @@
 % ------------
 \addbibresource{refs.bib}
 \renewcommand{\footnotesize}{\tiny} % resize foot citation
-\definecolor{refs}{RGB}{45, 52, 175} % Refs colors
-\definecolor{sweet_refs}{RGB}{121, 123, 202}
 
 % --------------
 % Math & Physics
 % --------------
+\usepackage{cancel}
 \usepackage{xcolor}
 \usepackage{physics}
 \usepackage{mathtools}
@@ -33,7 +32,7 @@
 \setbeamerfont{framesubtitle}{size=\small}
 \usefonttheme{professionalfonts} % using non standard fonts for beamer
 \usefonttheme{serif} % default family is serif
-\usepackage{charter}
+\usepackage[mono,vvarbb,upint]{notomath} % Font
 
 % ------------
 % TOC settings
@@ -41,18 +40,18 @@
 \setbeamercolor{section in toc}{fg=black}
 \setbeamertemplate{section in toc}[square]
 \setbeamertemplate{subsection in toc}{%
-  \vspace{0.25em}\hspace{2em}{\color{sweet_blue}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
+  \vspace{0.25em}\hspace{2em}{\color{spruce_light}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
 
 % ----------------------
 % Global frames settings
 % ----------------------
 \beamertemplatenavigationsymbolsempty
-\setbeamercolor{section number projected}{fg=black, bg=sweet_blue}
+\setbeamercolor{section number projected}{fg=black, bg=spruce_light}
 
 % Frame number
 \addtobeamertemplate{navigation symbols}{}{
     \usebeamerfont{footline}
-    \usebeamercolor{footline}
+    \usebeamercolor[spruce_medium]{footline}
     \hspace{1em}
     \insertframenumber/\inserttotalframenumber
 }
@@ -63,22 +62,26 @@
 % Colored blocks
 \definecolor{sweet_blue}{RGB}{214, 214, 239} % #09376e
 \definecolor{sweet_green}{RGB}{163, 209, 175} % #a3d1af
-\definecolor{hard_green}{RGB}{119, 187, 137} % #66b27b
+\definecolor{hard_green}{RGB}{0, 128, 64} % #66b27b
 \definecolor{sweet_orange}{RGB}{250, 200, 152} % #FAC898
+\definecolor{sweet_brown}{RGB}{197, 180, 160} % #bba790
+\definecolor{spruce_light}{RGB}{229, 240, 235}
+\definecolor{spruce_medium}{RGB}{115, 151, 134}
+\definecolor{spruce_dark}{RGB}{0, 61, 32}
 
 \newenvironment{defblock}[1]{
     \tcolorbox[noparskip, colback=white,
-    colframe=sweet_green, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
+    colframe=sweet_brown, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
     {\endtcolorbox
 }
 \newenvironment{noteblock}[1]{
     \tcolorbox[noparskip, colback=white,
-    colframe=sweet_orange, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
+    colframe=sweet_brown, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
     {\endtcolorbox
 }
 \newenvironment{colorblock}[1]{
     \tcolorbox[noparskip, colback=white,
-    colframe=sweet_blue, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
+    colframe=sweet_brown, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
     {\endtcolorbox
 }
 

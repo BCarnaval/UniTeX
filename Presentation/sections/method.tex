@@ -1,27 +1,26 @@
-% -------------------
-% METHODES NUMERIQUES
-% -------------------
+% ------
+% METHOD
+% ------
 
 % Defining TOC's sections before content
+
 \section{Méthodes numériques}
 
-\subsection{CDMFT}
+\subsection{CDMFT \&\;PyQCM}
 
-\subsection{Amélioration de l'auto-cohérence}
-
-\subsection{PyQCM}
+\subsection{Algorithme de sous-bains}
 
 \begin{frame}
+    \vfill
     \begin{center}
-    \vspace{0.5cm}
-    \boxed{
+        \large
         Méthodes numériques
-    }
     \end{center}
+    \vfill
 \end{frame}
 
 \begin{frame}
-    \frametitle{Méthodes numériques - CDMFT}
+  \frametitle{Méthodes numériques - CDMFT \&\;PyQCM}
     On choisit un amas pour lequel on calcule la fonction de Green en tenant
     compte des interactions avec le bain via $\vb{H}_{\text{AIM}}$
     \begin{align}
@@ -29,35 +28,28 @@
     \end{align}
     \begin{figure}
          \centering
-         \includegraphics[scale=0.75]{./figures/theory/1D_2s_4b_bulk.pdf}
-         \caption{Amas 1D plongé dans un bain sans interactions.}
+         \includegraphics[scale=0.8]{./figures/theory/1D_2s_4b_bulk.pdf}
+         % \caption{Amas 1D plongé dans un bain sans interactions.}
          \label{fig: amas_CDMFT}
     \end{figure}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Méthodes numérique - CDMFT}
-    \begin{defblock}{Définition: Fonction d'hybridation $\vb{\Gamma}(z)$}
-       L'effet du bain sur la fonction de Green est encapsulé dans l'hybridation
-        \begin{align}
-          \vb{\Gamma}(z) = \Gamma_{ij,\sigma}(z) = \sum_\nu\frac{\theta_{i\nu,\sigma}\theta^*_{j\nu,\sigma}}{z - \epsilon_{\nu,\sigma}},
-          \label{eq: hybridization}
-        \end{align}
-        à l'intérieur de laquelle sont stockés les paramètres variationnels de l'algorithme
-        CDMFT.
-    \end{defblock}
+  \frametitle{Méthodes numériques - CDMFT \&\;PyQCM}
+  L'effet du bain sur la fonction de Green est encapsulé dans ladite
+  \textcolor{hard_green}{fonction d'hybridation $\vb{\Gamma}(z)$}
+  \vspace{1cm}
+  \begin{align}
+    \vb{\Gamma}(z) = \Gamma_{ij,\sigma}(z) = \sum_\nu\frac{\theta_{i\nu,\sigma}\theta^*_{j\nu,\sigma}}{z - \epsilon_{\nu,\sigma}},
+    \label{eq: hybridization}
+  \end{align}
+  \vspace{1cm}
+
+  à l'intérieur de laquelle sont stockés les paramètres variationnels de l'algorithme CDMFT.
 \end{frame}
 
 \begin{frame}
-    \frametitle{Méthodes numérique - CDMFT}
-    Grâce au formalisme de base mixte, on calcule la fonction de Green
-    \textbf{projetée sur l'amas}
-    \begin{align}
-        \vb{\Bar{G}}(z) = \Bigg[\frac{N_c}{N}\sum_{\vb{\Tilde{k}}}e^{i\vb{\Tilde{k}}\cdot\vb{\Tilde{r}}}\vb{G}(\vb{\Tilde{k}}, z)\Bigg]_{\vb{\Tilde{r}}=0}
-        = \frac{N_c}{N}\sum_{\vb{\tilde{k}}}\frac{1}{z - \vb{t}(\vb{\tilde{k}}) - \textcolor{hard_green}{\vb{\Sigma}_c(z)}}.
-    \end{align}
-    \pause
-    \vfill
+  \frametitle{Méthodes numériques - CDMFT \&\;PyQCM}
     L'essence de la CDMFT est d'obtenir une correspondance entre
     $\vb{G}_c(z)$ et $\vb{\Bar{G}}(z)$ via \textcolor{hard_green}{l'approximation locale de la \textit{self-énergie}:}
     \begin{align}
@@ -65,10 +57,30 @@
         {\vb{\Sigma}(\vb{\tilde{k}}, z)\longrightarrow\vb{\Sigma}_c(z),}
     \end{align}
     dans une boucle d'auto-cohérence.
+    \vfill
+    \pause
+    Grâce au formalisme de base mixte, on calcule la fonction de Green
+    \textbf{projetée sur l'amas}
+    \begin{align}
+        \vb{\Bar{G}}(z) = \Bigg[\frac{N_c}{N}\sum_{\vb{\Tilde{k}}}e^{i\vb{\Tilde{k}}\cdot\vb{\Tilde{r}}}\vb{G}(\vb{\Tilde{k}}, z)\Bigg]_{\vb{\Tilde{r}}=0}
+        = \frac{N_c}{N}\sum_{\vb{\tilde{k}}}\frac{1}{z - \vb{t}(\vb{\tilde{k}}) - \textcolor{hard_green}{\vb{\Sigma}_c(z)}}.
+    \end{align}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Méthodes numériques - CDMFT}
+  \frametitle{Méthodes numériques - CDMFT \&\;PyQCM}
+    La fonction de distance est donnée par
+    \begin{align}
+      d &= \sum_{i\omega_n, \mu, \nu}W_n|(\vb{G}_c^{-1}(i\omega_n) - \vb{\Bar{G}}^{-1}(i\omega_n))_{\mu\nu}|^2 \\
+        &=\sum_{i\omega_n, \mu, \nu}W_n|(\vb{\Gamma}(i\omega_n) - \vb{\Bar{\Gamma}}(i\omega_n))_{\mu\nu}|^2,
+        \label{eq: dist}
+    \end{align}
+    où $i\omega_n$ sont les fréquences de Matsubara et $W_n$ des poids arbitraires.
+    C'est grâce à cette fonction que l'on calcule la correspondance entre $\vb{G}_c(z)$ et $\vb{\Bar{G}}(z)$.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Méthodes numériques - CDMFT \&\;PyQCM}
     \begin{columns}
         \column{0.4\linewidth}
         \hspace{1cm}
@@ -86,67 +98,63 @@
             \item[$\diamond$] Minimise la fonction de distance $d$ grâce aux paramètres de $\vb{\Gamma}(z)$
             \pause
             \item[$\diamond$] L'hybridation mise à jour est comparée à celle
-                de l'itération précédente pour vérifier la convergence
+                de l'itération précédente
         \end{itemize}
     \end{columns}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Méthodes numériques - Amélioration de l'auto-cohérence}
+    \frametitle{Méthodes numériques - Algorithme de sous-bains}
     L'idée est de morceler le bain en sous-bains dont un seul est impliqué dans
     la diagonalisation à chaque itération
     \begin{align}
-        \vb{\Gamma}(z)\longrightarrow\vb{\Gamma}_1(z) + \vb{\Gamma}_2(z)
+      \vb{G}^{-1}_{c_i}(z) = z - \vb{t}_{c_i}(z) - \vb{\Gamma}_{c_i}(z) - \vb{\Sigma}_{c_i}(z)
     \end{align}
     \begin{figure}
          \centering
          \includegraphics[scale=0.75]{./figures/theory/1D_2s_4vb_bulks.pdf}
-         \caption{Amas 1D plongé dans deux sous-bains sans interactions.}
+         % \caption{Amas 1D plongé dans deux sous-bains sans interactions.}
          \label{fig: amas_CDMFT_virtual}
     \end{figure}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Méthodes numériques - Amélioration de l'auto-cohérence}
+    \frametitle{Méthodes numériques - Algorithme de sous-bains}
+    Cependant, que se passe-t-il avec l'approximation locale de la self-énergie?
+    Plusieurs self-énergies sont valides...
+    \begin{align}
+      {\vb{\Sigma}(\vb{\tilde{k}}, z)\longrightarrow\cancel{\vb{\Sigma}_c(z)},}
+    \end{align}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Méthodes numériques - Algorithme de sous-bains}
+    Cependant, que se passe-t-il avec l'approximation locale de la self-énergie?
+    Plusieurs self-énergies sont valides...
+    \begin{align}
+      \vb{\Sigma}(\vb{\tilde{k}}, z)\longrightarrow\textcolor{hard_green}{\lambda_1\vb{\Sigma}_{c_1}(z) +
+      \lambda_2\vb{\Sigma}_{c_2}(z)},
+    \end{align}
+    \pause
+    Ce qui modifie le calcul de la fonction de Green projetée et la fonction de distance
+    \begin{align}
+        \vb{\Bar{G}}(z) = \frac{N_c}{N}\sum_{\vb{\tilde{k}}}\frac{1}{z - \vb{t}(\vb{\tilde{k}}) - (\textcolor{hard_green}{\lambda_1\vb{\Sigma}_{c_1}(z) +
+        \lambda_2\vb{\Sigma}_{c_2}(z)})}.
+    \end{align}
+    \begin{align}
+      d = \sum_{i\omega_n, \mu,\nu}W_n|(\textcolor{hard_green}{\lambda_1\vb{\Gamma}_{c_1}(i\omega_n) + \lambda_2\vb{\Gamma}_{c_2}(i\omega_n)} - \vb{\Bar{\Gamma}}(i\omega_n))_{\mu\nu}|^2
+    \end{align}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Méthodes numériques - Algorithme de sous-bains}
     \begin{columns}
         \column{0.25\linewidth}
         \includegraphics[scale=0.45]{./figures/theory/flow_chart.pdf}
         \column{0.05\linewidth}
+        \Large
         $\longrightarrow$
         \column{0.5\linewidth}
-        \includegraphics[scale=0.45]{./figures/theory/flow_chart_virtual_pair.pdf}
+        \includegraphics[scale=0.45]{./figures/theory/flow_chart_sub_baths.pdf}
     \end{columns}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Méthodes numériques - Amélioration de l'auto-cohérence}
-    \begin{columns}
-        \column{0.25\linewidth}
-        \includegraphics[scale=0.45]{./figures/theory/flow_chart.pdf}
-        \column{0.05\linewidth}
-        $\longrightarrow$
-        \column{0.5\linewidth}
-        \includegraphics[scale=0.45]{./figures/theory/flow_chart_virtual_impair.pdf}
-    \end{columns}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Méthodes numériques - PyQCM}
-        \begin{columns}
-            \column{0.5\linewidth}
-            {\scriptsize
-            \textit{"Pyqcm is a Python/C++ library that implements a few quantum
-            cluster methods with an exact diagonalization impurity solver. Quantum
-            cluster methods are used in the study of strongly correlated electrons
-            to provide an approximate solution to Hubbard-like models\dots"} - David Sénéchal.
-            }
-            \column{0.5\linewidth}
-            \begin{figure}
-                 \centering
-                 \includegraphics[scale=0.15]{./figures/theory/h8.png}
-                 \caption{Réseau cristallin nid d'abeilles\footnotemark.}
-                 \label{fig: pyqcm}
-            \end{figure}
-        \end{columns}
-        \footnotetext{\textcolor{refs}{Théo N. DIONNE et al.} Pyqcm: An open-source Python library for quantum cluster methods. \textcolor{sweet_refs}{2023. DOI : 10.21468/SciPostPhysCodeb.23.}}
 \end{frame}
