@@ -143,10 +143,6 @@ style.sty
 
 3. Assuming that **test** directory isn't missing any files, you can configure/customize the template to satisfy the nature of your project. Simply open your text editor and remove default values from `main.tex`, all the files inside `sections/` and `figs/` directories, references from `refs.bib` and feel free to add your personnal commands/style features inside `commands.sty`, `style.sty`.
 
-# Features
-
-IN DEVELOPPEMENT.
-
 # Screenshots
 
 ### Classic
@@ -219,7 +215,3 @@ WIP.
 - [x] 'Beamer' template
 - [x] Install/uninstall scripts
 - [x] Version control
-- [ ] REAME.md
-- [ ] Add all well explained commands and features
-  - [ ] Supported colors
-  - [ ] Supported Universities (emblems + colors)
