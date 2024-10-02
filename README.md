@@ -210,8 +210,8 @@ Example from 'presentation' template with spruce-like color as main color
       <td>Table of content</td>
     </tr>
     <tr>
-      <td><img src="/../screenshots/screenshots/Presentation/title.png" width=440 height=320></td>
-      <td><img src="/../screenshots/screenshots/Presentation/toc.png" width=440 height=320></td>
+      <td><img src="/../screenshots/screenshots/Presentation/title.png" width=460 height=300></td>
+      <td><img src="/../screenshots/screenshots/Presentation/toc.png" width=460 height=300></td>
     </tr>
    </table>
 
@@ -221,8 +221,8 @@ Example from 'presentation' template with spruce-like color as main color
       <td>Figure</td>
     </tr>
     <tr>
-      <td><img src="/../screenshots/screenshots/Presentation/maths.png" width=440 height=320></td>
-      <td><img src="/../screenshots/screenshots/Presentation/mixed_basis.png" width=440 height=320></td>
+      <td><img src="/../screenshots/screenshots/Presentation/maths.png" width=460 height=300></td>
+      <td><img src="/../screenshots/screenshots/Presentation/mixed_basis.png" width=460 height=300></td>
     </tr>
    </table>
 </div>
