@@ -33,8 +33,6 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 
 [Quick start](#quick-start)
 
-[Features](#features)
-
 <details>
   <summary><a href="#screenshots">Screenshots</a></summary>
   <OL, TYPE="square">
@@ -203,9 +201,31 @@ Example from 'homework' template with [lavender](https://www.w3schools.com/color
 
 ### Presentation
 
-Example from 'presentation' template with [light blue](https://www.w3schools.com/colors/color_tryit.asp?color=LightBlue) as main color
+Example from 'presentation' template with spruce-like color as main color
 
-WIP.
+<div align="center">
+  <table>
+    <tr>
+      <td>Title page</td>
+      <td>Table of content</td>
+    </tr>
+    <tr>
+      <td><img src="/../screenshots/screenshots/Presentation/title.png" width=480 height=360></td>
+      <td><img src="/../screenshots/screenshots/Presentation/toc.png" width=480 height=360></td>
+    </tr>
+   </table>
+
+  <table>
+    <tr>
+      <td>Maths</td>
+      <td>Figure</td>
+    </tr>
+    <tr>
+      <td><img src="/../screenshots/screenshots/Presentation/maths.png" width=480 height=360></td>
+      <td><img src="/../screenshots/screenshots/Presentation/mixed_basis.png" width=480 height=360></td>
+    </tr>
+   </table>
+</div>
 
 # TODO
 
