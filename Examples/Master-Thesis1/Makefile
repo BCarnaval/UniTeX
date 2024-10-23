@@ -1,6 +1,6 @@
 MAIN = main
 SHELL = /bin/bash
-PROJECT = UniTeX_presentation
+PROJECT = UniTeX_Master-thesis1
 DATE = $(shell date +"%F-%H")
 
 # Retreiving all source files
@@ -10,7 +10,7 @@ STY = $(shell find . -name "*.sty" -type f)
 TEX = $(shell find . -name "*.tex" -type f)
 
 SOURCE = $(BIB) $(STY) $(TEX) $(FIGS)
-GARBAGE = {bbl,synctex.gz,aux,fdb_latexmk,fls,log,nav,snm,xml}
+GARBAGE = {bbl,synctex.gz,aux,fdb_latexmk,fls,log}
 
 # Setting LaTeX compile (latexmk) options & flags
 MK = latexmk
@@ -53,7 +53,7 @@ dry: $(SOURCE)
 clean:
 	$(HIDE)$(RM) *.$(GARBAGE)
 	$(MK) -c
-	$(HIDE)echo -e "\n'Presentation' template cleaned !"
+	$(HIDE)echo -e "\n'Master-thesis1' template cleaned!"
 
 targz:
 	$(MAKE) clean

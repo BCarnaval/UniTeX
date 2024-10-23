@@ -1,0 +1,47 @@
+\documentclass[12pt, twoside]{book}
+\usepackage{colors,style,commands}
+
+\MasterColor  {REBECCAPURPLE_MASTER}
+
+% Title page variables
+\Titre        {Étude des modèles d'Holstein et SSH unidimensionnels à l'aide du groupe de renormalisation}
+\SousTitre    {}
+
+\Nom          {Émile Larouche}
+
+\Enseignant   {Claude Bourbonnais}
+
+\Emblem       {UDS} % Choose (UDS, UQTR, BISHOP, MCGILL, ULAVAL, UDEM)
+\University   {Université de Sherbrooke}
+\Faculte      { des Science}
+\Departement  {de physique}
+\Date         {\today}
+
+\begin{document}
+
+    \Language{french}
+
+    \subfile{TitlePage}
+
+    \subfile{sections/resum.tex}
+
+    \clearpage
+
+    \tableofcontents
+
+    \subfile{sections/intro.tex}
+    \subfile{sections/metho.tex}
+    \subfile{sections/mod_nospin.tex}
+    \subfile{sections/mod_spin.tex}
+    \subfile{sections/conc.tex}
+
+    \clearpage
+
+    \subfile{sections/annexe.tex}
+
+    \clearpage
+
+    \pagestyle{plain} % Remove header for references
+    \bibliography{refs}
+
+\end{document}

@@ -1,0 +1,175 @@
+% -----------------------------------------------------------------------------
+% Style & Libraries
+% -----------------------------------------------------------------------------
+\ProvidesPackage{style}[2022/08/24]
+
+% --------------------------
+% Global page style settings
+% --------------------------
+\usepackage{cite} % Bibliography support
+\usepackage[mono,vvarbb,upint]{notomath} % Font
+\let\openbox\undefined
+\let\Bbbk\undefined
+\usepackage{sectsty} % Control sectional headers
+
+% Using 'subfiles', the user can compile each of the project's file
+% separately and those will automatically use 'main.tex' preamble.
+\usepackage{subfiles}
+
+\usepackage{booktabs} % Enhances the quality of tables
+\usepackage{geometry} % Customize page layout and dimensions
+\usepackage{fancyhdr} % Extensive control of page headers and footers
+\usepackage{titlesec} % Select alternative section titles
+\usepackage{blindtext} % Generate dummy text to test template
+\usepackage[T1]{fontenc} % Uses fonts that have 256 glyphs
+\usepackage[11pt]{moresize} % To use '\HUGE' fontsize
+\usepackage[utf8]{inputenc} % Telling LaTeX what encoding is used
+\usepackage[titles]{tocloft} % Table of contents (ToC) customization
+\usepackage[most]{tcolorbox} % Colored boxes support
+
+% ----------------
+% Language support
+% ----------------
+\usepackage[greek, english, french]{babel} % Using different languages
+\newcommand{\Language}[1]{\selectlanguage{#1}}
+
+% --------------
+% Math & Physics
+% --------------
+\usepackage{bm} % Makes bold symbols in math env.
+\usepackage{array}
+\usepackage{empheq}
+\usepackage{physics}
+\usepackage{enumerate}
+\let\circledS\undefined
+\usepackage{amsmath, amsfonts, amsthm, amssymb, dsfont}
+
+% -------
+% Figures
+% -------
+\usepackage{wrapfig} % Merge figures and text blocks
+\usepackage{listings} % Insert code blocks in .tex file
+\usepackage{subcaption} % Insert subcaptions in figure's caption
+\usepackage{tikz} % to make your own figure :)
+\usepackage{float} % to force figure to be where you want by using \begin{figure}[H]
+\usetikzlibrary{decorations.pathreplacing} % Permit tikz decoration drawings
+
+% ------------
+% Bibliography
+% ------------
+\bibliographystyle{plain}
+
+% -----------------
+% Table of contents
+% -----------------
+% Removing TOC's header
+\makeatletter
+\renewcommand\tableofcontents{
+    \thispagestyle{empty}
+    \section*{Table des matières (TDM)}
+    \@starttoc{toc}
+}
+\makeatother
+
+\renewcommand{\cftsecfont}{\bfseries\color{\MasterColor}}
+\renewcommand{\cftsubsecfont}{\color{\MasterColor}}
+\renewcommand{\cftsubsubsecfont}{\color{\MasterColor}}
+
+% Link's dots color
+\renewcommand{\cftsecleader}{\color{\MasterColor}\cftdotfill{\cftsecdotsep}}
+\renewcommand{\cftsubsecleader}{\color{\MasterColor}\cftdotfill{\cftsubsecdotsep}}
+\renewcommand{\cftsubsubsecleader}{\color{\MasterColor}\cftdotfill{\cftsubsubsecdotsep}}
+
+% Load hyperred package after 'tocloft' settings to color Toc
+\usepackage{hyperref}
+\hypersetup{
+    hyperindex=true,
+    bookmarks=true,
+    pdfa,
+    colorlinks=true,
+    breaklinks=true,
+    urlcolor=REBECCAPURPLE_MASTER,
+    linkcolor=REBECCAPURPLE_MASTER,
+    citecolor=REBECCAPURPLE_MASTER,
+    bookmarksopen=true,
+}
+
+% ---------------
+% Page dimensions
+% ---------------
+\geometry{left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm}
+\setlength{\headheight}{16pt}
+\setlength\parindent{0pt} % No indentation
+
+% ----------------------------------------------
+% Titles (sections, subsections, subsubsections)
+% ----------------------------------------------
+\newcommand{\justifyheading}{\raggedleft}
+
+\titleformat{\chapter}{
+  \centering\fontsize{28}{10}\bfseries{
+    \color{\MasterColor}\titlerule[3pt]
+    }
+  \vspace{0.25cm}
+}{\thechapter}{1em}{}
+\titleformat{\section}{
+  \normalfont\Large\bfseries{
+    \color{\MasterColor}\titlerule[2pt]
+    }
+  \vspace{0.25cm}
+}{\thesection}{1em}{}
+
+\titleformat{\subsection}{
+  \normalfont\large\bfseries{
+    \color{\MasterColor}\titlerule[1pt]
+    }
+  \vspace{0.25cm}
+}{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}{
+  \normalfont\large\bfseries{
+    \color{\MasterColor}\titlerule[0.5pt]
+    }
+  \vspace{0.25cm}
+}{\thesubsubsection}{1em}{}
+
+\chapterfont{\centering}
+
+% abstract command for the debt of chapter
+% Reduce the margin of the summary
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
+
+% Generate the environment for the abstract
+\newcommand{\summaryname}{Résumé}
+\newenvironment{Abstract}%
+    {\small\begin{center}\bfseries{\summaryname}\end{center}} %
+
+% -----------------
+% Headers & Footers
+% -----------------
+\fancypagestyle{mypagestyle}{
+  \fancyhf{} % Clear header/footer
+  \fancyhead[OR]{\color{\MasterColor}\textit{\rightmark}} % Subsection name on odd pages
+  \fancyhead[EL]{\color{\MasterColor}\nouppercase{\textit{\leftmark}}} % Section name on even pages
+  \fancyfoot[C]{\thepage} % Page number centered
+  \renewcommand{\headrulewidth}{0pt} % Header rule of 0pt
+}
+\pagestyle{mypagestyle}
+
+% --------------------------------------
+% Title Page shortcuts & French captions
+% --------------------------------------
+\newcommand{\Nom}[1]{\renewcommand{\Nom}{#1}}
+\newcommand{\Titre}[1]{\renewcommand{\Titre}{#1}}
+\newcommand{\SousTitre}[1]{\renewcommand{\SousTitre}{#1}}
+\newcommand{\NomCours}[1]{\renewcommand{\NomCours}{#1}}
+\newcommand{\CodeCours}[1]{\renewcommand{\CodeCours}{#1}}
+\newcommand{\Enseignant}[1]{\renewcommand{\Enseignant}{#1}}
+\newcommand{\Faculte}[1]{\renewcommand{\Faculte}{#1}}
+\newcommand{\Departement}[1]{\renewcommand{\Departement}{#1}}
+\newcommand{\Date}[1]{\renewcommand{\Date}{#1}}
+
+\addto\captionsfrench{\def\figurename{{\sc Figure}}}
+\addto\captionsfrench{\def\tablename{{\sc Tableau}}}
+\addto\captionsfrench{\def\listfigurename{Liste des figures}}

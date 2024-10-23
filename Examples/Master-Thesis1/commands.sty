@@ -1,0 +1,198 @@
+% -----------------------------------------------------------------------------
+% USER DEFINED COMMANDS
+% -----------------------------------------------------------------------------
+\ProvidesPackage{commands}[2022/08/24]
+
+% --------------
+% Math & Physics
+% --------------
+% Blacksquare math proof env.
+\renewcommand{\qedsymbol}{\hfill\rule{0.7em}{0.7em}}
+
+% Partial derivative shortcut
+\newcommand{\pd}{\partial}
+\newcommand{\del}{\partial}
+
+% Space between equations in math environnement
+\newcommand{\betspace}{\hspace{0.5cm}\text{et}\hspace{0.5cm}}
+
+% Add text at the end of an equation in math env.
+\newcommand{\eqtext}[1]{,\hspace{0.5cm}\text{#1 }}
+
+% Spin's indices
+\renewcommand{\up}{\uparrow}
+\newcommand{\down}{\downarrow}
+
+% to add overline on variables
+\newcommand{\ove}{\overline}
+
+% Ending prove
+\newcommand{\bs}{$\blacksquare$}
+\newcommand{\s}{$\square$}
+
+% trace
+\DeclareMathOperator{\tra}{Tr}
+
+% mathcal shortcut
+\newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
+
+% functional derivative
+\newcommand{\FD}[1]{\ensuremath{\mathcal{D}{#1}^*\mathcal{D}{#1}}}
+
+% tilde variables
+\newcommand{\T}[1]{\ensuremath{\tilde{#1}}}
+
+% Styled Lagrangian
+\newcommand{\Lagr}{\mathcal{L}}
+
+% Basis vector notation
+\newcommand{\basis}[1]{\mathbf{\hat{#1}}}
+
+% Always better epsilon
+\renewcommand{\epsilon}{\varepsilon}
+
+% Nothing else matter
+\newcommand{\washer}{\oslash}
+
+% Mean notation
+\newcommand{\mean}[1]{\left\langle #1\right\rangle}
+\newcommand\moy[1]{\ensuremath{\left\langle {#1} \right\rangle}} %french's version
+
+% Levi-civita tensor
+\newcommand{\levici}{\varepsilon_{ijk}}
+
+% Vectorial subspace epsilon
+\newcommand{\subspace}{\mathcal{E}}
+
+% Add space and comma between equations
+\newcommand{\beq}{,\hspace{0.5cm}}
+
+% Correct braket notation
+\renewcommand{\ket}[1]{|{#1}\rangle}
+\renewcommand{\bra}[1]{\langle{#1}|}
+\renewcommand{\braket}[2]{\langle{#1}|{#2}\rangle}
+
+% Complete set quantum mechanics
+\newcommand{\compset}[1]{\ket{#1}\bra{#1}}
+
+% Vectors upright convention
+\renewcommand{\bm}[1]{\mathbf{#1}}
+
+% Identity operator
+\newcommand{\identity}{\ensuremath{\mathbb{1}}}
+
+% Derivatives
+\newcommand{\ddv}[1]{\, \mathrm{d} \vec{#1}}
+\newcommand{\derivv}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\derivvb}[1]{\frac{\mathrm{d}}{\mathrm{d} #1}}
+\newcommand{\derivvn}[3]{\frac{\mathrm{d}^{#3} #1}{\mathrm{d} {#2}^{#3}}}
+\newcommand{\partiald}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\partialdn}[3]{\frac{\partial^{#3} #1}{\partial {#2}^{#3}}}
+\newcommand{\rot}[1]{\nabla \cross \vec{#1}}
+\newcommand{\diver}[1]{\nabla \cdot \mathbf{#1}}
+\newcommand{\lapl}[1]{\nabla^2 {#1}}
+
+% Integrals
+\newcommand{\intg}[2]{\int #1 \dd #2}
+\newcommand{\intgd}[4]{\int_{#3}^{#4} #1 \dd #2}
+\newcommand{\intono}[1]{\varoiint_S \vec{#1} \cdot \dd \vec{S}}
+\newcommand{\inton}[2]{\iint_{S #2} \vec{#1} \cdot \dd \vec{S}_{#2}}
+
+% -------------
+% Colored Boxes
+% -------------
+\newtcolorbox{mybox}{
+  sharp corners, tcbox width=auto limited, math upper, capture=hbox, on line,
+  colback=white, colframe=\MasterColor,arc=0pt, boxrule=1pt
+}
+
+\newtcbox{\mymath}[1][]{
+    sharp corners, nobeforeafter, math upper, tcbox raise base,
+    enhanced, colframe=\MasterColor,
+    colback=white, boxrule=1pt, arc=0pt
+    #1
+}
+
+\newtcolorbox{bracedbox}{
+    enhanced jigsaw, breakable, frame hidden, colback=white, overlay={
+        \draw [
+            fill=none,
+            decoration={brace,amplitude=0.5em},
+            decorate,
+            ultra thick,
+            \MasterColor,
+        ]
+        (frame.north east) -- (frame.south east);
+        \draw [
+            fill=none,
+            decoration={brace,amplitude=0.5em, mirror},
+            decorate,
+            ultra thick,
+            \MasterColor,
+        ]
+        (frame.north west) -- (frame.south west);
+    },
+    parbox=false
+}
+
+% Classic colored boxes
+\renewcommand{\boxed}[1]{
+    \begin{mybox}
+        #1
+    \end{mybox}
+}
+
+% Numbered equation colored boxes
+\newcommand{\MNboxed}[2]{
+    \begin{empheq}[box=\mymath]{align}
+        \label{#2}
+        #1
+    \end{empheq}
+}
+
+% Unnumbered equation colored boxes
+\newcommand{\Mboxed}[2]{
+    \begin{empheq}[box=\mymath]{align*}
+        \label{#2}
+        #1
+    \end{empheq}
+}
+
+% Subsections blueboxes
+\newcommand{\SecBoxed}[1]{
+    \begin{tcolorbox}[sharp corners, colback=white, colframe=\MasterColor,
+        arc=0pt]
+        \section{#1}
+        \vspace{-0.5cm}
+    \end{tcolorbox}
+}
+
+% Sections blueboxes
+\newcommand{\SubBoxed}[1]{
+    \begin{tcolorbox}[sharp corners, colback=white, colframe=\MasterColor,
+        arc=0pt]
+        \subsection{#1}
+        \vspace{-0.5cm}
+    \end{tcolorbox}
+}
+
+% Braces boxed
+\newcommand{\Braced}[1]{
+    \begin{bracedbox}
+        #1
+    \end{bracedbox}
+    \vspace{0.6cm}
+}
+
+% ---------------
+% Document layout
+% ---------------
+
+% Indent answers paragraph
+\newcommand{\fullindent}{\setlength{\leftskip}{0.5cm}\noindent}
+
+% Noindent answers paragraph (where 'rindent' stands for remove indent)
+\newcommand{\rindent}{\setlength{\leftskip}{0cm}\noindent}
+
+% Roman numbers
+\newcommand{\rom}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
