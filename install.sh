@@ -9,9 +9,9 @@ ORANGE="$(printf '\033[33m')"
 PROJ=UniTeX
 CURRENT_DIR=$( pwd )
 TAG=$(git describe --tags)
-
-DESTINATION=${INSTALL_DIR:-${1:-${HOME}/.local/share}}
-LINK_DIR=${2:-${HOME}/.local/bin/unitex}
+DESTINATION=/usr/local/share
+TEMPLATE_DIR=$HOME/Documents/Templates/
+LINK_DIR=/usr/local/bin/unitex
 
 # Turn on extended globbing in bash shell
 shopt -s extglob
@@ -47,13 +47,34 @@ build_directory () {
         echo -e "${GREEN}[@] Building dirs inside ${WHITE}${DESTINATION}${GREEN}."
         mkdir -p ${DESTINATION}/${PROJ}
     fi
+
+    if [[ -d "${TEMPLATE_DIR}"/"${PROJ}" ]]; then
+        # Updating directories
+        echo -e "${GREEN}[@] Wiping old version if any inside ${WHITE}${TEMPLATE_DIR}${GREEN}."
+        sudo rm -rf ${TEMPLATE_DIR}/${PROJ}
+
+        echo -e "${GREEN}[@] Building new dirs inside ${WHITE}${TEMPLATE_DIR}${GREEN}."
+        sudo mkdir -p ${TEMPLATE_DIR}/${PROJ}
+    else
+        echo -e "${GREEN}[@] Building dirs inside ${WHITE}${TEMPLATE_DIR}${GREEN}."
+        sudo mkdir -p ${TEMPLATE_DIR}/${PROJ}
+    fi
 }
 
 fill_directory () {
     echo -e "${WHITE}\n--------------------------\n"
     echo -e "${GREEN}[@] Filling dirs with templates..."
 
-    rsync -a --exclude='*.md' --exclude='.*' ${CURRENT_DIR}/ ${DESTINATION}/${PROJ}
+    # Copy templates to the template directory
+    sudo rsync -a --exclude='*.md' --exclude="PKGBUILD" --exclude='.*' --exclude="*.txt" --exclude="*.sh" ${CURRENT_DIR}/ ${TEMPLATE_DIR}/${PROJ}
+    # Link these templates to destination/proj
+    sudo ln -s ${TEMPLATE_DIR}/${PROJ}/* ${DESTINATION}/${PROJ}/
+
+    # Copy the scripts to the destination
+    sudo cp ${CURRENT_DIR}/unitex.sh ${DESTINATION}/${PROJ}
+    sudo cp ${CURRENT_DIR}/uninstall.sh ${DESTINATION}/${PROJ}
+    sudo cp ${CURRENT_DIR}/version.txt ${DESTINATION}/${PROJ}
+    sudo cp ${CURRENT_DIR}/LICENSE ${DESTINATION}/${PROJ}
 
     # Make scripts executable
     chmod +x ${DESTINATION}/${PROJ}/unitex.sh
