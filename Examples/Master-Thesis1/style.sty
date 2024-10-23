@@ -7,7 +7,9 @@
 % Global page style settings
 % --------------------------
 \usepackage{cite} % Bibliography support
-\usepackage[charter, cal]{mathdesign} % Font
+\usepackage[mono,vvarbb,upint]{notomath} % Font
+\let\openbox\undefined
+\let\Bbbk\undefined
 \usepackage{sectsty} % Control sectional headers
 
 % Using 'subfiles', the user can compile each of the project's file
@@ -24,6 +26,7 @@
 \usepackage[utf8]{inputenc} % Telling LaTeX what encoding is used
 \usepackage[titles]{tocloft} % Table of contents (ToC) customization
 \usepackage[most]{tcolorbox} % Colored boxes support
+
 % ----------------
 % Language support
 % ----------------
@@ -103,7 +106,6 @@
 % ----------------------------------------------
 \newcommand{\justifyheading}{\raggedleft}
 
-
 \titleformat{\chapter}{
   \centering\fontsize{28}{10}\bfseries{
     \color{\MasterColor}\titlerule[3pt]
@@ -130,6 +132,18 @@
     }
   \vspace{0.25cm}
 }{\thesubsubsection}{1em}{}
+
+\chapterfont{\centering}
+
+% abstract command for the debt of chapter
+% Reduce the margin of the summary
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
+
+% Generate the environment for the abstract
+\newcommand{\summaryname}{Résumé}
+\newenvironment{Abstract}%
+    {\small\begin{center}\bfseries{\summaryname}\end{center}} %
 
 % -----------------
 % Headers & Footers
@@ -159,5 +173,3 @@
 \addto\captionsfrench{\def\figurename{{\sc Figure}}}
 \addto\captionsfrench{\def\tablename{{\sc Tableau}}}
 \addto\captionsfrench{\def\listfigurename{Liste des figures}}
-
-

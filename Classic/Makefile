@@ -14,10 +14,13 @@ GARBAGE = {bbl,synctex.gz,aux,fdb_latexmk,fls,log}
 
 # Setting LaTeX compile (latexmk) options & flags
 MK = latexmk
+
 # Generate pdf version of document using pdflatex
 OUT = pdf
+
 # Run a file previewer and continually update the files
 OUT_MODE = pvc
+
 # Sets the generation of pdf files by pdflatex
 GENERATOR = pdflatex
 OPT = -interaction=batchmode
@@ -63,4 +66,3 @@ zip:
 	$(MAKE) dry
 	$(MAKE) clean
 	zip -q -r $(PROJECT)_$(DATE).zip $(SOURCE) ./figs
-

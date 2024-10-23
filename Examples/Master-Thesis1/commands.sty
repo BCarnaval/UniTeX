@@ -12,6 +12,7 @@
 % Partial derivative shortcut
 \newcommand{\pd}{\partial}
 \newcommand{\del}{\partial}
+
 % Space between equations in math environnement
 \newcommand{\betspace}{\hspace{0.5cm}\text{et}\hspace{0.5cm}}
 
@@ -21,7 +22,6 @@
 % Spin's indices
 \renewcommand{\up}{\uparrow}
 \newcommand{\down}{\downarrow}
-
 
 % to add overline on variables
 \newcommand{\ove}{\overline}
@@ -34,13 +34,13 @@
 \DeclareMathOperator{\tra}{Tr}
 
 % mathcal shortcut
-\newcommand\mc[1]{\ensuremath{\mathcal{#1}}}
+\newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
 
 % functional derivative
-\newcommand\FD[1]{\ensuremath{\mathcal{D}{#1}^*\mathcal{D}{#1}}}
+\newcommand{\FD}[1]{\ensuremath{\mathcal{D}{#1}^*\mathcal{D}{#1}}}
 
 % tilde variables
-\newcommand\T[1]{\ensuremath{\tilde{#1}}}
+\newcommand{\T}[1]{\ensuremath{\tilde{#1}}}
 
 % Styled Lagrangian
 \newcommand{\Lagr}{\mathcal{L}}
@@ -57,6 +57,7 @@
 % Mean notation
 \newcommand{\mean}[1]{\left\langle #1\right\rangle}
 \newcommand\moy[1]{\ensuremath{\left\langle {#1} \right\rangle}} %french's version
+
 % Levi-civita tensor
 \newcommand{\levici}{\varepsilon_{ijk}}
 
@@ -187,20 +188,6 @@
 % Document layout
 % ---------------
 
-% ----------------------------------------
-% abstract command for the debt of chapter
-% ----------------------------------------
-
-%   Reduce the margin of the summary:
-\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
-\let\endchangemargin=\endlist 
-
-%   Generate the environment for the abstract:
-\newcommand\summaryname{Résumé}
-\newenvironment{Abstract}%
-    {\small\begin{center}\bfseries{\summaryname}\end{center}} % 
-
-
 % Indent answers paragraph
 \newcommand{\fullindent}{\setlength{\leftskip}{0.5cm}\noindent}
 
@@ -209,4 +196,3 @@
 
 % Roman numbers
 \newcommand{\rom}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
-
