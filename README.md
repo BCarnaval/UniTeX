@@ -12,226 +12,78 @@ UniTeX is a collection of scientific oriented and minimalistic [LaTeX](https://w
 
 # Table of contents
 
-[Overleaf support](#overleaf-support)
+[Getting started](#getting-started)
 
-<details>
-  <summary><a href="#requirements-full-installation">Requirements (full installation)</a></summary>
-  <OL, TYPE="square">
-    <li><a href="#tex">TeX</a></li>
-    <li><a href="#shell">Shell</a></li>
-    <li><a href="#pdf-viewer">PDF viewer</a></li>
-  </OL>
-</details>
+[Configuration](#configuration)
 
-<details>
-  <summary><a href="#installation">Installation</a></summary>
-  <OL, TYPE="square">
-    <li><a href="#unix-based-os">Unix based OS</a></li>
-    <li><a href="#windows">Windows</a></li>
-  </OL>
-</details>
+[Local LaTeX installation](#local-latex-installation)
 
-[Quick start](#quick-start)
+[Todo](#todo)
 
-<details>
-  <summary><a href="#screenshots">Screenshots</a></summary>
-  <OL, TYPE="square">
-    <li><a href="#classic">Classic</a></li>
-    <li><a href="#homework">Homework</a></li>
-    <li><a href="#Presentation">Presentation</a></li>
-  </OL>
-</details>
+# Getting started
 
-[TODO](#todo)
-
-# Overleaf support
-
-Using UniTeX templates inside an [Overleaf](https://www.overleaf.com/) project is encouraged and pretty simple to setup. Download the .zip file associated with wanted template and upload it inside [Overleaf](https://www.overleaf.com/) by selecting `New project > Upload project > Select a .zip file`. To do so, download any template folder using the links:
+The simplest way to use UniTeX's templates is by dowloading one from the links below
 
 <div align="center">
 
-| Classic                                                                                                  | Homework                                                                                                  | Presentation                                                                                                  |
-| -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Classic) | [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Homework) | [Download](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Presentation) |
+|   Template   	|                                                                                                                    Description                                                                                                                    	| See template                                                                       	| Download link                                                                                                         	|
+|:------------:	|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|------------------------------------------------------------------------------------	|-----------------------------------------------------------------------------------------------------------------------	|
+|    Classic   	| Most likely suits longer document style such as lab and internships reports. 	| [See default](https://github.com/BCarnaval/UniTeX/blob/main/Classic/main.pdf)      	| [Get classic](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Classic)           	|
+|  Assignment  	| Useful for homework assignments or project that needs clear split between uncorrelated sections.                                            	| [See default](https://github.com/BCarnaval/UniTeX/blob/main/Homework/main.pdf)     	| [Get assignment](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Homework)         	|
+| Presentation 	| Beamer presentation style. Very minimalistic.                                                                                                                                                                                                     	| [See default](https://github.com/BCarnaval/UniTeX/blob/main/Presentation/main.pdf) 	| [Get presentation](https://downgit.evecalm.com/#/home?url=https://github.com/BCarnaval/UniTeX/tree/main/Presentation) 	|
+|    RevTeX    	| Two columns LaTeX template for non-official article style.                                                                                                                                                                                        	| WIP                                                                                	| WIP                                                                                                                   	|
 
 </div>
 
-then import wanted template directly from [Overleaf](https://www.overleaf.com/).
+Using the downloaded content, you can use it directly within [Overleaf](https://www.overleaf.com/) by selecting `New project > Upload project > Select a .zip file`. You can also use it locally but UniTeX requires a complete TeX distribution. Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of TeX distributions like MikTeX and MacTeX but you can always install it separately by following [these](https://mg.readthedocs.io/latexmk.html) steps.
 
-# Requirements (full installation)
+# Configuration
 
-### TeX
-
-UniTeX requires a complete TeX distribution (you can find the most used TeX distributions
-[here](https://www.latex-project.org/get/#tex-distributions)). Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of TeX distributions like MikTeX and MacTeX but you can always install it separately by following [these](https://mg.readthedocs.io/latexmk.html) steps.
-
-### Shell
-
-A Unix shell is better to install UniTeX properly. Commands such as `mkdir`, `cp`, `ln` and others are used within install script and makefiles so it's important for you to have access to this type of shell to install UniTeX correctly.
-
-### PDF viewer
-
-A responsive pdf viewer like [Skim](https://skim-app.sourceforge.io/),
-[Zathura](https://pwmt.org/projects/zathura/index.html) and [SumatraPDF](https://www.sumatrapdfreader.org/free-pdf-reader) is also a must have
-when working on LaTeX projects. These are some viewers that provide automatic refresh on file change and this is why they are working very well with `latexmk`. For example, using Skim on MacOS, the viewer settings offer to check automatically for changes and reload the pdf
-
-<div align="center">
-    <tr>
-      <td><img src="/../screenshots/screenshots/skim_example.png" width=320 height=200></td>
-    </tr>
-</div>
-
-# Installation
-
-### Unix based OS
-
-The ideal way to install UniTeX is via the install script `install.sh`.
-
-```shell
-git clone https://github.com/BCarnaval/UniTeX
-```
-
-```shell
-cd UniTeX && chmod +x install.sh && ./install.sh
-```
-
-By doing it like so, you will be able to use UniTeX's commands (see `unitex -h`).
-
-### Windows
-
-On Windows, `install.sh` might be not the best way to use UniTeX. I personnally suggest to people in this situation to clone the repository somewhere on their system and use directly template's folder `Classic`, `Article`, `Homework` and `Cover`. Makefiles should work properly so one can copy `Homework` template for some homework and, in the same directory, use
-
-```shell
-make <dry, clean, all, zip, targz>
-```
-
-to work with it.
-
-# Quick start
-
-Once [installation](#installation) properly done and `unitex -h` command outputs no error, you can directly build any UniTeX template
-
-1. Select a directory (folder) in which store template's files to edit later. For the example, we use a folder named **test** in home directory.
-
-```shell
-mkdir ~/test
-```
-
-2. Build the template inside previous directory using `unitex` by specifying the flags **-b build**: template (classic, article, homework, cover), **-d directory**: directory in which build it (directory created in step 1.) and **-o opt**: building options (`clean`, `dry`, `targz`, `zip` or empty to tell latexmk to continuously compile your project on save).
-
-```shell
-unitex -b classic -d ~/test -o dry
-```
-
-Here, the `dry` option means that latexmk will not compile your project continuously and not clean the directory either. It will simply build the template inside the specified directory and leave stallite files there. To clean it, you must use the option `clean` with the `-o` flag. These commands being done (`dry` and `clean`), you should have the following content inside your **test** folder
-
-```shell
-$ ls ~/test
-Makefile
-PageTitre.tex
-colors.sty
-commands.sty
-figs/
-main.pdf
-main.tex
-refs.bib
-sections/
-style.sty
-```
-
-3. Assuming that **test** directory isn't missing any files, you can configure/customize the template to satisfy the nature of your project. Simply open your text editor and remove default values from `main.tex`, all the files inside `sections/` and `figs/` directories, references from `refs.bib` and feel free to add your personnal commands/style features inside `commands.sty`, `style.sty`.
-
-# Screenshots
+Every template folder contains a `main.tex` file in which are inputed configuration files (`preamble.sty, style.sty, commands.sty` and `colors.sty`) and the `.tex` files of the different sections of the project. Here we will describe how you can personnalise the template using the variables in these files.
 
 ### Classic
 
-Example from 'classic' template with [Yale](https://en.wikipedia.org/wiki/Yale_University)'s darkblue as main color
+- `main.tex`: use this file to change the color of the document details by changing the value of `MasterColor` variable for one listed in [colors.sty](https://github.com/BCarnaval/UniTeX/blob/main/Classic/colors.sty). Title page variables are also at the beginning of this file.
+- `colors.sty`: use this file to choose a color for you document! If you want a color that is not listed in the file, add it by yourself using the same format.
+- `style.sty`: This is where all the modules are imported and briefly commented. Then, the style is defined (TOC setting, headers, references, dimensions, titles and etc.).
+- `commands.sty`: This is the place to defined your own commands. I put some for math & physics as well as the custom colored boxes.
 
-<div align="center">
-  <table>
-    <tr>
-      <td>Default title page</td>
-      <td>Sections layout</td>
-    </tr>
-    <tr>
-      <td><img src="/../screenshots/screenshots/Classic/title.png" width=360 height=480></td>
-      <td><img src="/../screenshots/screenshots/Classic/body.png" width=360 height=480></td>
-    </tr>
-   </table>
+### Assignment
 
-  <table>
-    <tr>
-      <td>Maths display</td>
-      <td>References</td>
-    </tr>
-    <tr>
-      <td><img src="/../screenshots/screenshots/Classic/math.png" width=360 height=480></td>
-      <td><img src="/../screenshots/screenshots/Classic/refs.png" width=360 height=480></td>
-    </tr>
-   </table>
-</div>
-
-### Homework
-
-Example from 'homework' template with [lavender](https://www.w3schools.com/colors/color_tryit.asp?color=Lavender) as main color
-
-<div align="center">
-  <table>
-    <tr>
-      <td>Default title page</td>
-      <td>Problem(s) presentation</td>
-    </tr>
-    <tr>
-      <td><img src="/../screenshots/screenshots/Homework/title.png" width=360 height=480></td>
-      <td><img src="/../screenshots/screenshots/Homework/problem_1.png" width=360 height=480></td>
-    </tr>
-   </table>
-
-  <table>
-    <tr>
-      <td>Basic problem solving</td>
-      <td>Problem(s) presentation</td>
-    </tr>
-    <tr>
-      <td><img src="/../screenshots/screenshots/Homework/body_1.png" width=360 height=480></td>
-      <td><img src="/../screenshots/screenshots/Homework/problem_2.png" width=360 height=480></td>
-    </tr>
-   </table>
-</div>
+- `main.tex`: use this file to change the color of the document details by changing the value of `MasterColor` and `MinorColor` (lighter than principal color for the filling of the section box) variables for one listed in [colors.sty](https://github.com/BCarnaval/UniTeX/blob/main/Assignment/colors.sty). Title page variables are also at the beginning of this file.
+- `colors.sty`: use this file to choose a color for you document! If you want a color that is not listed in the file, add it by yourself using the same format.
+- `style.sty`: This is where all the modules are imported and briefly commented. Then, the style is defined (TOC setting, headers, references, dimensions, titles and etc.).
+- `commands.sty`: This is the place to defined your own commands. I put some for math & physics as well as the custom colored boxes.
 
 ### Presentation
 
-Example from 'presentation' template with spruce-like color as main color
+- `premable.sty`: Beamer theme and color are defined here. Same for used modules and style settings. I regrouped all of the configuration files in one because of the simplicity of the project.
 
-<div align="center">
-  <table>
-    <tr>
-      <td>Title page</td>
-      <td>Table of content</td>
-    </tr>
-    <tr>
-      <td><img src="/../screenshots/screenshots/Presentation/title.png" width=460 height=300></td>
-      <td><img src="/../screenshots/screenshots/Presentation/toc.png" width=460 height=300></td>
-    </tr>
-   </table>
+### RevTeX
 
-  <table>
-    <tr>
-      <td>Maths</td>
-      <td>Figure</td>
-    </tr>
-    <tr>
-      <td><img src="/../screenshots/screenshots/Presentation/maths.png" width=460 height=300></td>
-      <td><img src="/../screenshots/screenshots/Presentation/mixed_basis.png" width=460 height=300></td>
-    </tr>
-   </table>
-</div>
+WIP.
 
-# TODO
+# Local LaTeX installation
+
+You can find the most used TeX distributions [here](https://www.latex-project.org/get/#tex-distributions). In my experience, [TeX Live](https://www.tug.org/texlive/) and [MiKTeX](https://miktex.org/) are the most reliable and easy to use out-of-the-box. [Latexmk](https://www.cantab.net/users/johncollins/latexmk/) is usually part of TeX distributions like MikTeX and MacTeX but you can always install it separately by following [these](https://mg.readthedocs.io/latexmk.html) steps.
+
+Each UniTeX template contains a `Makefile` in which are defined very useful commands if you plan to compile the templates locally. For example, using
+
+```shell
+make
+```
+
+at the root of a template will start a continuous compilation with `latexmk` and will update itself when you modify a any of the project's file. The possible commands are
+
+- `make clean`: Cleans the project's folder from garbage files (.bbl, .synctex, .aux, etc.)
+- `make dry`: Compiles the project but non-contiuously
+- `make zip`: Compiles the project then build a .zip with it.
+- `make targz`: Compiles the project then build a .tgz with it.
+
+# Todo
 
 - [x] 'Classic' template
 - [x] 'Homework' template (Overleaf's rebuild)
 - [ ] 'RevTeX' template
-- [x] 'Beamer' template
-- [x] Install/uninstall scripts
-- [x] Version control
+- [x] 'Presentation' template from Beamer
+- [ ] Version control
