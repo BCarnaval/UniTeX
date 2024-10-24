@@ -65,7 +65,9 @@ WIP.
 
 # Local LaTeX installation
 
-You can find the most used TeX distributions [here](https://www.latex-project.org/get/#tex-distributions). In my experience, [TeX Live](https://www.tug.org/texlive/) and [MiKTeX](https://miktex.org/) are the most reliable and easy to use out-of-the-box. [Latexmk](https://www.cantab.net/users/johncollins/latexmk/) is usually part of TeX distributions like MikTeX and MacTeX but you can always install it separately by following [these](https://mg.readthedocs.io/latexmk.html) steps.
+You can find the most used TeX distributions [here](https://www.latex-project.org/get/#tex-distributions). In my experience, [TeX Live](https://www.tug.org/texlive/) and [MiKTeX](https://miktex.org/) are the most reliable and easy to use out-of-the-box.
+
+> [Latexmk](https://www.cantab.net/users/johncollins/latexmk/) is usually part of TeX distributions like MikTeX and MacTeX but you can always install it separately by following [these](https://mg.readthedocs.io/latexmk.html) steps. It is essential if you want to use the Makefiles.
 
 Each UniTeX template contains a `Makefile` in which are defined very useful commands if you plan to compile the templates locally. For example, using
 
