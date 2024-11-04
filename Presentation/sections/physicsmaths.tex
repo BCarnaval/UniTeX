@@ -1,0 +1,89 @@
+% -------------------------
+% Physique et Mathématiques
+% -------------------------
+
+% Defining TOC's sections before content
+\section{Physique et Mathématiques}
+
+\subsection{Module \textit{physics}}
+
+\subsection{Mathématiques avancés}
+
+\begin{frame}
+    \vfill
+    \begin{center}
+        \large
+        Physique et Mathématiques
+    \end{center}
+    \vfill
+\end{frame}
+
+\begin{frame}
+    \frametitle{Physique et Mathématiques - Module \textit{physics}}
+    Le module \textcolor{hard_green}{\textit{physics}}\footnotemark est de loin un des outils les plus utiles via
+    \pause
+    \vspace{0.3cm}
+    \begin{itemize}
+        \item[$\diamond$] Gestion de parenthèses
+        \item[$\diamond$] Notation vectorielle
+        \item[$\diamond$] Opérateurs mathématiques ($\sin, \det, \Trace,\dots$)
+        \item[$\diamond$] Notation différentielle (dérivées et dérivées partielles)
+        \item[$\diamond$] Raccourcis pour les matrices
+        \item[$\diamond$] Notation de Dirac
+    \end{itemize}
+    \footnotetext{physics – Macros supporting the Mathematics of Physics. \href{https://ctan.org/pkg/physics}{\textcolor{hard_green}{https://ctan.org/pkg/physics}}.}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Physique et Mathématiques - Module \textit{physics}}
+    \begin{columns}
+        \column{0.55\linewidth}
+        \begin{lstlisting}[xleftmargin=-2cm]
+            \qty(\frac{1}{2})^n
+
+
+            \norm{\vb{v}}
+
+
+            \pdv[3]{f}{x}
+
+
+            \smqty{\imat{3}}
+        \end{lstlisting}
+        \column{0.45\linewidth}
+        \vspace{-0.3cm}
+        \begin{align*}
+            &\qty(\frac{1}{2})^n\qq{vs}(\frac{1}{2})^n \\\\
+            &\norm{\vb{v}} \\\\
+            &\pdv[3]{f}{x} \\\\
+            &\smqty(\imat{3})
+        \end{align*}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Physique et Mathématiques - Mathématiques avancés}
+  L'essentiel en termes de notation mathématique peut être résumé par les modules
+  \vspace{0.3cm}
+  \pause
+    \begin{itemize}
+        \item[$\diamond$] \textcolor{hard_green}{\textit{amsmath}}\footnotemark (environnements mathématiques)
+        \footnotetext{amsmath – AMS mathematical facilities for \LaTeX. \href{https://ctan.org/pkg/amsmath}{\textcolor{hard_green}{https://ctan.org/pkg/amsmath}}.}
+        \item[$\diamond$] \textcolor{hard_green}{\textit{amsfonts}}\footnotemark (styles calligraphiques: $\mathcal{A}, \mathcal{B}, \mathcal{C}$)
+        \footnotetext{amsfonts – TeX fonts from the American Mathematical Society. \href{https://ctan.org/pkg/amsfonts}{\textcolor{hard_green}{https://ctan.org/pkg/amsfonts}}.}
+        \item[$\diamond$] \textcolor{hard_green}{\textit{amsthm}}\footnotemark(théorèmes, preuves, définitions)
+        \footnotetext{amsthm – Typesetting theorems (AMS style). \href{https://ctan.org/pkg/amsthm}{\textcolor{hard_green}{https://ctan.org/pkg/amsthm}}.}
+        \item[$\diamond$] \textcolor{hard_green}{\textit{dsfont}}\footnotemark (lettres doubles pour les ensembles: $\mathds{R}, \mathds{N}, \mathds{Z}$)
+    \end{itemize}
+    \footnotetext{doublestroke – Typeset mathematical double stroke symbols. \href{https://ctan.org/pkg/doublestroke}{\textcolor{hard_green}{https://ctan.org/pkg/doublestroke}}.}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Physique et Mathématiques - Mathématiques avancés}
+  Les environnements mathématiques permettent notamment d'aligner des équations lors d'un développement
+    \begin{align*}
+        \mathrm{H}\ket{\ell, S, J, M_J} &= \frac{\vb{L}^2}{2I}\ket{\ell, S, J, M_J} + \frac{\alpha}{2}\qty[\vb{J}^2 - \vb{L}^2 - \vb{S}^2]\ket{\ell, S, J, M_J} \\\\
+        &= \frac{\hbar^2}{2}\qty[\frac{\ell(\ell + 1)}{I} + \alpha\qty(J(J + 1) - \ell(\ell + 1) - \frac{3}{4})]\ket{\ell, S, J, M_J} \\\\
+        &= \frac{\hbar^2}{2}\qty[\ell(\ell + 1)\qty(\frac{1}{I} - \alpha) + \alpha J(J + 1) - \frac{3\alpha}{4}]\ket{\ell, S, J, M_J}.
+    \end{align*}
+\end{frame}

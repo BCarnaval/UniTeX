@@ -10,7 +10,6 @@
 \usepackage[style=verbose]{biblatex}
 \usepackage[greek, english, french]{babel} % Using different languages
 
-
 % ------------
 % Bibliography
 % ------------
@@ -20,15 +19,17 @@
 % --------------
 % Math & Physics
 % --------------
+\usepackage{cancel}
+\usepackage{xcolor}
 \usepackage{physics}
 \usepackage{mathtools}
-\usepackage{listings}
-\usepackage{dsfont}
+\usepackage{tcolorbox}
 
 % -------------
 % Font settings
 % -------------
 \setbeamerfont{framesubtitle}{size=\small}
+\usefonttheme{professionalfonts} % using non standard fonts for beamer
 \usefonttheme{serif} % default family is serif
 \usepackage[mono,vvarbb,upint]{notomath} % Font
 
@@ -64,18 +65,36 @@
 % ------------------------
 % Colored Boxes and blocks
 % ------------------------
-\usepackage{xcolor}
-\usepackage{tcolorbox}
-
-% Custom colors
+% Colored blocks
 \definecolor{spruce_medium}{RGB}{195, 215, 205}
 \definecolor{hard_green}{RGB}{30, 150, 110}
 \definecolor{sweet_brown}{RGB}{202, 184, 166}
 \definecolor{sweet_refs}{RGB}{102, 122, 162}
 
-% Colored blocks
+\newenvironment{defblock}[1]{
+    \tcolorbox[noparskip, colback=white,
+    colframe=sweet_brown, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
+    {\endtcolorbox
+}
 \newenvironment{noteblock}[1]{
     \tcolorbox[noparskip, colback=white,
     colframe=sweet_brown, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
     {\endtcolorbox
+}
+\newenvironment{colorblock}[1]{
+    \tcolorbox[noparskip, colback=white,
+    colframe=sweet_brown, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
+    {\endtcolorbox
+}
+
+% Colored boxes
+\newtcolorbox{mybox}{
+    tcbox width=auto limited, capture=hbox, on line,
+  colback=white, colframe=sweet_blue, arc=1pt, boxrule=1pt
+}
+
+\renewcommand{\boxed}[1]{
+  \begin{mybox}
+      \hspace{0.05cm}#1
+  \end{mybox}
 }

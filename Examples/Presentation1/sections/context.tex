@@ -1,0 +1,27 @@
+% ----------------
+% MISE EN CONTEXTE
+% ----------------
+
+\begin{frame}
+    \frametitle{Mise en contexte - Essence du projet}
+    Alternative à la représentation de l'effet du réseau
+    cristallin sur un amas en CDMFT (\textit{Cluster Dynamical Mean Field Theory})
+    \vspace{0.3cm}
+    \begin{itemize}
+        \pause
+        \item[$\diamond$] Morceler le bain en sous-bains
+        \item[$\diamond$] Modifier l'algorithme CDMFT original de PyQCM\footnotemark
+        \item[$\diamond$] Étalonner la méthode et obtenir des premiers résultats
+    \end{itemize}
+    \vfill
+    \pause
+    \begin{noteblock}{Note: Taille de l'espace de Hilbert en diagonalisation}
+        \begin{align*}
+            4^{\qty(n_s + \frac{n_b}{\lambda})}\hspace{1.5cm}\text{vs}\hspace{1.5cm}
+          4^{(n_s + n_b)}
+        \end{align*}
+    \end{noteblock}
+    \footnotetext{Théo N. DIONNE et al.
+    Pyqcm: An open-source Python library for quantum cluster methods.
+    \textcolor{hard_green}{2023. DOI : 10.21468/SciPostPhysCodeb.23.}}
+\end{frame}

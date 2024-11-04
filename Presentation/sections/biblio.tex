@@ -1,0 +1,102 @@
+% --------------------------------------
+% BIBLIOGRAPHIE, CITATIONS ET RÉFÉRENCES
+% --------------------------------------
+
+% Defining TOC's sections before content
+\section{Bibliographie, citations et références}
+
+\begin{frame}
+    \vfill
+    \begin{center}
+        \large
+        Bibliographie, citations et références
+    \end{center}
+    \vfill
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bibliographie, citations et références}
+    La gestion de la bibliographie et des citations peut se faire avec \textcolor{hard_green}{\textit{biblatex}}\footnotemark. Il y a 4 étapes essentielles
+    \vspace{0.3cm}
+    \begin{itemize}
+    \pause
+        \item[$1.$] Importer le module et personnaliser le style
+            \pause
+        \item[$2.$] Créer un fichier .bib et l'ajouter comme référence
+            \pause
+        \item[$3.$] Citer grâce à la commande \texttt{cite\{\dots\}}
+            \pause
+        \item[$4.$] Insérer la bibliographie
+    \end{itemize}
+    \footnotetext{Bib\LaTeX – Sophisticated Bibliographies in \LaTeX. \href{https://ctan.org/pkg/biblatex}{\textcolor{hard_green}{https://ctan.org/pkg/biblatex}}.}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bibliographie, citations et références}
+    \underline{Étape 1}:
+    \begin{lstlisting}[xleftmargin=-1.5cm, basicstyle=\small]
+        \usepackage[backend=biber,style=phys]{biblatex}
+    \end{lstlisting}
+    \vfill
+    \pause
+    \underline{Étape 2}:
+    \begin{lstlisting}[xleftmargin=-1.5cm, basicstyle=\small]
+        \addbibresource{references.bib}
+    \end{lstlisting}
+    \begin{columns}
+        \column{0.5\linewidth}
+        \begin{lstlisting}[xleftmargin=-1cm, basicstyle=\footnotesize]
+            @article{Einstein1905,
+              author  = {Albert Einstein},
+              title   = {Some title},
+              journal = {Annalen der Physik},
+              volume  = {322},
+              number  = {10},
+              pages   = {891--921},
+              year    = {1905},
+              doi     = {10.1002/andp.19053221004}}
+        \end{lstlisting}
+        \column{0.5\linewidth}
+        \begin{lstlisting}[xleftmargin=-1cm, basicstyle=\footnotesize]
+            @misc{Doe2021,
+              author    = {John Doe and Jane Smith},
+              title     = {Some title},
+              note      = {arXiv:2103.12345},
+              year      = {2021},
+              eprint    = {2103.12345},
+              archivePrefix = {arXiv},
+              primaryClass  = {quant-ph}}
+        \end{lstlisting}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bibliographie, citations et références}
+    \underline{Étapes 3 et 4}:
+    \vfill
+    \begin{lstlisting}[xleftmargin=-1cm, basicstyle=\small]
+       \begin{document}
+
+        According to \textcite{Einstein1905} ...
+
+        \printbibliography
+
+        \end{document}
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Bibliographie, citations et références}
+    \underline{Résultat pour un document vide}:
+    \vfill
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.65\linewidth]{./figures/biblatex.png}
+        \label{fig: biblatex}
+    \end{figure}
+    \vfill\pause
+    \begin{noteblock}{Note: Type de références}
+        Il est aussi possible de référencer des équations, tableaux et figures avec le module \textcolor{hard_green}{\textit{cleveref}}\footnotemark via la commande \texttt{cref\{...\}}.
+    \end{noteblock}
+    \footnotetext{cleveref – Intelligent cross-referencing. \href{https://ctan.org/pkg/cleveref}{\textcolor{hard_green}{https://ctan.org/pkg/cleveref}}.}
+\end{frame}

@@ -10,7 +10,7 @@ STY = $(shell find . -name "*.sty" -type f)
 TEX = $(shell find . -name "*.tex" -type f)
 
 SOURCE = $(BIB) $(STY) $(TEX) $(FIGS)
-GARBAGE = {bbl,synctex.gz,aux,fdb_latexmk,fls,log,nav,snm,xml,vrb}
+GARBAGE = {bbl,synctex.gz,aux,fdb_latexmk,fls,log,nav,snm,xml}
 
 # Setting LaTeX compile (latexmk) options & flags
 MK = latexmk
