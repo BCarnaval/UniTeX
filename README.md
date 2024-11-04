@@ -75,7 +75,7 @@ Each UniTeX template contains a `Makefile` in which are defined very useful comm
 make
 ```
 
-at the root of a template will start a continuous compilation with `latexmk` and will update itself when you modify a any of the project's file. The possible commands are
+at the root of a template will start a continuous compilation with `latexmk` and will update itself when you modify any of the project's file. The possible commands are
 
 - `make clean`: Cleans the project's folder from garbage files (.bbl, .synctex, .aux, etc.)
 - `make dry`: Compiles the project but non-contiuously
