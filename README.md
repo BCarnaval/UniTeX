@@ -88,4 +88,4 @@ at the root of a template will start a continuous compilation with `latexmk` and
 - [x] 'Homework' template (Overleaf's rebuild)
 - [ ] 'RevTeX' template
 - [x] 'Presentation' template from Beamer
-- [ ] Version control
+- [ ] Rework CLI (make it robust and clean to install)
