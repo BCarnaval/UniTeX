@@ -37,9 +37,9 @@
 % ------------
 \setbeamercolor{section in toc}{fg=black}
 \setbeamertemplate{section in toc}[square]
-\setbeamercolor{section number projected}{bg=spruce_medium, fg=black} % setting the color for the section numbers within toc
+\setbeamercolor{section number projected}{bg=pastel_green, fg=black} % setting the color for the section numbers within toc
 \setbeamertemplate{subsection in toc}{%
-  \vspace{0.25em}\hspace{2em}{\color{spruce_medium}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
+  \vspace{0.25em}\hspace{2em}{\color{pastel_green}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
 
 % ----------------------
 % Global frames settings
@@ -47,16 +47,16 @@
 \beamertemplatenavigationsymbolsempty
 
 % Setting color for section titles in frames
-\setbeamercolor{frametitle}{fg=black, bg=spruce_medium}
+\setbeamercolor{frametitle}{fg=black, bg=pastel_green}
 
 % Setting color for title and subtitle in title page
-\setbeamercolor{title}{fg=black, bg=spruce_medium}
-\setbeamercolor{subtitle}{fg=black, bg=spruce_medium}
+\setbeamercolor{title}{fg=black, bg=pastel_green}
+\setbeamercolor{subtitle}{fg=black, bg=pastel_green}
 
 % Frame number
 \addtobeamertemplate{navigation symbols}{}{
     \usebeamerfont{footline}
-    \usebeamercolor[hard_green]{footline}
+    \usebeamercolor[vibrant_green]{footline}
     \hspace{1em}
     \insertframenumber/\inserttotalframenumber
 }
@@ -66,16 +66,40 @@
 % ------------------------
 \usepackage{xcolor}
 \usepackage{tcolorbox}
+\usepackage{marvosym} % Funny logos
 
 % Custom colors
-\definecolor{spruce_medium}{RGB}{195, 215, 205}
-\definecolor{hard_green}{RGB}{30, 150, 110}
-\definecolor{sweet_brown}{RGB}{202, 184, 166}
-\definecolor{sweet_refs}{RGB}{102, 122, 162}
+\definecolor{pastel_green}{RGB}{195, 215, 205}
+\definecolor{vibrant_green}{RGB}{30, 150, 110}
+\definecolor{pastel_brown}{RGB}{202, 184, 166}
+\definecolor{lila_links}{RGB}{102, 122, 162}
 
-% Colored blocks
-\newenvironment{noteblock}[1]{
-    \tcolorbox[noparskip, colback=white,
-    colframe=sweet_brown, boxrule=1pt, arc=1pt, title=#1, coltitle=black]}
-    {\endtcolorbox
+% Custom tcolorbox
+\newtcolorbox{mygreenbox}{
+  colback=pastel_green!10,     % Background color (lighter colframe)
+  colframe=pastel_green,       % Frame color
+  sharp corners,               % Sharp edges
+  boxrule=0.6mm,               % Thickness of the box frame
+  width=\linewidth,            % Box width
+}
+
+\newtcolorbox{mybrownbox}{
+  colback=pastel_brown!10,      % Background color (lighter colframe)
+  colframe=pastel_brown,        % Frame color
+  sharp corners,                % Sharp edges
+  boxrule=0.6mm,                % Thickness of the box frame
+  width=\linewidth,             % Box width
+}
+
+% Custom math tcolorbox
+\newtcolorbox{mymathbox}{
+  colback=white,                % Background color
+  colframe=pastel_green,        % Frame color
+  boxrule=1mm,                  % Thickness of the box frame
+  sharp corners,
+  left=2mm,
+  right=2mm,
+  top=1mm,
+  bottom=1mm,
+  width=fit to height,
 }

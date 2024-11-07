@@ -82,16 +82,14 @@
 
 % Load hyperred package after 'tocloft' settings to color Toc
 \usepackage{hyperref}
-\hypersetup{
-    hyperindex=true,
-    bookmarks=true,
-    pdfa,
+\newcommand{\SetRefColor}[1]{%
+  \hypersetup{%
     colorlinks=true,
     breaklinks=true,
-    urlcolor=REBECCAPURPLE_MASTER,
-    linkcolor=REBECCAPURPLE_MASTER,
-    citecolor=REBECCAPURPLE_MASTER,
-    bookmarksopen=true,
+    urlcolor=#1,
+    linkcolor=#1,
+    citecolor=#1
+    }%
 }
 
 % ---------------

@@ -80,16 +80,14 @@
 
 % Load hyperred package after 'tocloft' settings to color Toc
 \usepackage{hyperref}
-\hypersetup{
-    hyperindex=true,
-    bookmarks=true,
-    pdfa,
+\newcommand{\SetRefColor}[1]{%
+  \hypersetup{%
     colorlinks=true,
     breaklinks=true,
-    urlcolor=YALE1_MASTER,
-    linkcolor=YALE1_MASTER,
-    citecolor=YALE1_MASTER,
-    bookmarksopen=true,
+    urlcolor=#1,
+    linkcolor=#1,
+    citecolor=#1
+    }%
 }
 
 % ---------------
@@ -135,7 +133,6 @@
   \fancyfoot[C]{\thepage} % Page number centered
   \renewcommand{\headrulewidth}{0pt} % Header rule of 0pt
 }
-\pagestyle{mypagestyle}
 
 % --------------------------------------
 % Title Page shortcuts & French captions
@@ -153,4 +150,3 @@
 \addto\captionsfrench{\def\figurename{{\sc Figure}}}
 \addto\captionsfrench{\def\tablename{{\sc Tableau}}}
 \addto\captionsfrench{\def\listfigurename{Liste des figures}}
-

@@ -18,16 +18,14 @@
 
 \usepackage{booktabs} % Enhances the quality of tables
 \usepackage{hyperref}
-\hypersetup{
-    hyperindex=true,
-    bookmarks=true,
-    pdfa,
+\newcommand{\SetRefColor}[1]{%
+  \hypersetup{%
     colorlinks=true,
     breaklinks=true,
-    urlcolor=LAVENDER_MASTER,
-    linkcolor=LAVENDER_MASTER,
-    citecolor=LAVENDER_MASTER,
-    bookmarksopen=true,
+    urlcolor=#1,
+    linkcolor=#1,
+    citecolor=#1
+    }%
 }
 
 \usepackage{geometry} % Customize page layout and dimensions
@@ -81,12 +79,6 @@
 % ----------------------------------------------
 % Titles (sections, subsections, subsubsections)
 % ----------------------------------------------
-% \titleformat{\section}{
-%   \normalfont\Large\bfseries{
-%     \color{\MasterColor}\titlerule[2pt]
-%     }
-%   \vspace{0.25cm}
-% }{\thesection}{1em}{}
 
 \titleformat{\subsection}{
   \normalfont\large\bfseries{
@@ -128,4 +120,3 @@
 \addto\captionsfrench{\def\figurename{{\sc Figure}}}
 \addto\captionsfrench{\def\tablename{{\sc Tableau}}}
 \addto\captionsfrench{\def\listfigurename{Liste des figures}}
-

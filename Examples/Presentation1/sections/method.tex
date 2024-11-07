@@ -37,7 +37,7 @@
 \begin{frame}
   \frametitle{Méthodes numériques - CDMFT \&\;PyQCM}
   L'effet du bain sur la fonction de Green est encapsulé dans ladite
-  \textcolor{hard_green}{fonction d'hybridation $\vb{\Gamma}(z)$}
+  \textcolor{vibrant_green}{fonction d'hybridation $\vb{\Gamma}(z)$}
   \vspace{1cm}
   \begin{align}
     \vb{\Gamma}(z) = \Gamma_{ij,\sigma}(z) = \sum_\nu\frac{\theta_{i\nu,\sigma}\theta^*_{j\nu,\sigma}}{z - \epsilon_{\nu,\sigma}},
@@ -51,9 +51,9 @@
 \begin{frame}
   \frametitle{Méthodes numériques - CDMFT \&\;PyQCM}
     L'essence de la CDMFT est d'obtenir une correspondance entre
-    $\vb{G}_c(z)$ et $\vb{\Bar{G}}(z)$ via \textcolor{hard_green}{l'approximation locale de la \textit{self-énergie}:}
+    $\vb{G}_c(z)$ et $\vb{\Bar{G}}(z)$ via \textcolor{vibrant_green}{l'approximation locale de la \textit{self-énergie}:}
     \begin{align}
-        \textcolor{hard_green}
+        \textcolor{vibrant_green}
         {\vb{\Sigma}(\vb{\tilde{k}}, z)\longrightarrow\vb{\Sigma}_c(z),}
     \end{align}
     dans une boucle d'auto-cohérence.
@@ -63,7 +63,7 @@
     \textbf{projetée sur l'amas}
     \begin{align}
         \vb{\Bar{G}}(z) = \Bigg[\frac{N_c}{N}\sum_{\vb{\Tilde{k}}}e^{i\vb{\Tilde{k}}\cdot\vb{\Tilde{r}}}\vb{G}(\vb{\Tilde{k}}, z)\Bigg]_{\vb{\Tilde{r}}=0}
-        = \frac{N_c}{N}\sum_{\vb{\tilde{k}}}\frac{1}{z - \vb{t}(\vb{\tilde{k}}) - \textcolor{hard_green}{\vb{\Sigma}_c(z)}}.
+        = \frac{N_c}{N}\sum_{\vb{\tilde{k}}}\frac{1}{z - \vb{t}(\vb{\tilde{k}}) - \textcolor{vibrant_green}{\vb{\Sigma}_c(z)}}.
     \end{align}
 \end{frame}
 
@@ -120,10 +120,10 @@
 
 \begin{frame}
     \frametitle{Méthodes numériques - Algorithme de sous-bains}
-    Cependant, que se passe-t-il avec l'approximation locale de la self-énergie?
+    Cependant, que se passe-t-il avec l'approximation locale de la self-énergie~?
     Plusieurs self-énergies sont valides...
     \begin{align}
-      {\vb{\Sigma}(\vb{\tilde{k}}, z)\longrightarrow\cancel{\vb{\Sigma}_c(z)},}
+      \vb{\Sigma}(\vb{\tilde{k}}, z)\longrightarrow\cancel{\vb{\Sigma}_c(z)},
     \end{align}
 \end{frame}
 
@@ -132,17 +132,17 @@
     Cependant, que se passe-t-il avec l'approximation locale de la self-énergie?
     Plusieurs self-énergies sont valides...
     \begin{align}
-      \vb{\Sigma}(\vb{\tilde{k}}, z)\longrightarrow\textcolor{hard_green}{\lambda_1\vb{\Sigma}_{c_1}(z) +
+      \vb{\Sigma}(\vb{\tilde{k}}, z)\longrightarrow\textcolor{vibrant_green}{\lambda_1\vb{\Sigma}_{c_1}(z) +
       \lambda_2\vb{\Sigma}_{c_2}(z)},
     \end{align}
     \pause
     Ce qui modifie le calcul de la fonction de Green projetée et la fonction de distance
     \begin{align}
-        \vb{\Bar{G}}(z) = \frac{N_c}{N}\sum_{\vb{\tilde{k}}}\frac{1}{z - \vb{t}(\vb{\tilde{k}}) - (\textcolor{hard_green}{\lambda_1\vb{\Sigma}_{c_1}(z) +
+        \vb{\Bar{G}}(z) = \frac{N_c}{N}\sum_{\vb{\tilde{k}}}\frac{1}{z - \vb{t}(\vb{\tilde{k}}) - (\textcolor{vibrant_green}{\lambda_1\vb{\Sigma}_{c_1}(z) +
         \lambda_2\vb{\Sigma}_{c_2}(z)})}.
     \end{align}
     \begin{align}
-      d = \sum_{i\omega_n, \mu,\nu}W_n|(\textcolor{hard_green}{\lambda_1\vb{\Gamma}_{c_1}(i\omega_n) + \lambda_2\vb{\Gamma}_{c_2}(i\omega_n)} - \vb{\Bar{\Gamma}}(i\omega_n))_{\mu\nu}|^2
+      d = \sum_{i\omega_n, \mu,\nu}W_n|(\textcolor{vibrant_green}{\lambda_1\vb{\Gamma}_{c_1}(i\omega_n) + \lambda_2\vb{\Gamma}_{c_2}(i\omega_n)} - \vb{\Bar{\Gamma}}(i\omega_n))_{\mu\nu}|^2
     \end{align}
 \end{frame}
 
