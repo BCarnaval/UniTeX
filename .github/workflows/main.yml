@@ -1,0 +1,42 @@
+name: Selectively Update and Commit Zipped Templates
+
+on:
+  push:
+    branches:
+      - main  # Triggers on pushes to the main branch
+
+jobs:
+  update_zips:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
+
+    - name: Setup Environment
+      run: sudo apt-get update && sudo apt-get install -y zip make texlive-full
+
+    - name: Determine Changed Directories
+      id: changed_dirs
+      run: |
+        git diff --name-only HEAD^ HEAD | grep '^.*\/' | xargs -L1 dirname | sort -u > changed_dirs.txt
+        echo "changed_dirs=$(cat changed_dirs.txt)" >> $GITHUB_ENV
+
+    - name: Compile and Zip Changed Templates
+      run: |
+        while read dir; do
+          if [ -d "$dir" ] && [ -f "$dir/Makefile" ]; then
+            (cd "$dir" && make zip")
+            git add "*.zip"
+          fi
+        done < changed_dirs.txt
+
+    - name: Commit and Push Changes
+      if: env.changed_dirs != ''
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "(feat) Automatically update zipped templates based on recent changes."
+        git push
