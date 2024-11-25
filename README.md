@@ -35,7 +35,9 @@ The simplest way to use UniTeX's templates is by dowloading one from the links b
 
 </div>
 
-You can directly use the downloaded within [Overleaf](https://www.overleaf.com/) by selecting `New project > Upload project > Select a .zip file`. You can also use it locally but UniTeX requires a complete TeX distribution. Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of TeX distributions like MikTeX and MacTeX but you can always install it separately by following [these](https://mg.readthedocs.io/latexmk.html) steps.
+You can directly use the downloaded within [Overleaf](https://www.overleaf.com/) by selecting `New project > Upload project > Select a .zip file`.
+
+To use it locally, UniTeX requires a complete TeX distribution. Most features need external tools such as latexmk that fully automates LaTeX document generation. Latexmk is usually part of TeX distributions like MikTeX and MacTeX but you can always install it separately by following [these](https://mg.readthedocs.io/latexmk.html) steps.
 
 # Configuration
 
