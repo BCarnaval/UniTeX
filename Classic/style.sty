@@ -1,7 +1,7 @@
-% -----------------------------------------------------------------------------
+% -----------------
 % Style & Libraries
-% -----------------------------------------------------------------------------
-\ProvidesPackage{style}[2022/08/24]
+% -----------------
+\ProvidesPackage{style}[2024/11/27]
 
 % --------------------------
 % Global page style settings
@@ -60,6 +60,7 @@
 % -----------------
 % Table of contents
 % -----------------
+
 % Removing TOC's header
 \makeatletter
 \renewcommand\tableofcontents{
@@ -133,6 +134,8 @@
   \fancyfoot[C]{\thepage} % Page number centered
   \renewcommand{\headrulewidth}{0pt} % Header rule of 0pt
 }
+
+\pagestyle{mypagestyle}
 
 % --------------------------------------
 % Title Page shortcuts & French captions
